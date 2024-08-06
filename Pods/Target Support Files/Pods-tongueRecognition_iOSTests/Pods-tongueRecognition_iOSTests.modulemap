@@ -1,0 +1,6 @@
+framework module Pods_tongueRecognition_iOSTests {
+  umbrella header "Pods-tongueRecognition_iOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
