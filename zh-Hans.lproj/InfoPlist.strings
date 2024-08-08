@@ -6,7 +6,7 @@
   
 */
 
-"NSCameraUsageDescription" = "需要开启相机以获取舌象照片。";
-"NSPhotoLibraryAddUsageDescription" = "需要开启权限以储存舌象照片。";
-"CFBundleDisplayName" = "观舌辨食";
-"NSFaceIDUsageDescription" = "需要生物识别凭据以登入观舌辨食";
+NSCameraUsageDescription = "需要开启相机以获取舌象照片。";
+NSPhotoLibraryAddUsageDescription = "需要开启权限以储存舌象照片。";
+CFBundleDisplayName = "观舌辨食";
+NSFaceIDUsageDescription = "需要生物识别凭据以登入观舌辨食";

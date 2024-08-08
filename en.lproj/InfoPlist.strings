@@ -6,7 +6,7 @@
   
 */
 
-"NSCameraUsageDescription" = "Camera is required to capture tongue image.";
-"NSPhotoLibraryAddUsageDescription" = "Permission is required to save photos";
-"CFBundleDisplayName" = "Tongue HealthChecker";
-"NSFaceIDUsageDescription" = "Biometric credentials is required to log in to Tongue HealthChecker";
+NSCameraUsageDescription = "Camera is required to capture tongue image.";
+NSPhotoLibraryAddUsageDescription = "Permission is required to save photos";
+CFBundleDisplayName = "Tongue HealthChecker";
+NSFaceIDUsageDescription = "Biometric credentials is required to log in to Tongue HealthChecker";
