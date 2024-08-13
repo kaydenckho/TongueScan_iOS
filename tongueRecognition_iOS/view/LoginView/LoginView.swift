@@ -19,8 +19,17 @@ struct LoginView: View {
         case ForgetPassword
         case LoggedIn
     }
+    
+    enum InputType{
+        case Email
+        case Code
+        case Password
+        case Username
+    }
 
     @Binding var state :PageState
+    
+    @State var inputType :InputType? = nil
     
     @State var username: String = ""
     @State var password: String = ""
@@ -111,28 +120,51 @@ struct LoginView: View {
                                             Spacer()
                                         }
                                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 15, trailing: 0))
-                                        HStack(){
-                                            Spacer()
-                                            Button(action: {
-                                                state = .Login
-                                            }){
-                                                Button1View(text: "memberLogin".localizedString(language: language), width: .infinity, color: (state == .Login) ? Color("toolbarBackground") : Color("login_button_bg_grey"), topLeading:0, bottomLeading:20, topTrailing:20, bottomTrailing:20, verticalPadding:10, textSize: Font.headline, textColor:(state == .Login) ? Color.white : Color("login_button_text_grey"))
+                                    
+                                        ZStack{
+                                            HStack(){
+                                                Button(action: {
+                                                 tabViewSelection = 0
+                                                }){
+                                                    Image(systemName:"chevron.left")
+                                                        .foregroundColor(Color("indicator_grey"))
+                                                }
+                                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+                                                .buttonStyle(ClickScaleDown())
+                                                Spacer()
                                             }
-                                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 5))
-                                            .buttonStyle(ClickScaleDown())
                                             
-                                            Button(action: {
-                                                state = .Register
-                                            }){
-                                                Button1View(text: "memberRegister".localizedString(language: language), width: .infinity, color: (state == .Register) ? Color("toolbarBackground") : Color("login_button_bg_grey"), topLeading:20, bottomLeading:20, topTrailing:20, bottomTrailing:0, verticalPadding:10,textSize: Font.headline, textColor:(state == .Register) ? Color.white : Color("login_button_text_grey"))
+                                            HStack(){
+                                                Spacer()
+                                                switch state{
+                                                case .Register:  
+                                                    "memberRegister".localizedText(language: language)
+                                                        .font(.headline)
+                                                case .Login:
+                                                    "memberLogin".localizedText(language: language)
+                                                            .font(.headline)
+                                                case .ForgetPassword:
+                                                    "resetPassword".localizedText(language: language)
+                                                            .font(.headline)
+                                                default:
+                                                    "memberLogin".localizedText(language: language)
+                                                            .font(.headline)
+                                                }
+                                                Spacer()
                                             }
-                                            .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 10))
-                                            .buttonStyle(ClickScaleDown())
-                                            Spacer()
                                         }
                                         .padding([.bottom], 20)
                                         
-                                        if (state != .ForgetPassword){
+                                        if (state != .Login){
+                                            HStack{
+                                                "inputEmail".localizedText(language: language)
+                                                    .font(.headline).foregroundStyle(Color.black)
+                                                Spacer()
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 0))
+                                        }
+                                        
+                                        if (state == .Login){
                                             TextInputView(hint: "username".localizedString(language: language),input:$username, image:"person_icon")
                                                 .cornerRadius(20.0)
                                                 .focused($usernameIsFocused)
@@ -150,74 +182,25 @@ struct LoginView: View {
                                                 )
                                         }
                                         
-                                        
-                                        
-                                        if (state == .Register){
-                                            HStack{
-                                                "username_invalid".localizedText(language: language)
-                                                    .font(.caption2).foregroundStyle(Color.gray)
-                                                    .padding(EdgeInsets(top: 0, leading: 25, bottom: 15, trailing: 25))
-                                                    .fixedSize(horizontal: false, vertical: true)
-                                                Spacer()
-                                            }
-                                        }
-                                        
-                                        SecureTextInputView(hint: (state == .ForgetPassword) ? "newPassword".localizedString(language: language) :  "password".localizedString(language: language),input:$password, image:"password", isMasked:$passwordMask)
-                                            .cornerRadius(20.0)
-                                            .focused($passwordIsFocused)
-                                            .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
-                                            .onTapGesture{
-                                                passwordIsFocused = true
-                                            }
-                                            .overlay(
-                                                passwordIsNotValid ?
+                                        if (state == .Login || ((state == .Register || state == .ForgetPassword) && inputType == .Password)){
+                                            SecureTextInputView(hint: (state == .ForgetPassword) ? "newPassword".localizedString(language: language) :  "password".localizedString(language: language),input:$password, image:"password", isMasked:$passwordMask)
+                                                .cornerRadius(20.0)
+                                                .focused($passwordIsFocused)
+                                                .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
+                                                .onTapGesture{
+                                                    passwordIsFocused = true
+                                                }
+                                                .overlay(
+                                                    passwordIsNotValid ?
                                                     RoundedRectangle(cornerRadius: 20)
                                                         .stroke(.red, lineWidth: 2)
                                                         .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
-                                                :
-                                                    nil
-                                            )
-                                        
-                                        if (state == .Register){
-                                            HStack{
-                                                "password_invalid".localizedText(language: language)
-                                                    .font(.caption2).foregroundStyle(Color.gray)
-                                                    .padding(EdgeInsets(top: 0, leading: 25, bottom: 15, trailing: 25))
-                                                    .fixedSize(horizontal: false, vertical: true)
-                                                Spacer()
-                                            }
-                                        }
-                                        
-                                        if (state == .Register){
-                                            
-                                            SecureTextInputView(hint: "confirm_password".localizedString(language: language),input:$confirmPassword, image:"password", isMasked:$confirmPasswordMask)
-                                                .cornerRadius(20.0)
-                                                .focused($confirmPasswordIsFocused)
-                                                .padding((confirmpasswordIsNotValid) ? EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
-                                                .onTapGesture{
-                                                    confirmPasswordIsFocused = true
-                                                }
-                                                .overlay(
-                                                    confirmpasswordIsNotValid ?
-                                                    RoundedRectangle(cornerRadius: 20)
-                                                        .stroke(.red, lineWidth: 2)
-                                                        .padding((confirmpasswordIsNotValid) ? EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                                     :
                                                         nil
                                                 )
                                         }
                                             
-                                            if (state == .Register && confirmpasswordIsNotValid){
-                                                HStack(){
-                                                    "passwordNotMatched".localizedText(language: language)
-                                                        .font(.caption2).foregroundStyle(Color.red)
-                                                        .padding(EdgeInsets(top: 0, leading: 25, bottom: 15, trailing: 25))
-                                                        .fixedSize(horizontal: false, vertical: true)
-                                                    Spacer()
-                                                }
-                                            }
-                                            
-                                        if (state == .Register || state == .ForgetPassword){
+                                        if ((state == .Register || state == .ForgetPassword) && inputType == .Email){
                                             TextInputView(hint: "email".localizedString(language: language),input:$email, image:"person_icon")
                                                 .cornerRadius(20.0)
                                                 .focused($emailIsFocused)
@@ -233,7 +216,9 @@ struct LoginView: View {
                                                     :
                                                         nil
                                                 )
+                                        }
                                             
+                                        if ((state == .Register || state == .ForgetPassword) && inputType == .Code){
                                             HStack(spacing:0){
                                                 TextInputView(hint: "verification_code".localizedString(language: language),input:$code, image:"code")
                                                     .focused($codeIsFocused)
@@ -296,9 +281,9 @@ struct LoginView: View {
                                                 :
                                                     nil
                                             )
+                                        
                                         }
-                                        
-                                        
+                                         
                                         if (state == .Login){
                                             HStack{
                                                 Toggle(isOn: $isRememberLogin) {
@@ -380,39 +365,44 @@ struct LoginView: View {
                                                 }
                                             }
                                         }){
-                                            Button1View(text: state == .Login ? "login".localizedString(language: language) : state == .Register ? "register".localizedString(language: language) : "resetPassword".localizedString(language: language), width: .infinity, color: Color("toolbarBackground"), topLeading:0, bottomLeading:20, topTrailing:20, bottomTrailing:20, verticalPadding:10, textSize: Font.headline, textColor:.white)
+                                            Button1View(text: (state == .Login) ? "login".localizedString(language: language) : ((state == .Register && inputType == .Username) || (state == .ForgetPassword && inputType == .Password)) ? "confirm".localizedString(language: language) : "next".localizedString(language: language)
+                                                        , width: .infinity, color: Color("toolbarBackground"), topLeading:0, bottomLeading:20, topTrailing:20, bottomTrailing:20, verticalPadding:10, textSize: Font.headline, textColor:.white)
                                         }
-                                        .padding(EdgeInsets(top: 0, leading: 20, bottom: 10, trailing: 20))
+                                        .padding(EdgeInsets(top: (state == .Login) ? 0 : 20, leading: 20, bottom: (state == .Login) ? 20 : 40, trailing: 20))
                                         .buttonStyle(ClickScaleDown())
                                         
-                                        Button(action: {
-                                            if (preferenceUtil.username != nil){
-                                                biometricAuth()
-                                            } else{
-                                                biometricFirstTimeDialog = true
+                                        if (state == .Login){
+                                            Button(action: {
+                                                if (preferenceUtil.username != nil){
+                                                    biometricAuth()
+                                                } else{
+                                                    biometricFirstTimeDialog = true
+                                                }
+                                            }){
+                                                Button1View(text: "biometric_login".localizedString(language: language), width: .infinity, color: Color("toolbarBackground"), topLeading:0, bottomLeading:20, topTrailing:20, bottomTrailing:20, verticalPadding:10, textSize: Font.headline, textColor:.white)
                                             }
-                                        }){
-                                            Button1View(text: "biometric_login".localizedString(language: language), width: .infinity, color: Color("toolbarBackground"), topLeading:0, bottomLeading:20, topTrailing:20, bottomTrailing:20, verticalPadding:10, textSize: Font.headline, textColor:.white)
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20))
+                                            .buttonStyle(ClickScaleDown())
                                         }
-                                        .padding(EdgeInsets(top: 0, leading: 20, bottom: 30, trailing: 20))
-                                        .buttonStyle(ClickScaleDown())
-                                        .alert(vm.loginModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.loginCompleted){
-                                            Button("confirm", role: .cancel) { vm.loginCompleted = false }
+                                   
+                                        if (state == .Login){
+                                            HStack{
+                                                "no_account".localizedText(language: language)
+                                                    .font(.footnote)
+                                                    .foregroundColor(Color("toolbarBackground"))
+                                                Button(action: {
+                                                    state = .Register
+                                                    inputType = .Email
+                                                }){
+                                                    "register".localizedText(language: language)
+                                                        .font(.footnote)
+                                                        .foregroundColor(Color("orange"))
+                                                }
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 40, trailing: 20))
                                         }
-                                        .alert(vm.registerModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.registerCompleted){
-                                            Button("confirm", role: .cancel) { vm.registerCompleted = false }
-                                        }
-                                        .alert(vm.resetPasswordModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.resetPasswordCompleted){
-                                            Button("confirm", role: .cancel) { vm.resetPasswordCompleted = false }
-                                        }
-                                        .alert("biometric_not_supported".localizedString(language: language), isPresented: $biometricNotSupportedDialog){
-                                            Button("confirm", role: .cancel) { biometricNotSupportedDialog = false }
-                                        }
-                                        .alert("biometric_first_time".localizedString(language: language), isPresented: $biometricFirstTimeDialog){
-                                            Button("confirm", role: .cancel) { biometricFirstTimeDialog = false }
-                                        }
-                             
-                                        
+                                      
+                                    
                                     }
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 20, style: .continuous)
@@ -448,6 +438,21 @@ struct LoginView: View {
                     isStartCountdown = false
                     sendCodeCountdown = 60
                 }
+            }
+            .alert(vm.loginModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.loginCompleted){
+                Button("confirm", role: .cancel) { vm.loginCompleted = false }
+            }
+            .alert(vm.registerModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.registerCompleted){
+                Button("confirm", role: .cancel) { vm.registerCompleted = false }
+            }
+            .alert(vm.resetPasswordModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.resetPasswordCompleted){
+                Button("confirm", role: .cancel) { vm.resetPasswordCompleted = false }
+            }
+            .alert("biometric_not_supported".localizedString(language: language), isPresented: $biometricNotSupportedDialog){
+                Button("confirm", role: .cancel) { biometricNotSupportedDialog = false }
+            }
+            .alert("biometric_first_time".localizedString(language: language), isPresented: $biometricFirstTimeDialog){
+                Button("confirm", role: .cancel) { biometricFirstTimeDialog = false }
             }
         }
     }
