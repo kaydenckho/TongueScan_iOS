@@ -8,7 +8,7 @@ class LoginVM: ObservableObject {
     @Published var loginModel: APIResponse<LoginModel>?
     @Published var loginCompleted: Bool = false
     
-    @Published var registerModel: APIResponse<LoginModel>?
+    @Published var registerModel: APIResponse<RegisterModel>?
     @Published var registerCompleted: Bool = false
     
     @Published var sendCodeModel: APIResponse<RegisterModel>?
@@ -16,6 +16,9 @@ class LoginVM: ObservableObject {
     
     @Published var resetPasswordModel: APIResponse<RegisterModel>?
     @Published var resetPasswordCompleted: Bool = false
+    
+    @Published var verifyCodeModel: APIResponse<RegisterModel>?
+    @Published var verifyCodeCompleted: Bool = false
     
     var sessionId:String = ""
     
@@ -141,6 +144,32 @@ class LoginVM: ObservableObject {
                     self.resetPasswordModel = nil
                 }
                 self.resetPasswordCompleted = true
+            }
+            DispatchQueue.main.async {
+                self.uploading = false
+            }
+        }
+    }
+    
+    func verifyCode(code: String, sessionId: String, callback: @escaping ()->Void) async {
+        DispatchQueue.main.async {
+            self.uploading = true
+        }
+        Webservice().verifyCode(code: code, sessionId: sessionId){ result in
+            switch result{
+            case .success(let model):
+                DispatchQueue.main.async {
+                    self.verifyCodeModel = model
+                    if (model?.code == 0){
+                        callback()
+                    }
+                    self.verifyCodeCompleted = true
+                }
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.verifyCodeModel = nil
+                }
+                self.verifyCodeCompleted = true
             }
             DispatchQueue.main.async {
                 self.uploading = false

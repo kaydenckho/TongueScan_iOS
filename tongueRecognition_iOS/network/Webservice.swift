@@ -91,7 +91,7 @@ struct Webservice {
         }
     }
     
-    func register(username:String, password:String, email:String, code:String, sessionId:String, completion: @escaping (Result<APIResponse<LoginModel>?>) -> Void){
+    func register(username:String, password:String, email:String, code:String, sessionId:String, completion: @escaping (Result<APIResponse<RegisterModel>?>) -> Void){
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(username.data(using: .utf8)!,withName:"username",mimeType: "text/plain")
             multipartFormData.append(password.data(using: .utf8)!,withName:"password",mimeType: "text/plain")
@@ -106,12 +106,12 @@ struct Webservice {
                 //                    upload.uploadProgress(closure: { (progress) in
                 //                        print("Upload Progress: \(progress.fractionCompleted)")
                 //                    })
-                var model = APIResponse<LoginModel>()
+                var model = APIResponse<RegisterModel>()
                 upload.responseJSON { response in
                     do{
                         if let data = response.data{
                             let decoder = JSONDecoder()
-                            model = try decoder.decode(APIResponse<LoginModel>.self, from: data)
+                            model = try decoder.decode(APIResponse<RegisterModel>.self, from: data)
                         }
                         print(model)
                     } catch {
@@ -195,6 +195,38 @@ struct Webservice {
                 multipartFormData.append(code.data(using: .utf8)!,withName:"code",mimeType: "text/plain")
                 multipartFormData.append(sessionId.data(using: .utf8)!,withName:"session_id",mimeType: "text/plain")
             },to:Constant.BASE_URL+Constant.RESET_PASSWORD)
+            { (result) in
+                print(result)
+                switch result {
+                case .success(let upload, _, _):
+                    //                    upload.uploadProgress(closure: { (progress) in
+                    //                        print("Upload Progress: \(progress.fractionCompleted)")
+                    //                    })
+                    var model = APIResponse<RegisterModel>()
+                    upload.responseJSON { response in
+                        do{
+                            if let data = response.data{
+                                let decoder = JSONDecoder()
+                                model = try decoder.decode(APIResponse<RegisterModel>.self, from: data)
+                            }
+                            print(model)
+                        } catch {
+                            print(error)
+                            completion(.failure(error))
+                        }
+                        completion(.success(model))
+                    }
+                case .failure(let encodingError):
+                    completion(.failure(encodingError))
+                }
+            }
+        }
+    
+    func verifyCode(code:String, sessionId: String, completion: @escaping (Result<APIResponse<RegisterModel>?>) -> Void){
+            Alamofire.upload(multipartFormData: { multipartFormData in
+                multipartFormData.append(code.data(using: .utf8)!,withName:"code",mimeType: "text/plain")
+                multipartFormData.append(sessionId.data(using: .utf8)!,withName:"session_id",mimeType: "text/plain")
+            },to:Constant.BASE_URL+Constant.REGISTER_VERIFY_CODE)
             { (result) in
                 print(result)
                 switch result {

@@ -12,6 +12,7 @@ struct Constant {
     // Login & Register
     static let LOGIN = "user/login/username_email"
     static let REGISTER = "user/register/email/verify"
+    static let REGISTER_VERIFY_CODE = "user/register/email/verifycode"
     static let RESET_PASSWORD = "user/forget/password/reset"
     static let OBTAIN_EMAIL_REGISTER_CODE = "user/register/email/code"
     static let OBTAIN_EMAIL_FORGET_PASSWORD_CODE = "user/forget/password/code"

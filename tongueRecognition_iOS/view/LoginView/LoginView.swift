@@ -318,58 +318,32 @@ struct LoginView: View {
                                             emailIsNotValid = false
                                             codeIsEmpty = false
                                             if (state == .Login){
-                                                if (username.isEmpty){
-                                                   usernameIsNotValid = true
-                                                } else if (password.isEmpty){
-                                                    passwordIsNotValid = true
-                                                } else{
-                                                    Task{
-                                                        await vm.login(username: username, password: password, callback:{
-                                                            tongueRecognition_iOSApp.loginModel = vm.loginModel?.data
-                                                            preferenceUtil.username = vm.loginModel?.data?.username
-                                                            preferenceUtil.token = vm.loginModel?.data?.token
-                                                            preferenceUtil.isRememberLogin = self.isRememberLogin
-                                                            state = .LoggedIn
-                                                        })
-                                                    }
-                                                }
+                                                handleLogin()
                                             } else if (state == .Register){
-                                                if (username.isEmpty || !checkUsernameValid(username: username)){
-                                                   usernameIsNotValid = true
-                                                } else if (password.isEmpty || !checkPasswordValid(password: password)){
-                                                    passwordIsNotValid = true
-                                                } else if (confirmPassword.isEmpty || (password != confirmPassword) ){
-                                                    confirmpasswordIsNotValid = true
-                                                } else if (email.isEmpty){
-                                                    emailIsNotValid = true
-                                                } else if (code.isEmpty){
-                                                    codeIsEmpty = true
-                                                } else{
-                                                    Task{
-                                                        await vm.register(username: username, password: password, email: email, code: code, sessionId: vm.sessionId, callback:{
-                                                        })
-                                                    }
-                                                }
+                                                handleRegister()
                                             } else if (state == .ForgetPassword){
-                                                if (password.isEmpty || !checkPasswordValid(password: password)){
-                                                    passwordIsNotValid = true
-                                                } else if (email.isEmpty){
-                                                    emailIsNotValid = true
-                                                } else if (code.isEmpty){
-                                                    codeIsEmpty = true
-                                                } else{
-                                                    Task{
-                                                        await vm.resetPassword(password: password, email: email, code: code, sessionId: vm.sessionId, callback:{
-                                                        })
-                                                    }
-                                                }
+                                                handleForgetPassword()
                                             }
                                         }){
                                             Button1View(text: (state == .Login) ? "login".localizedString(language: language) : ((state == .Register && inputType == .Username) || (state == .ForgetPassword && inputType == .Password)) ? "confirm".localizedString(language: language) : "next".localizedString(language: language)
                                                         , width: .infinity, color: Color("toolbarBackground"), topLeading:0, bottomLeading:20, topTrailing:20, bottomTrailing:20, verticalPadding:10, textSize: Font.headline, textColor:.white)
                                         }
-                                        .padding(EdgeInsets(top: (state == .Login) ? 0 : 20, leading: 20, bottom: (state == .Login) ? 20 : 40, trailing: 20))
+                                        .padding(EdgeInsets(top: (state == .Login) ? 0 : 10, leading: 20, bottom: 20, trailing: 20))
                                         .buttonStyle(ClickScaleDown())
+                                        
+                                        if (state == .Register && inputType == .Email){
+                                            (
+                                                "registerEmailHint1".localizedText(language: language)
+                                                    .font(.footnote)
+                                                    .foregroundColor(Color("toolbarBackground")) +
+                                                "registerEmailHint2".localizedText(language: language)
+                                                    .font(.footnote)
+                                                    .foregroundColor(Color("orange"))
+                                            )
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 40, trailing: 20))
+                                            .fixedSize(horizontal: false, vertical: true)
+                                            .multilineTextAlignment(.center)
+                                        }
                                         
                                         if (state == .Login){
                                             Button(action: {
@@ -495,6 +469,116 @@ struct LoginView: View {
         } else {
             // no biometrics
             biometricNotSupportedDialog = true
+        }
+    }
+    
+    func handleLogin(){
+        if (username.isEmpty){
+           usernameIsNotValid = true
+        } else if (password.isEmpty){
+            passwordIsNotValid = true
+        } else{
+            Task{
+                await vm.login(username: username, password: password, callback:{
+                    tongueRecognition_iOSApp.loginModel = vm.loginModel?.data
+                    preferenceUtil.username = vm.loginModel?.data?.username
+                    preferenceUtil.token = vm.loginModel?.data?.token
+                    preferenceUtil.isRememberLogin = self.isRememberLogin
+                    state = .LoggedIn
+                })
+            }
+        }
+    }
+    
+    func handleRegister(){
+        switch inputType {
+            case .Email:
+                if (!email.isEmpty){
+                    Task{
+                        await vm.sendCode(email: email) {
+                            inputType = .Code
+                            vm.sessionId = vm.sendCodeModel?.data?.session_id ?? ""
+                            if (!isStartCountdown){
+                                isStartCountdown = true
+                            }
+                        }
+                    }
+                } else{
+                    emailIsNotValid = true
+                }
+            case .Code:
+                if (!code.isEmpty){
+                    Task{
+                        await vm.verifyCode(code: code, sessionId: vm.sessionId, callback: {inputType = .Password
+                        })
+                    }
+                } else{
+                    codeIsEmpty = true
+                }
+            case .Password:
+                if (!password.isEmpty && checkPasswordValid(password: password)){
+                    inputType = .Username
+                } else{
+                    passwordIsNotValid = true
+                }
+            case .Username:
+                if (!username.isEmpty && checkUsernameValid(username: username)){
+                    Task{
+                        await vm.register(username: username, password: password, email: email, code: code, sessionId: vm.sessionId, callback:{
+                            var loginModel = LoginModel(message: vm.registerModel?.message , token: vm.registerModel?.data?.token, username: vm.registerModel?.data?.username)
+                            tongueRecognition_iOSApp.loginModel = loginModel
+                            preferenceUtil.username = loginModel.username
+                            preferenceUtil.token = loginModel.token
+                            state = .LoggedIn
+                        })
+                    }
+                } else{
+                    usernameIsNotValid = true
+                }
+        default: ()
+            
+        }
+    }
+    
+    func handleForgetPassword(){
+        switch inputType {
+            case .Email:
+                if (!email.isEmpty){
+                    Task{
+                        await vm.sendCode(email: email) {
+                            inputType = .Code
+                            vm.sessionId = vm.sendCodeModel?.data?.session_id ?? ""
+                            if (!isStartCountdown){
+                                isStartCountdown = true
+                            }
+                        }
+                    }
+                } else{
+                    emailIsNotValid = true
+                }
+            case .Code:
+                if (!code.isEmpty){
+                    Task{
+                        await vm.verifyCode(code: code, sessionId: vm.sessionId, callback: {
+                            inputType = .Password
+                        })
+                    }
+                } else{
+                    codeIsEmpty = true
+                }
+            case .Password:
+                if (!password.isEmpty && checkPasswordValid(password: password)){
+                    Task{
+                        await vm.resetPassword(password: password, email: email, code: code, sessionId: vm.sessionId, callback:{
+                            state = .Login
+                        })
+                    }
+                } else{
+                    passwordIsNotValid = true
+                }
+            case .Username: ()
+        default: ()
+            
         }
     }
 
