@@ -86,7 +86,7 @@
 "no_account" = "还没有账号？";
 "inputEmail" = "請輸入您的郵箱";
 "inputCode" = "請輸入6位數字驗證碼";
-"createPassword" = "請輸入6位數字驗證碼";
+"createPassword" = "创建密码";
 "passwordRule1" = "8–30個字符長度";
 "passwordRule2" = "大寫字母";
 "passwordRule3" = "小寫字母";

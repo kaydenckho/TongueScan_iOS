@@ -157,18 +157,18 @@ struct LoginView: View {
                                         
                                         if (state != .Login){
                                             HStack{
-                                                "inputEmail".localizedText(language: language)
+                                                var text = (inputType == .Email) ? "inputEmail" : (inputType == .Code) ? "inputCode" : (inputType == .Username) ? "inputUsername" : (inputType == .Password && state == .Register) ? "createPassword" : "newPassword"
+                                                text.localizedText(language: language)
                                                     .font(.headline).foregroundStyle(Color.black)
                                                 Spacer()
                                             }
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 0))
                                         }
                                         
-                                        if (state == .Login){
+                                        if (state == .Login || (state == .Register && inputType == .Username)){
                                             TextInputView(hint: "username".localizedString(language: language),input:$username, image:"person_icon")
                                                 .cornerRadius(20.0)
                                                 .focused($usernameIsFocused)
-                                                .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                                 .onTapGesture{
                                                     usernameIsFocused = true
                                                 }
@@ -176,18 +176,17 @@ struct LoginView: View {
                                                     usernameIsNotValid ?
                                                         RoundedRectangle(cornerRadius: 20)
                                                             .stroke(.red, lineWidth: 2)
-                                                            .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                                     :
                                                         nil
                                                 )
                                                 .autocapitalization(.none)
+                                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                         }
                                         
                                         if (state == .Login || ((state == .Register || state == .ForgetPassword) && inputType == .Password)){
                                             SecureTextInputView(hint: (state == .ForgetPassword) ? "newPassword".localizedString(language: language) :  "password".localizedString(language: language),input:$password, image:"password", isMasked:$passwordMask)
                                                 .cornerRadius(20.0)
                                                 .focused($passwordIsFocused)
-                                                .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                                 .onTapGesture{
                                                     passwordIsFocused = true
                                                 }
@@ -195,11 +194,11 @@ struct LoginView: View {
                                                     passwordIsNotValid ?
                                                     RoundedRectangle(cornerRadius: 20)
                                                         .stroke(.red, lineWidth: 2)
-                                                        .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                                     :
                                                         nil
                                                 )
                                                 .autocapitalization(.none)
+                                                .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: (state != .Login) ? 15 : 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                         }
                                             
                                         if ((state == .Register || state == .ForgetPassword) && inputType == .Email){
@@ -332,7 +331,7 @@ struct LoginView: View {
                                             Button1View(text: (state == .Login) ? "login".localizedString(language: language) : ((state == .Register && inputType == .Username) || (state == .ForgetPassword && inputType == .Password)) ? "confirm".localizedString(language: language) : "next".localizedString(language: language)
                                                         , width: .infinity, color: Color("toolbarBackground"), topLeading:0, bottomLeading:20, topTrailing:20, bottomTrailing:20, verticalPadding:10, textSize: Font.headline, textColor:.white)
                                         }
-                                        .padding(EdgeInsets(top: (state == .Login) ? 0 : 10, leading: 20, bottom: 20, trailing: 20))
+                                        .padding(EdgeInsets(top: (state == .Login) ? 0 : 10, leading: 20, bottom: (state != .Login || (state == .Register && inputType != .Email) ? 40 : 20), trailing: 20))
                                         .buttonStyle(ClickScaleDown())
                                         
                                         if (state == .Register && inputType == .Email){
