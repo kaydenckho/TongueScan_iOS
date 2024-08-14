@@ -180,6 +180,7 @@ struct LoginView: View {
                                                     :
                                                         nil
                                                 )
+                                                .autocapitalization(.none)
                                         }
                                         
                                         if (state == .Login || ((state == .Register || state == .ForgetPassword) && inputType == .Password)){
@@ -198,6 +199,7 @@ struct LoginView: View {
                                                     :
                                                         nil
                                                 )
+                                                .autocapitalization(.none)
                                         }
                                             
                                         if ((state == .Register || state == .ForgetPassword) && inputType == .Email){
@@ -216,6 +218,7 @@ struct LoginView: View {
                                                     :
                                                         nil
                                                 )
+                                                .autocapitalization(.none)
                                         }
                                             
                                         if ((state == .Register || state == .ForgetPassword) && inputType == .Code){
@@ -233,6 +236,7 @@ struct LoginView: View {
                                                     .onTapGesture{
                                                         codeIsFocused = true
                                                     }
+                                                    .autocapitalization(.none)
                                                 
                                                 Button(action: {
                                                     emailIsNotValid = false
@@ -375,8 +379,6 @@ struct LoginView: View {
                                             }
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 40, trailing: 20))
                                         }
-                                      
-                                    
                                     }
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 20, style: .continuous)
@@ -390,6 +392,15 @@ struct LoginView: View {
                             }
                             Spacer()
                         }
+                        .alert(vm.registerModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.registerCompleted){
+                            Button("confirm", role: .cancel) { vm.registerCompleted = false }
+                        }
+                    }
+                    .alert(vm.sendCodeModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.sendCodeCompleted){
+                        Button("confirm", role: .cancel) { vm.sendCodeCompleted = false }
+                    }
+                    .alert(vm.verifyCodeModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.verifyCodeCompleted){
+                        Button("confirm", role: .cancel) { vm.verifyCodeCompleted = false }
                     }
                     LoadingView(text:"loading".localizedString(language: language)).opacity(vm.uploading ? 1 : 0)
                 }
@@ -404,6 +415,12 @@ struct LoginView: View {
                 .keyboardHeight($keyboardHeight)
                 .animation(.easeOut(duration: 0.16))
                 .offset(y: state == .Login ? 0 : (-keyboardHeight / 2.5))
+                .alert(vm.loginModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.loginCompleted){
+                    Button("confirm", role: .cancel) { vm.loginCompleted = false }
+                }
+                .alert(vm.resetPasswordModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.resetPasswordCompleted){
+                    Button("confirm", role: .cancel) { vm.resetPasswordCompleted = false }
+                }
             }
             .onReceive(sendCodeCountdownTimer){ _ in
                 if (isStartCountdown && sendCodeCountdown > 0) {
@@ -412,15 +429,6 @@ struct LoginView: View {
                     isStartCountdown = false
                     sendCodeCountdown = 60
                 }
-            }
-            .alert(vm.loginModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.loginCompleted){
-                Button("confirm", role: .cancel) { vm.loginCompleted = false }
-            }
-            .alert(vm.registerModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.registerCompleted){
-                Button("confirm", role: .cancel) { vm.registerCompleted = false }
-            }
-            .alert(vm.resetPasswordModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.resetPasswordCompleted){
-                Button("confirm", role: .cancel) { vm.resetPasswordCompleted = false }
             }
             .alert("biometric_not_supported".localizedString(language: language), isPresented: $biometricNotSupportedDialog){
                 Button("confirm", role: .cancel) { biometricNotSupportedDialog = false }
@@ -525,7 +533,7 @@ struct LoginView: View {
                 if (!username.isEmpty && checkUsernameValid(username: username)){
                     Task{
                         await vm.register(username: username, password: password, email: email, code: code, sessionId: vm.sessionId, callback:{
-                            var loginModel = LoginModel(message: vm.registerModel?.message , token: vm.registerModel?.data?.token, username: vm.registerModel?.data?.username)
+                            let loginModel = LoginModel(message: vm.registerModel?.message , token: vm.registerModel?.data?.token, username: vm.registerModel?.data?.username)
                             tongueRecognition_iOSApp.loginModel = loginModel
                             preferenceUtil.username = loginModel.username
                             preferenceUtil.token = loginModel.token

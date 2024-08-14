@@ -57,6 +57,9 @@ class LoginVM: ObservableObject {
                 case .success(let model):
                         DispatchQueue.main.async {
                             self.registerModel = model
+                            if (model?.code == 0){
+                                callback()
+                            }
                             self.registerCompleted = true
                         }
                 case .failure(_):
