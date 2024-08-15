@@ -372,6 +372,7 @@ struct LoginView: View {
                                                 Spacer()
                                                 Button(action: {
                                                     state = .ForgetPassword
+                                                    inputType = .Email
                                                 }){
                                                     "forgetPassword".localizedText(language: language)
                                                         .font(.footnote).foregroundStyle(Color.gray)
@@ -404,7 +405,7 @@ struct LoginView: View {
                                             Button1View(text: (state == .Login) ? "login".localizedString(language: language) : ((state == .Register && inputType == .Username) || (state == .ForgetPassword && inputType == .Password)) ? "confirm".localizedString(language: language) : "next".localizedString(language: language)
                                                         , width: .infinity, color: Color("toolbarBackground"), topLeading:0, bottomLeading:20, topTrailing:20, bottomTrailing:20, verticalPadding:10, textSize: Font.headline, textColor:.white)
                                         }
-                                        .padding(EdgeInsets(top: (state == .Login) ? 0 : 10, leading: 20, bottom:(state == .Register && inputType != .Email) ? 40 : 15, trailing: 20))
+                                        .padding(EdgeInsets(top: (state == .Login) ? 0 : 10, leading: 20, bottom: (state == .Register && inputType != .Email) || (state == .ForgetPassword) ? 40 : 15, trailing: 20))
                                         .buttonStyle(ClickScaleDown())
                                         
                                         if (state == .Register && inputType == .Email){
@@ -509,12 +510,8 @@ struct LoginView: View {
                 Button("confirm", role: .cancel) { biometricFirstTimeDialog = false }
             }
             .onAppear(){
+                clearData()
                 state = .Login
-                username = ""
-                password = ""
-                confirmPassword = ""
-                email = ""
-                code = ""
             }
         }
     }
@@ -572,6 +569,7 @@ struct LoginView: View {
                     preferenceUtil.username = vm.loginModel?.data?.username
                     preferenceUtil.token = vm.loginModel?.data?.token
                     preferenceUtil.isRememberLogin = self.isRememberLogin
+                    clearData()
                     state = .LoggedIn
                 })
             }
@@ -617,6 +615,7 @@ struct LoginView: View {
                             tongueRecognition_iOSApp.loginModel = loginModel
                             preferenceUtil.username = loginModel.username
                             preferenceUtil.token = loginModel.token
+                            clearData()
                             state = .LoggedIn
                         })
                     }
@@ -633,7 +632,7 @@ struct LoginView: View {
             case .Email:
                 if (!email.isEmpty){
                     Task{
-                        await vm.sendCode(email: email) {
+                        await vm.sendForgetPasswordCode(email: email) {
                             inputType = .Code
                             vm.sessionId = vm.sendCodeModel?.data?.session_id ?? ""
                             if (!isStartCountdown){
@@ -658,6 +657,7 @@ struct LoginView: View {
                 if (!password.isEmpty && checkPasswordValid(password: password)){
                     Task{
                         await vm.resetPassword(password: password, email: email, code: code, sessionId: vm.sessionId, callback:{
+                            clearData()
                             state = .Login
                         })
                     }
@@ -668,6 +668,14 @@ struct LoginView: View {
         default: ()
             
         }
+    }
+    
+    func clearData(){
+        username = ""
+        password = ""
+        confirmPassword = ""
+        email = ""
+        code = ""
     }
 
 }
