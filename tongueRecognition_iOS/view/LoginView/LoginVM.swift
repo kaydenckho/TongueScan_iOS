@@ -34,7 +34,7 @@ class LoginVM: ObservableObject {
                         if (model?.code == 0){
                             callback()
                         }
-                        self.loginCompleted = true
+//                        self.loginCompleted = true
                     }
                 case .failure(_):
                     DispatchQueue.main.async {
@@ -86,13 +86,12 @@ class LoginVM: ObservableObject {
                         if (model?.code == 0){
                             callback()
                         }
-                        self.sendCodeCompleted = true
                     }
                 case .failure(_):
                     DispatchQueue.main.async {
                         self.sendCodeModel = nil
                     }
-                    self.sendCodeCompleted = true
+//                    self.sendCodeCompleted = true
                 }
                     
             DispatchQueue.main.async {
@@ -113,7 +112,7 @@ class LoginVM: ObservableObject {
                         if (model?.code == 0){
                             callback()
                         }
-                        self.sendCodeCompleted = true
+//                        self.sendCodeCompleted = true
                     }
                 case .failure(_):
                     DispatchQueue.main.async {
@@ -165,8 +164,9 @@ class LoginVM: ObservableObject {
                     self.verifyCodeModel = model
                     if (model?.code == 0){
                         callback()
+                    } else{
+                        self.verifyCodeCompleted = true
                     }
-                    self.verifyCodeCompleted = true
                 }
             case .failure(_):
                 DispatchQueue.main.async {

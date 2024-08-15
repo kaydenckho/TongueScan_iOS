@@ -157,12 +157,35 @@ struct LoginView: View {
                                         
                                         if (state != .Login){
                                             HStack{
-                                                var text = (inputType == .Email) ? "inputEmail" : (inputType == .Code) ? "inputCode" : (inputType == .Username) ? "inputUsername" : (inputType == .Password && state == .Register) ? "createPassword" : "newPassword"
+                                                let text = (inputType == .Email) ? "inputEmail" : (inputType == .Code) ? "inputCode" : (inputType == .Username) ? "inputUsername" : (inputType == .Password && state == .Register) ? "createPassword" : "newPassword"
                                                 text.localizedText(language: language)
                                                     .font(.headline).foregroundStyle(Color.black)
                                                 Spacer()
                                             }
-                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 0))
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: (inputType == .Code || inputType == .Username) ? 5 : 20, trailing: 0))
+                                        }
+                                        
+                                        if (state != .Login && inputType == .Code){
+                                            HStack{
+                                                ("inputCodeDescription".localizedText(language: language)
+                                                    .font(.footnote).foregroundStyle(Color.black) +
+                                                Text(email)
+                                                    .font(.footnote).foregroundStyle(Color.black)
+                                                )
+                                                .fixedSize(horizontal: false, vertical: true)
+                                                Spacer()
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 0))
+                                        }
+                                        
+                                        if (state != .Login && inputType == .Username){
+                                            HStack{
+                                                "inputUsernameDescription".localizedText(language: language)
+                                                    .font(.footnote).foregroundStyle(Color.black)
+                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Spacer()
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 0))
                                         }
                                         
                                         if (state == .Login || (state == .Register && inputType == .Username)){
@@ -180,8 +203,19 @@ struct LoginView: View {
                                                         nil
                                                 )
                                                 .autocapitalization(.none)
-                                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
+                                                .padding(EdgeInsets(top: 0, leading: 20, bottom: (state == .Register) ? 5 : 15, trailing: 20))
                                         }
+                                        
+                                        if (state == .Register && inputType == .Username){
+                                            HStack{
+                                                "usernameRule".localizedText(language: language)
+                                                    .font(.footnote).foregroundColor(Color("indicator_grey"))
+                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Spacer()
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 0))
+                                        }
+                                        
                                         
                                         if (state == .Login || ((state == .Register || state == .ForgetPassword) && inputType == .Password)){
                                             SecureTextInputView(hint: (state == .ForgetPassword) ? "newPassword".localizedString(language: language) :  "password".localizedString(language: language),input:$password, image:"password", isMasked:$passwordMask)
@@ -200,7 +234,46 @@ struct LoginView: View {
                                                 .autocapitalization(.none)
                                                 .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: (state != .Login) ? 15 : 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                         }
-                                            
+                                        
+                                        if (state != .Login && inputType == .Password){
+                                            HStack{
+                                                "inputPasswordDescription".localizedText(language: language)
+                                                    .font(.footnote).foregroundColor(Color("indicator_grey"))
+                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Spacer()
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+                                            HStack{
+                                                "passwordRule1".localizedText(language: language)
+                                                    .font(.caption).foregroundColor(Color("light_grey"))
+                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Spacer()
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+                                            HStack{
+                                                "passwordRule2".localizedText(language: language)
+                                                    .font(.caption).foregroundColor(Color("light_grey"))
+                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Spacer()
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+                                            HStack{
+                                                "passwordRule3".localizedText(language: language)
+                                                    .font(.caption).foregroundColor(Color("light_grey"))
+                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Spacer()
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+                                            HStack{
+                                                "passwordRule4".localizedText(language: language)
+                                                    .font(.caption).foregroundColor(Color("light_grey"))
+                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Spacer()
+                                            }
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 0))
+                                    
+                                        }
+                                        
                                         if ((state == .Register || state == .ForgetPassword) && inputType == .Email){
                                             TextInputView(hint: "email".localizedString(language: language),input:$email, image:"person_icon")
                                                 .cornerRadius(20.0)
@@ -331,7 +404,7 @@ struct LoginView: View {
                                             Button1View(text: (state == .Login) ? "login".localizedString(language: language) : ((state == .Register && inputType == .Username) || (state == .ForgetPassword && inputType == .Password)) ? "confirm".localizedString(language: language) : "next".localizedString(language: language)
                                                         , width: .infinity, color: Color("toolbarBackground"), topLeading:0, bottomLeading:20, topTrailing:20, bottomTrailing:20, verticalPadding:10, textSize: Font.headline, textColor:.white)
                                         }
-                                        .padding(EdgeInsets(top: (state == .Login) ? 0 : 10, leading: 20, bottom: (state != .Login || (state == .Register && inputType != .Email) ? 40 : 20), trailing: 20))
+                                        .padding(EdgeInsets(top: (state == .Login) ? 0 : 10, leading: 20, bottom:(state == .Register && inputType != .Email) ? 40 : 15, trailing: 20))
                                         .buttonStyle(ClickScaleDown())
                                         
                                         if (state == .Register && inputType == .Email){
@@ -434,6 +507,14 @@ struct LoginView: View {
             }
             .alert("biometric_first_time".localizedString(language: language), isPresented: $biometricFirstTimeDialog){
                 Button("confirm", role: .cancel) { biometricFirstTimeDialog = false }
+            }
+            .onAppear(){
+                state = .Login
+                username = ""
+                password = ""
+                confirmPassword = ""
+                email = ""
+                code = ""
             }
         }
     }
