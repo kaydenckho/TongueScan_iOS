@@ -74,7 +74,7 @@
 "go_to_login" = "前往登录";
 "continue_to_test" = "继续测试";
 "logout" = "退出登录";
-"diabetesTongueTitle" = "糖尿病舌相似度";
+"diabetesTongueTitle" = "与高血糖人群舌象的相似度";
 "cancel" = "取消";
 "please_login" = "请先登入";
 "biometric_login" = "生 物 认 证 登 入";

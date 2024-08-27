@@ -334,7 +334,7 @@ struct ResultView: View {
                             if (isShowDiabetesTongueExp){
                                 TextDialog(isActive: $isShowDiabetesTongueExp,
                                            titleArr: "diabetesTongueTitle".localizedString(language: language).replacingOccurrences(of: "\n\n", with:"\n").components(separatedBy: "\n") ?? [""],
-                                           description: (tongueDiabetesDescription ).localizedText(language: language)
+                                           description: (tongueDiabetesDescription).localizedText(language: language)
                                            , trigger: $scrollbarFlash
                                 )
                             }
@@ -387,7 +387,9 @@ struct ResultView: View {
                         }
                         let link = (matchStrings[0] as String).replacingOccurrences(of: "<a href=\"", with: "")
                             .replacingOccurrences(of: "\">", with: "")
-                        tongueDiabetesDescription = result?.result?.diabetes_tongue_description_explain?.replacingOccurrences(of: "<a href=\"\(link)\">\(link)</a>", with: "[\(link)](\(link))") ?? ""
+                        let linkText = link.replacingOccurrences(of: "https://", with: "")
+                        tongueDiabetesDescription = result?.result?.diabetes_tongue_description_explain?.replacingOccurrences(of: "<a href=\"\(link)\">\(linkText)</a>", with: "[\(linkText)](\(link))") ?? ""
+                        tongueDiabetesDescription += "\nHsu PC, Wu HK, Huang YC, Chang HH, Lee TC, Chen YP, Chiang JY, Lo LC. The tongue features associated with type 2 diabetes mellitus. Medicine. 2019 May 1;98(19):e15567."
                     }
                
                     if let image = result?.image{
