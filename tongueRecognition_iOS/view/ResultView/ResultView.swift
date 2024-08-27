@@ -22,6 +22,10 @@ struct ResultView: View {
     let result: UploadImagesResult?
     
     @State var tongueDiabetesDescription = ""
+    @State var tongueBodyColorDescription = ""
+    @State var tongueCoatingColorDescription = ""
+    @State var tongueCoatingThicknessDescription = ""
+    @State var otherFindingDescription = ""
     
     @State var healthIndicatorOffsetX  = 0.0
     
@@ -341,28 +345,28 @@ struct ResultView: View {
                             if (isShowTongueBodyColorExp){
                                 TextDialog(isActive: $isShowTongueBodyColorExp,
                                            titleArr: result?.result?.tontue_color_description?.replacingOccurrences(of: "\n\n", with:"\n").components(separatedBy: "\n") ?? [""],
-                                           description: (result?.result?.tontue_color_description_explain ?? "").localizedText(language: language)
+                                           description: (tongueBodyColorDescription).localizedText(language: language)
                                            , trigger: $scrollbarFlash
                                 )
                             }
                             if (isShowCoatingColorExp){
                                 TextDialog(isActive: $isShowCoatingColorExp,
                                            titleArr: result?.result?.coating_color_description?.replacingOccurrences(of: "\n\n", with:"\n").components(separatedBy: "\n") ?? [""],
-                                           description: (result?.result?.coating_color_description_explain ?? "").localizedText(language: language)
+                                           description: (tongueCoatingColorDescription).localizedText(language: language)
                                            , trigger: $scrollbarFlash
                                 )
                             }
                             if (isShowCoatingThicknessExp){
                                 TextDialog(isActive: $isShowCoatingThicknessExp,
                                            titleArr: result?.result?.think_coating_description?.replacingOccurrences(of: "\n\n", with:"\n").components(separatedBy: "\n") ?? [""],
-                                           description: (result?.result?.think_coating_description_explain ?? "").localizedText(language: language)
+                                           description: (tongueCoatingThicknessDescription).localizedText(language: language)
                                            , trigger: $scrollbarFlash
                                 )
                             }
                             if (isShowOtherFindingExp){
                                 TextDialog(isActive: $isShowOtherFindingExp,
                                            titleArr: result?.result?.greasy_coating_description?.replacingOccurrences(of: "\n\n", with:"\n").components(separatedBy: "\n") ?? [""],
-                                           description: (result?.result?.greasy_coating_description_explain ?? "").localizedText(language: language)
+                                           description: (otherFindingDescription).localizedText(language: language)
                                            , trigger: $scrollbarFlash
                                 )
                             }
@@ -390,6 +394,11 @@ struct ResultView: View {
                         let linkText = link.replacingOccurrences(of: "https://", with: "")
                         tongueDiabetesDescription = result?.result?.diabetes_tongue_description_explain?.replacingOccurrences(of: "<a href=\"\(link)\">\(linkText)</a>", with: "[\(linkText)](\(link))") ?? ""
                         tongueDiabetesDescription += "\nHsu PC, Wu HK, Huang YC, Chang HH, Lee TC, Chen YP, Chiang JY, Lo LC. The tongue features associated with type 2 diabetes mellitus. Medicine. 2019 May 1;98(19):e15567."
+                        tongueBodyColorDescription = (result?.result?.tontue_color_description_explain ?? "") + "\n\nSeerangaiyan K, Jüch F, Winkel EG. Tongue coating: Its characteristics and role in intra-oral halitosis and general health—A review. Journal of breath research. 2018 Mar 6;12(3):034001."
+                        tongueCoatingColorDescription = (result?.result?.coating_color_description_explain ?? "") + "\n\nMore Ref for Heath of tongue coating : Evaluation of tongue coating indices. Oral diseases. 2007 Mar;13(2):177-80."
+                        tongueCoatingThicknessDescription = (result?.result?.think_coating_description_explain ?? "") + "\n\nVan Gils LM, Slot DE, Van der Sluijs E, Hennequin‐Hoenderdos NL, Van der Weijden F. Tongue coating in relationship to gender, plaque, gingivitis and tongue cleaning behaviour in systemically healthy young adults. International journal of dental hygiene. 2020 Feb;18(1):62-72."
+                        otherFindingDescription = (result?.result?.think_coating_description_explain ?? "") + "\n\nBalamanikandan P, Shetty P, Shetty U. Diabetic tongue–a review. Romanian Journal of Diabetes Nutrition and Metabolic Diseases. 2021 Jun 30;28(2):218-22."
+                        
                     }
                
                     if let image = result?.image{
