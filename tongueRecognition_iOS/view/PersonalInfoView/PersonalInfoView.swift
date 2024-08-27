@@ -8,6 +8,7 @@ struct PersonalInfoView: View {
 
     @State var isShowGuideDialog = false
     @State var isShowTermsAndConditionDialog = false
+    @State var isShowDeleteAccountDialog = false
     
     @State var scrollbarFlash: Int = 0
     
@@ -121,10 +122,40 @@ struct PersonalInfoView: View {
                             .padding(EdgeInsets(top: 15, leading: 30, bottom: 0, trailing: 30))
                             .buttonStyle(ClickScaleDown())
                         
+                            Button(action: {
+                                isShowDeleteAccountDialog = true
+                            }){
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .foregroundStyle(.white)
+                                        .shadow(color: Color("light_grey"), radius: 1.5, x: 0, y: 1)
+                                    HStack{
+                                        Spacer()
+                                        Image(systemName: "trash.slash")
+                                            .resizable().scaledToFit()
+                                            .frame(width: 25)
+                                            .foregroundColor(Color("indicator_grey"))
+                                        "deleteAccount".localizedText(language: language)
+                                            .font(.subheadline)
+                                            .foregroundColor(Color("text"))
+                                                .padding([.top, .bottom], 15)
+                                                .lineLimit(1)
+                                        Spacer()
+                                    }
+                                }
+                            }
+                            .fixedSize(horizontal: false, vertical: true)
+                            .frame(width: .infinity)
+                            .padding(EdgeInsets(top: 15, leading: 30, bottom: 0, trailing: 30))
+                            .buttonStyle(ClickScaleDown())
+                            
                             Spacer()
                         }
                         Spacer()
                     }
+                }
+                .alert("deleteAccountDescription".localizedString(language: language), isPresented: $isShowDeleteAccountDialog){
+                    Button("confirm".localizedString(language: language), role: .cancel) { isShowDeleteAccountDialog = false }
                 }
                 if (isShowGuideDialog){
                     TextDialog(isActive: $isShowGuideDialog, titleArr: ["guideTitle".localizedString(language: language)],

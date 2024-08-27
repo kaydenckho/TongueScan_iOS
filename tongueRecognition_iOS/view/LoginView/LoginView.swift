@@ -345,7 +345,7 @@ struct LoginView: View {
                                                 }
                                                 .buttonStyle(ClickScaleDown())
                                                 .alert(vm.sendCodeModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.sendCodeCompleted){
-                                                    Button("confirm", role: .cancel) { vm.sendCodeCompleted = false }
+                                                    Button("confirm".localizedString(language: language), role: .cancel) { vm.sendCodeCompleted = false }
                                                 }
                                             }
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
@@ -466,14 +466,14 @@ struct LoginView: View {
                             Spacer()
                         }
                         .alert(vm.registerModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.registerCompleted){
-                            Button("confirm", role: .cancel) { vm.registerCompleted = false }
+                            Button("confirm".localizedString(language: language), role: .cancel) { vm.registerCompleted = false }
                         }
                     }
                     .alert(vm.sendCodeModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.sendCodeCompleted){
-                        Button("confirm", role: .cancel) { vm.sendCodeCompleted = false }
+                        Button("confirm".localizedString(language: language), role: .cancel) { vm.sendCodeCompleted = false }
                     }
                     .alert(vm.verifyCodeModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.verifyCodeCompleted){
-                        Button("confirm", role: .cancel) { vm.verifyCodeCompleted = false }
+                        Button("confirm".localizedString(language: language), role: .cancel) { vm.verifyCodeCompleted = false }
                     }
                     LoadingView(text:"loading".localizedString(language: language)).opacity(vm.uploading ? 1 : 0)
                 }
@@ -489,10 +489,10 @@ struct LoginView: View {
                 .animation(.easeOut(duration: 0.16))
                 .offset(y: state == .Login ? 0 : (-keyboardHeight / 2.5))
                 .alert(vm.loginModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.loginCompleted){
-                    Button("confirm", role: .cancel) { vm.loginCompleted = false }
+                    Button("confirm".localizedString(language: language), role: .cancel) { vm.loginCompleted = false }
                 }
                 .alert(vm.resetPasswordModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.resetPasswordCompleted){
-                    Button("confirm", role: .cancel) { vm.resetPasswordCompleted = false }
+                    Button("confirm".localizedString(language: language), role: .cancel) { vm.resetPasswordCompleted = false }
                 }
             }
             .onReceive(sendCodeCountdownTimer){ _ in
@@ -504,10 +504,10 @@ struct LoginView: View {
                 }
             }
             .alert("biometric_not_supported".localizedString(language: language), isPresented: $biometricNotSupportedDialog){
-                Button("confirm", role: .cancel) { biometricNotSupportedDialog = false }
+                Button("confirm".localizedString(language: language), role: .cancel) { biometricNotSupportedDialog = false }
             }
             .alert("biometric_first_time".localizedString(language: language), isPresented: $biometricFirstTimeDialog){
-                Button("confirm", role: .cancel) { biometricFirstTimeDialog = false }
+                Button("confirm".localizedString(language: language), role: .cancel) { biometricFirstTimeDialog = false }
             }
             .onAppear(){
                 clearData()

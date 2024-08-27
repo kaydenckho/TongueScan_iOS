@@ -263,7 +263,7 @@ struct HomeView: View {
                 }
             }
             .alert("upload_failed_msg", isPresented: $vm.uploadFailed){
-                Button("confirm", role: .cancel) { vm.uploadFailed = false }
+                Button("confirm".localizedString(language: language), role: .cancel) { vm.uploadFailed = false }
             }
             .animation(.easeOut(duration: 0.16))
         }
