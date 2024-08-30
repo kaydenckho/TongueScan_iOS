@@ -512,6 +512,7 @@ struct LoginView: View {
             .onAppear(){
                 clearData()
                 state = .Login
+                isRememberLogin = true
             }
         }
     }
