@@ -21,12 +21,19 @@ struct TextInputView: View {
             TextField("", text: $input, prompt: Text(hint).foregroundColor(Color("toolbarBackground")))
                 .fontWeight(.regular)
                 .font(.footnote)
-                    .foregroundColor(.black)
-                    .lineLimit(1)
+                .foregroundColor(.black)
+                .lineLimit(1)
+                .clearButton(text: $input)
         }
         .padding([.top, .bottom], 11.0)
         .background(Color("login_textInput_bg"))
         .fixedSize(horizontal: false, vertical: true)
         .frame(width: .infinity)
+    }
+}
+
+extension View {
+    func clearButton(text: Binding<String>) -> some View {
+        modifier(ClearButton(text: text))
     }
 }
