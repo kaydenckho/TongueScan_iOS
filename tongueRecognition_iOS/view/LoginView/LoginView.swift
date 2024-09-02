@@ -212,8 +212,11 @@ struct LoginView: View {
                                                     .font(.footnote).foregroundColor(Color("indicator_grey"))
                                                     .fixedSize(horizontal: false, vertical: true)
                                                 Spacer()
+                                                Text("\(username.count)/20")
+                                                    .font(.footnote).foregroundColor((username.count > 20) ? Color.red : Color("indicator_grey"))
+                                                    .fixedSize(horizontal: false, vertical: true)
                                             }
-                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 0))
+                                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 20))
                                         }
                                         
                                         
