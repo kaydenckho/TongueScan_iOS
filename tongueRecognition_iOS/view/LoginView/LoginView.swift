@@ -45,6 +45,11 @@ struct LoginView: View {
     
     @State var isRememberLogin = false
     
+    @State var passwordRule1 = false
+    @State var passwordRule2 = false
+    @State var passwordRule3 = false
+    @State var passwordRule4 = false
+    
     @State var passwordMask: Bool = true
     @State var confirmPasswordMask: Bool = true
     
@@ -124,7 +129,11 @@ struct LoginView: View {
                                         ZStack{
                                             HStack(){
                                                 Button(action: {
-                                                 tabViewSelection = 0
+                                                    if (state == .Login){
+                                                        tabViewSelection = 0
+                                                    } else{
+                                                        state == .Login
+                                                    }
                                                 }){
                                                     Image(systemName:"chevron.left")
                                                         .foregroundColor(Color("indicator_grey"))
@@ -221,7 +230,12 @@ struct LoginView: View {
                                         
                                         
                                         if (state == .Login || ((state == .Register || state == .ForgetPassword) && inputType == .Password)){
-                                            SecureTextInputView(hint: (state == .ForgetPassword) ? "newPassword".localizedString(language: language) :  "password".localizedString(language: language),input:$password, image:"password", isMasked:$passwordMask)
+                                            SecureTextInputView(hint: (state == .ForgetPassword) ? "newPassword".localizedString(language: language) :  "password".localizedString(language: language),input:$password, image:"password", isMasked:$passwordMask, onChangeAction: {
+                                                passwordRule1 = checkLength(password: password)
+                                                passwordRule2 = hasUppercase(password: password)
+                                                passwordRule3 = hasLowercase(password: password)
+                                                passwordRule4 = hasSymbolOrNumber(password: password)
+                                            })
                                                 .cornerRadius(20.0)
                                                 .focused($passwordIsFocused)
                                                 .onTapGesture{
@@ -247,30 +261,50 @@ struct LoginView: View {
                                             }
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                             HStack{
-                                                "passwordRule1".localizedText(language: language)
-                                                    .font(.caption).foregroundColor(Color("light_grey"))
-                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Toggle(isOn: $passwordRule1){
+                                                    "passwordRule1".localizedText(language: language)
+                                                        .font(.caption).foregroundColor(Color("light_grey"))
+                                                        .fixedSize(horizontal: false, vertical: true)
+                                                }
+                                                .allowsHitTesting(false)
+                                                .toggleStyle(iOSCheckboxToggleStyle())
+                                                .fixedSize(horizontal: false, vertical: true)
                                                 Spacer()
                                             }
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                             HStack{
-                                                "passwordRule2".localizedText(language: language)
-                                                    .font(.caption).foregroundColor(Color("light_grey"))
-                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Toggle(isOn: $passwordRule2){
+                                                    "passwordRule2".localizedText(language: language)
+                                                        .font(.caption).foregroundColor(Color("light_grey"))
+                                                        .fixedSize(horizontal: false, vertical: true)
+                                                }
+                                                .allowsHitTesting(false)
+                                                .toggleStyle(iOSCheckboxToggleStyle())
+                                                .fixedSize(horizontal: false, vertical: true)
                                                 Spacer()
                                             }
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                             HStack{
-                                                "passwordRule3".localizedText(language: language)
-                                                    .font(.caption).foregroundColor(Color("light_grey"))
-                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Toggle(isOn: $passwordRule3){
+                                                    "passwordRule3".localizedText(language: language)
+                                                        .font(.caption).foregroundColor(Color("light_grey"))
+                                                        .fixedSize(horizontal: false, vertical: true)
+                                                }
+                                                .allowsHitTesting(false)
+                                                .toggleStyle(iOSCheckboxToggleStyle())
+                                                .fixedSize(horizontal: false, vertical: true)
                                                 Spacer()
                                             }
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                                             HStack{
-                                                "passwordRule4".localizedText(language: language)
-                                                    .font(.caption).foregroundColor(Color("light_grey"))
-                                                    .fixedSize(horizontal: false, vertical: true)
+                                                Toggle(isOn: $passwordRule4){
+                                                    "passwordRule4".localizedText(language: language)
+                                                        .font(.caption).foregroundColor(Color("light_grey"))
+                                                        .fixedSize(horizontal: false, vertical: true)
+                                                }
+                                                .allowsHitTesting(false)
+                                                .toggleStyle(iOSCheckboxToggleStyle())
+                                                .fixedSize(horizontal: false, vertical: true)
                                                 Spacer()
                                             }
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 0))
@@ -534,6 +568,43 @@ struct LoginView: View {
             let passwordRegex = try Regex("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[\\da-zA-Z!@#$%^&*.]{8,30}$")
             return password.contains(passwordRegex)
         } catch{
+            return false
+        }
+    }
+    
+    func checkLength(password:String) -> Bool{
+        return (8...30).contains(password.count)
+    }
+    
+    func hasUppercase(password:String) -> Bool{
+        let letters = NSCharacterSet.uppercaseLetters
+        let range = password.rangeOfCharacter(from: letters)
+        if let test = range {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    func hasLowercase(password:String) -> Bool{
+        let letters = NSCharacterSet.lowercaseLetters
+        let range = password.rangeOfCharacter(from: letters)
+        if let test = range {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    func hasSymbolOrNumber(password: String) -> Bool{
+        let letters = NSCharacterSet.symbols
+        let range = password.rangeOfCharacter(from: letters)
+        if let test = range {
+            return true
+        }
+        else {
             return false
         }
     }

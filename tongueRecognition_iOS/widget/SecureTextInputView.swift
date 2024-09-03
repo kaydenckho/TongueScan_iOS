@@ -13,6 +13,7 @@ struct SecureTextInputView: View {
     @Binding var input: String
     let image:String
     @Binding var isMasked: Bool
+    let onChangeAction: () -> Void
     
     var body: some View {
         ZStack(alignment: .trailing){
@@ -26,12 +27,18 @@ struct SecureTextInputView: View {
                         .font(.footnote)
                             .foregroundColor(.black)
                             .lineLimit(1)
+                            .onChange(of: input){
+                                onChangeAction()
+                            }
                 } else{
                     TextField("", text: $input, prompt: Text(hint).foregroundColor(Color("toolbarBackground")))
                         .fontWeight(.regular)
                         .font(.footnote)
                             .foregroundColor(.black)
                             .lineLimit(1)
+                            .onChange(of: input){
+                                onChangeAction()
+                            }
                 }
             }
             .padding([.top, .bottom], 11.0)
