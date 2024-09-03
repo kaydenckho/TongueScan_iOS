@@ -230,12 +230,12 @@ struct LoginView: View {
                                         
                                         
                                         if (state == .Login || ((state == .Register || state == .ForgetPassword) && inputType == .Password)){
-                                            SecureTextInputView(hint: (state == .ForgetPassword) ? "newPassword".localizedString(language: language) :  "password".localizedString(language: language),input:$password, image:"password", isMasked:$passwordMask, onChangeAction: {
+                                            SecureTextInputView(hint: (state == .ForgetPassword) ? "newPassword".localizedString(language: language) :  "password".localizedString(language: language),input:$password, image:"password", isMasked:$passwordMask, onChangeAction: (state != .Login && inputType == .Password) ? {
                                                 passwordRule1 = checkLength(password: password)
                                                 passwordRule2 = hasUppercase(password: password)
                                                 passwordRule3 = hasLowercase(password: password)
                                                 passwordRule4 = hasSymbolOrNumber(password: password)
-                                            })
+                                            } : {})
                                                 .cornerRadius(20.0)
                                                 .focused($passwordIsFocused)
                                                 .onTapGesture{
