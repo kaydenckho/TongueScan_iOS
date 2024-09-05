@@ -132,7 +132,7 @@ struct LoginView: View {
                                                     if (state == .Login){
                                                         tabViewSelection = 0
                                                     } else{
-                                                        state == .Login
+                                                        state = .Login
                                                     }
                                                 }){
                                                     Image(systemName:"chevron.left")
