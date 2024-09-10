@@ -73,7 +73,9 @@ class CameraViewVM: ObservableObject {
         }
         let croppedImgData = self.rotateImage(cgImage: croppedImg).jpegData(compressionQuality: 0.8)
         let originalImgData = self.rotateImage(cgImage: cgImage).jpegData(compressionQuality: 0.8)
-        self.images.append(ImageModel(originalImg: originalImgData, croppedImg: croppedImgData, filename: filename))
+        DispatchQueue.main.async{
+            self.images.append(ImageModel(originalImg: originalImgData, croppedImg: croppedImgData, filename: filename))
+        }
     }
     
     func rotateImage(cgImage:CGImage) -> UIImage{
