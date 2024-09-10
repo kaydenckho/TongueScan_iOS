@@ -40,6 +40,13 @@ class CameraManager: ObservableObject {
         for device in availableCameraDevices as [AVCaptureDevice] {
           if device.position == .back {
               self.device = device
+              do {
+                  try device.lockForConfiguration()
+                  device.focusMode = AVCaptureDevice.FocusMode.continuousAutoFocus
+                  device.unlockForConfiguration()
+              } catch {
+                  
+              }
           }
         }
     }
