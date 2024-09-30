@@ -9,6 +9,7 @@ struct PersonalInfoView: View {
     @State var isShowGuideDialog = false
     @State var isShowTermsAndConditionDialog = false
     @State var isShowDeleteAccountDialog = false
+    @State var isUseBiometricLoginDialog = false
     
     @State var scrollbarFlash: Int = 0
     
@@ -157,6 +158,20 @@ struct PersonalInfoView: View {
                 .alert("deleteAccountDescription".localizedString(language: language), isPresented: $isShowDeleteAccountDialog){
                     Button("confirm".localizedString(language: language), role: .cancel) { isShowDeleteAccountDialog = false }
                 }
+                .alert(isPresented: $isUseBiometricLoginDialog) {
+                    Alert(
+                        title: "hint".localizedText(language: language),
+                        message: "isUseBiometricLogin".localizedText(language: language),
+                        primaryButton: .default(
+                            "enable".localizedText(language: language),
+                            action: { preferenceUtil.isUseBiometricLogin = true }
+                        ),
+                        secondaryButton: .destructive(
+                            "dontAskAgain".localizedText(language: language),
+                            action: { preferenceUtil.isUseBiometricLogin = true }
+                        )
+                    )
+                }
                 if (isShowGuideDialog){
                     TextDialog(isActive: $isShowGuideDialog, titleArr: ["guideTitle".localizedString(language: language)],
                                description: "guideDescription".localizedText(language: language),
@@ -171,6 +186,11 @@ struct PersonalInfoView: View {
                         isShowTermsAndConditionDialog = false
                     }, trigger: $scrollbarFlash)
                 }
+            }
+        }
+        .onAppear(){
+            if (!(preferenceUtil.isUseBiometricLogin ?? false)){
+                isUseBiometricLoginDialog = true
             }
         }
         .ignoresSafeArea()

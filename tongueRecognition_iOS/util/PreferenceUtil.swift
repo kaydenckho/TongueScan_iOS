@@ -14,6 +14,7 @@ class PreferenceUtil{
     let THEME = "THEME"
     let IS_AGREED_TERMS = "IS_AGREED_TERMS"
     let IS_REMEMBER_LOGIN = "IS_REMEMBER_LOGIN"
+    let IS_USE_BIOMETRIC_LOGIN = "IS_USE_BIOMETRIC_LOGIN"
     let USERNAME = "USERNAME"
     let TOKEN = "TOKEN"
     
@@ -22,6 +23,7 @@ class PreferenceUtil{
         theme = UserDefaults.standard.object(forKey: THEME) as? ColorScheme
         isAgreedTerms = UserDefaults.standard.bool(forKey: IS_AGREED_TERMS)
         isRememberLogin = UserDefaults.standard.bool(forKey: IS_REMEMBER_LOGIN)
+        isUseBiometricLogin = UserDefaults.standard.bool(forKey: IS_USE_BIOMETRIC_LOGIN)
         username = UserDefaults.standard.string(forKey: USERNAME)
         token = UserDefaults.standard.string(forKey: TOKEN)
     }
@@ -52,6 +54,13 @@ class PreferenceUtil{
             didSet {
                 guard oldValue != self.isRememberLogin else { return }
                 UserDefaults.standard.set(self.isRememberLogin, forKey: IS_REMEMBER_LOGIN)
+            }
+        }
+    
+    var isUseBiometricLogin: Bool? = nil{
+            didSet {
+                guard oldValue != self.isUseBiometricLogin else { return }
+                UserDefaults.standard.set(self.isUseBiometricLogin, forKey: IS_USE_BIOMETRIC_LOGIN)
             }
         }
     

@@ -102,3 +102,6 @@
 "next" = "下一步";
 "deleteAccount" = "删除账户";
 "deleteAccountDescription" = "您可以发送电邮至info@ecbothk.com提交删除账户要求，我们的管理员会在七个工作日内与您取得联系。";
+"isUseBiometricLogin" = "是否开启生物识别登录?";
+"enable" = "开启";
+"dontAskAgain" = "不再提示";

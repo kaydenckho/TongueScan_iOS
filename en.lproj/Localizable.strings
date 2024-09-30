@@ -102,3 +102,6 @@
 "next" = "Next";
 "deleteAccount" = "Delete account";
 "deleteAccountDescription" = "You can submit an account deletion request by sending an email to info@ecbothk.com, and our administrator will contact you within 7 working days.";
+"isUseBiometricLogin" = "Enable biometric login?";
+"enable" = "Yes";
+"dontAskAgain" = "Don't ask again";
