@@ -91,7 +91,7 @@ class LoginVM: ObservableObject {
                     DispatchQueue.main.async {
                         self.sendCodeModel = nil
                     }
-//                    self.sendCodeCompleted = true
+                    self.sendCodeCompleted = true
                 }
                     
             DispatchQueue.main.async {
@@ -112,7 +112,7 @@ class LoginVM: ObservableObject {
                         if (model?.code == 0){
                             callback()
                         }
-//                        self.sendCodeCompleted = true
+                        self.sendCodeCompleted = true
                     }
                 case .failure(_):
                     DispatchQueue.main.async {

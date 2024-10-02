@@ -129,6 +129,7 @@ struct LoginView: View {
                                         ZStack{
                                             HStack(){
                                                 Button(action: {
+                                                    clearData()
                                                     if (state == .Login){
                                                         tabViewSelection = 0
                                                     } else{
@@ -243,6 +244,24 @@ struct LoginView: View {
                                                 }
                                                 .overlay(
                                                     passwordIsNotValid ?
+                                                    RoundedRectangle(cornerRadius: 20)
+                                                        .stroke(.red, lineWidth: 2)
+                                                    :
+                                                        nil
+                                                )
+                                                .autocapitalization(.none)
+                                                .padding((state == .Register) ? EdgeInsets(top: 0, leading: 20, bottom: (state != .Login) ? 15 : 0, trailing: 20) : EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
+                                        }
+                                        
+                                        if (state != .Login && inputType == .Password){
+                                            SecureTextInputView(hint:  "confirm_password".localizedString(language: language),input:$confirmPassword, image:"password", isMasked:$confirmPasswordMask, onChangeAction: {})
+                                                .cornerRadius(20.0)
+                                                .focused($confirmPasswordIsFocused)
+                                                .onTapGesture{
+                                                    confirmPasswordIsFocused = true
+                                                }
+                                                .overlay(
+                                                    confirmpasswordIsNotValid ?
                                                     RoundedRectangle(cornerRadius: 20)
                                                         .stroke(.red, lineWidth: 2)
                                                     :
@@ -599,9 +618,12 @@ struct LoginView: View {
     }
     
     func hasSymbolOrNumber(password: String) -> Bool{
-        let letters = NSCharacterSet.symbols
-        let range = password.rangeOfCharacter(from: letters)
-        if let test = range {
+        var letters1 = NSCharacterSet.symbols
+        letters1.insert(charactersIn: "!@#$%^&*.")
+        let letters2 = NSCharacterSet.decimalDigits
+        let range1 = password.rangeOfCharacter(from: letters1)
+        let range2 = password.rangeOfCharacter(from: letters2)
+        if (range1 != nil || range2 != nil) {
             return true
         }
         else {
@@ -678,7 +700,11 @@ struct LoginView: View {
                 }
             case .Password:
                 if (!password.isEmpty && checkPasswordValid(password: password)){
-                    inputType = .Username
+                    if (!confirmPassword.isEmpty && (password == confirmPassword)){
+                        inputType = .Username
+                    } else{
+                        confirmpasswordIsNotValid = true
+                    }
                 } else{
                     passwordIsNotValid = true
                 }
@@ -730,11 +756,15 @@ struct LoginView: View {
                 }
             case .Password:
                 if (!password.isEmpty && checkPasswordValid(password: password)){
-                    Task{
-                        await vm.resetPassword(password: password, email: email, code: code, sessionId: vm.sessionId, callback:{
-                            clearData()
-                            state = .Login
-                        })
+                    if (!confirmPassword.isEmpty && (password == confirmPassword)){
+                        Task{
+                            await vm.resetPassword(password: password, email: email, code: code, sessionId: vm.sessionId, callback:{
+                                clearData()
+                                state = .Login
+                            })
+                        }
+                    } else{
+                        confirmpasswordIsNotValid = true
                     }
                 } else{
                     passwordIsNotValid = true
@@ -751,6 +781,11 @@ struct LoginView: View {
         confirmPassword = ""
         email = ""
         code = ""
+        usernameIsNotValid = false
+        passwordIsNotValid = false
+        confirmpasswordIsNotValid = false
+        emailIsNotValid = false
+        codeIsEmpty = false
     }
 
 }
