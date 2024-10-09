@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (4.9.1)
+  - JPSVolumeButtonHandler (1.0.5)
 
 DEPENDENCIES:
   - Alamofire
+  - JPSVolumeButtonHandler
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - JPSVolumeButtonHandler
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  JPSVolumeButtonHandler: 53110330c9168ed325def93eabff39f0fe3e8082
 
-PODFILE CHECKSUM: 5fe0c77fb9bd5ed94b0fab0644c59fa77da2b1e8
+PODFILE CHECKSUM: fc4731dde3b3064953f7d9994a4b4397f8091202
 
 COCOAPODS: 1.12.1

@@ -7,126 +7,175 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		119B37D7E7D3A59C6685FC0EFEE881CE /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */; };
-		1812380D67A8C0EC4D77F8BF4BB1C407 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73C42F286D00E2A6DD3D80E5C4CDCF /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-dummy.m */; };
-		19EF8DA889FB14DFDD889BB54F29E191 /* Pods-tongueRecognition_iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9F16A7FB8419E979586DEFA22391273 /* Pods-tongueRecognition_iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2119BBBDD76C9B182007C9E8D3BD8DDA /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */; };
-		314513C35D47EB33EFFC8321437E3AE9 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A5BDAF450B7D0AF6251C9C8206C2C05 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		334D4B3C5205242269F35A67130FF28C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		349DBC8607852A0993D8A1501851689B /* Pods-tongueRecognition_iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A80BA4F75D05941112B011AEBBE05B5B /* Pods-tongueRecognition_iOS-dummy.m */; };
-		3DE8AA12C52787A0BA570717BB27AAB0 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */; };
-		43C3C17BFDFD71F45C5A7AFB0C0BEF45 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */; };
-		4C301CCA81AAFB4453B6B827F846E0AC /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */; };
-		537D7452E6C8C82D9C1908EA29706E35 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */; };
-		5CECD168465CF59B489253695D3FB51F /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */; };
-		6D0464BDCD6CE52FE613303A5558DE30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		6DF154F51210D4C446AA021F2DBA34A4 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */; };
-		70EA6F068498CEC1B273D6BB1E74EB4E /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */; };
-		8023EECE8437F0311A065A9C2F420E2E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3F4F1011789493720361780A1982D /* SessionManager.swift */; };
-		85379CCF081FC9C36F082E71D2DF4D2F /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */; };
-		90E42B43904F2F22CA3A8BBD0155D9A2 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F367F44FC87833A1792B541781BB7 /* AFError.swift */; };
-		9146510540C8DAF109CC4BCCB0CA74A9 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BCBBFE03318F5DD172F9E1F3100F67B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */; };
+		0195899306D8FDF8C659F997F53F6A23 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4412D947E2BD0910003E8A367F9D540 /* MediaPlayer.framework */; };
+		0FD475F74241F3DA33670DBF88806ACD /* JPSVolumeButtonHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B11596E3115D5A1814A8FFE8623627A /* JPSVolumeButtonHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		119B37D7E7D3A59C6685FC0EFEE881CE /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E2F6EADBC7B74D0BF1A8F881B278F /* TaskDelegate.swift */; };
+		17D3BBB07AAA45A2F91B53C71C3079BC /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A5BDAF450B7D0AF6251C9C8206C2C05 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2119BBBDD76C9B182007C9E8D3BD8DDA /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DCE3411AD073BBDE16A4A421158A60 /* Timeline.swift */; };
+		334D4B3C5205242269F35A67130FF28C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
+		3DE8AA12C52787A0BA570717BB27AAB0 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C307E5129890B263834C5D51B59A6614 /* ServerTrustPolicy.swift */; };
+		43C3C17BFDFD71F45C5A7AFB0C0BEF45 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F45E5951DB732E8D723DE90E3C0094 /* ResponseSerialization.swift */; };
+		4C301CCA81AAFB4453B6B827F846E0AC /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9896336C91594A83D9EC0B8EE5275B7 /* Validation.swift */; };
+		537D7452E6C8C82D9C1908EA29706E35 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCAF77E99370B6EFEC0C3B78B9FB546 /* Notifications.swift */; };
+		5CECD168465CF59B489253695D3FB51F /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475183D4F5B099312A44E9D809F9903 /* NetworkReachabilityManager.swift */; };
+		6D0464BDCD6CE52FE613303A5558DE30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
+		6DF154F51210D4C446AA021F2DBA34A4 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F64C3EDE59CAE11692CB476BDE4E4D /* MultipartFormData.swift */; };
+		70EA6F068498CEC1B273D6BB1E74EB4E /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146792F8ACF09BCCE3B6166321748BFA /* Alamofire.swift */; };
+		7582D09D21370469DF096FB198575C4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
+		7AFD3E1474711214D5398E59F94766DE /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73C42F286D00E2A6DD3D80E5C4CDCF /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-dummy.m */; };
+		8023EECE8437F0311A065A9C2F420E2E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D45D1A4A9BFA7D1AD0F0EE6477A4AE /* SessionManager.swift */; };
+		82A67678EB785183F1EF448408AE021A /* Pods-tongueRecognition_iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9F16A7FB8419E979586DEFA22391273 /* Pods-tongueRecognition_iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85379CCF081FC9C36F082E71D2DF4D2F /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74878BAA2E3EE245989E9285A014BC24 /* SessionDelegate.swift */; };
+		89FBF4782A012FDC216275979CE17CFE /* JPSVolumeButtonHandler-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4C249CE3B7A19AE0C9BBA1F35DA79A /* JPSVolumeButtonHandler-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C5758BDCBFB5C7C537426F301A2A0DD /* JPSVolumeButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7F7CE292F24EDDFB5C41F658DEE084 /* JPSVolumeButtonHandler.m */; };
+		90E42B43904F2F22CA3A8BBD0155D9A2 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2AD3D52EED380971B5FB9D6492FED /* AFError.swift */; };
+		9146510540C8DAF109CC4BCCB0CA74A9 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A521C9BC3F41EC4BA89AF3526B290ACB /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BCBBFE03318F5DD172F9E1F3100F67B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F60E2503B1A103127E0F77AAD200D9 /* Response.swift */; };
+		A00771B5E045664E6CFF85AFADF9E470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
 		A145111D9CAB9830757D69237ABFD78D /* Pods-tongueRecognition_iOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BDFF5492C64B41F98F49ABAE8C3E259 /* Pods-tongueRecognition_iOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8F0FE7A03E97942897E2A1A34ABA5E9 /* JPSVolumeButtonHandler-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E30737E8370DD621F872417A89876C0B /* JPSVolumeButtonHandler-dummy.m */; };
 		B6D286CADCCAF0F34EBE20D1A8D1ACE2 /* Pods-tongueRecognition_iOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B72B05402045B344FDAF586872C8E361 /* Pods-tongueRecognition_iOSTests-dummy.m */; };
-		B72B72C8F4E3A5C4BE4C048708E0F097 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		C27C72B2D755F3A7B2D97089CA75146F /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */; };
-		D46CB5AF7BE345C5D27ABF9DCF692881 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */; };
-		D593E5BEB4221FF272DBF69E51945319 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */; };
-		F5C92DC8E274C4FC541267A97575BC05 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */; };
-		F81024CD073F444496736AE0204FB771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		F93AEAF3659818E2308E0E5C70B66423 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */; };
+		C27C72B2D755F3A7B2D97089CA75146F /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F2EDD400216673923776CDD0F0635 /* Alamofire-dummy.m */; };
+		C5892D8E06CCEA94B4AEC831922823AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
+		CA1955C23B5B3CDC5B8CC3DFA49193A4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D298C727DDCC1888B761AC24454BD5 /* AVFoundation.framework */; };
+		D46CB5AF7BE345C5D27ABF9DCF692881 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E52D66F9766C4A93A37B643626C294 /* Result.swift */; };
+		D593E5BEB4221FF272DBF69E51945319 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45BA8634CA63589AC1F3F211510B05 /* Request.swift */; };
+		F5C92DC8E274C4FC541267A97575BC05 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8128110BB92E4277041D10C8AF84D /* ParameterEncoding.swift */; };
+		F69C8B3BB3C452461B85007CAE026E31 /* Pods-tongueRecognition_iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A80BA4F75D05941112B011AEBBE05B5B /* Pods-tongueRecognition_iOS-dummy.m */; };
+		F93AEAF3659818E2308E0E5C70B66423 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE02052A0DB66C65F66909CABEDBC5 /* DispatchQueue+Alamofire.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0A65230F149CD0E5DFB5AD6F57E4557B /* PBXContainerItemProxy */ = {
+		58A4AD2601271AE0A0287638378007EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
+			remoteGlobalIDString = 35B6AC0A7EF19650ADE76C22449ACB77;
+			remoteInfo = JPSVolumeButtonHandler;
 		};
-		56929A403E7F66004158846B84F70444 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
-		};
-		EDB85FB48357DF668086978E17A37C22 /* PBXContainerItemProxy */ = {
+		5E63D42E9630F2C48F6574AC4F4424AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B0897864A0FF53CDC09D47A63E3052A8;
 			remoteInfo = "Pods-tongueRecognition_iOS";
 		};
+		66DDA2393BB90072B637387DD1DC3999 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		6B4A0A41FED5CF6D32FB994A275A9F83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35B6AC0A7EF19650ADE76C22449ACB77;
+			remoteInfo = JPSVolumeButtonHandler;
+		};
+		991313FFC584754405D2362CF11EDB8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		0B7193D5850E5EE39E06A89E24BCB589 /* Pods-tongueRecognition_iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tongueRecognition_iOS-Info.plist"; sourceTree = "<group>"; };
-		0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
+		0DCAF77E99370B6EFEC0C3B78B9FB546 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		1291E820F6ED8F0E93FB4421D7FA1B07 /* JPSVolumeButtonHandler */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JPSVolumeButtonHandler; path = JPSVolumeButtonHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		146792F8ACF09BCCE3B6166321748BFA /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		178F2EDD400216673923776CDD0F0635 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		17DDC8952BEFEB79BE868A96929B01FF /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1AB877B77E2A4D9F1C5C1A32188DB530 /* Pods-tongueRecognition_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tongueRecognition_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		1C73C42F286D00E2A6DD3D80E5C4CDCF /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-dummy.m"; sourceTree = "<group>"; };
+		1CFE02052A0DB66C65F66909CABEDBC5 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		21B058983350624D66CD6D89DEE6BCA3 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests"; path = Pods_tongueRecognition_iOS_tongueRecognition_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D95FBC7D4940B0118036601936607D /* Pods-tongueRecognition_iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tongueRecognition_iOS.modulemap"; sourceTree = "<group>"; };
-		2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
+		24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		259000E93FCDBE74C19735E35248629B /* JPSVolumeButtonHandler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JPSVolumeButtonHandler.release.xcconfig; sourceTree = "<group>"; };
+		2B11596E3115D5A1814A8FFE8623627A /* JPSVolumeButtonHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JPSVolumeButtonHandler.h; path = JPSVolumeButtonHandler/JPSVolumeButtonHandler.h; sourceTree = "<group>"; };
+		2B1E76B8310BC8FFDD7BEDF89F2E9F11 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		2EAB83B294B95CA94731F12080044160 /* Pods-tongueRecognition_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tongueRecognition_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		300C2F58B79CE868922604A92F7DD37C /* Pods-tongueRecognition_iOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tongueRecognition_iOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		3804A1D79E623EC5D28EACC766FBE8DF /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		38DCE3411AD073BBDE16A4A421158A60 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		48AD3F1832CE2B28BD02E588106A56B2 /* Pods-tongueRecognition_iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tongueRecognition_iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4EC795640DD75645BB0AFCBBD2421CB6 /* Pods-tongueRecognition_iOSTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tongueRecognition_iOSTests.modulemap"; sourceTree = "<group>"; };
 		4F441CCEC33FE4512DBBCE0106C7F8E2 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		52D298C727DDCC1888B761AC24454BD5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		5CDA4C804DBAB2B7C8B77E78E074919C /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ED047C2109FD8C989F0D93F032AAA29 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		5FCBE1A2D48701E2E8A1953F3D690BBB /* Pods-tongueRecognition_iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tongueRecognition_iOS-frameworks.sh"; sourceTree = "<group>"; };
-		5FEB2726D8D5B1A0A657204329BCF4BD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		6222765470D086E47010341A7EA8B149 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-Info.plist"; sourceTree = "<group>"; };
+		69E52D66F9766C4A93A37B643626C294 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		6BDFF5492C64B41F98F49ABAE8C3E259 /* Pods-tongueRecognition_iOSTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tongueRecognition_iOSTests-umbrella.h"; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6F4C249CE3B7A19AE0C9BBA1F35DA79A /* JPSVolumeButtonHandler-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JPSVolumeButtonHandler-umbrella.h"; sourceTree = "<group>"; };
 		734DCCFFD749F5ED5A0ED01D7A956C27 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.modulemap"; sourceTree = "<group>"; };
+		74878BAA2E3EE245989E9285A014BC24 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		788CF3101356A4A33EF786B3946FD814 /* Pods-tongueRecognition_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tongueRecognition_iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		79F45E5951DB732E8D723DE90E3C0094 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		7CCF6639B83FC7FC7A2A06DE34768ED2 /* Pods-tongueRecognition_iOSTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-tongueRecognition_iOSTests"; path = Pods_tongueRecognition_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		80F64C3EDE59CAE11692CB476BDE4E4D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		82E2AD3D52EED380971B5FB9D6492FED /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		8475183D4F5B099312A44E9D809F9903 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		848E2F6EADBC7B74D0BF1A8F881B278F /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		89D45D1A4A9BFA7D1AD0F0EE6477A4AE /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		8CE2A9AADC712C1C0E98B82733A6FE6D /* Pods-tongueRecognition_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tongueRecognition_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		98D3F4F1011789493720361780A1982D /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		9A5BDAF450B7D0AF6251C9C8206C2C05 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-umbrella.h"; sourceTree = "<group>"; };
 		9BC54AB12D561B1A1C5B1A4146D9E4E7 /* Pods-tongueRecognition_iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tongueRecognition_iOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E0EB897B1CB445974A912231592C23D /* Pods-tongueRecognition_iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-tongueRecognition_iOS"; path = Pods_tongueRecognition_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA22CCC5A9D57BA319DE3A072023889 /* JPSVolumeButtonHandler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JPSVolumeButtonHandler.debug.xcconfig; sourceTree = "<group>"; };
 		A2F82FB846CFBFBB03E1C1225A11561B /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-frameworks.sh"; sourceTree = "<group>"; };
-		A31DDF318E3E03B4DEA2F1B4182A555D /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		A4412D947E2BD0910003E8A367F9D540 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		A521C9BC3F41EC4BA89AF3526B290ACB /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		A80BA4F75D05941112B011AEBBE05B5B /* Pods-tongueRecognition_iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tongueRecognition_iOS-dummy.m"; sourceTree = "<group>"; };
-		AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		AD7F7CE292F24EDDFB5C41F658DEE084 /* JPSVolumeButtonHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JPSVolumeButtonHandler.m; path = JPSVolumeButtonHandler/JPSVolumeButtonHandler.m; sourceTree = "<group>"; };
 		B2EE479634F5C49E10FE7764AC93C7D9 /* Pods-tongueRecognition_iOSTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tongueRecognition_iOSTests-Info.plist"; sourceTree = "<group>"; };
 		B72B05402045B344FDAF586872C8E361 /* Pods-tongueRecognition_iOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tongueRecognition_iOSTests-dummy.m"; sourceTree = "<group>"; };
-		B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		B7817C743566C96215BB59EBB3A8C016 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
+		B9429D09AC9193E51C08FD63D1925DBD /* JPSVolumeButtonHandler-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JPSVolumeButtonHandler-Info.plist"; sourceTree = "<group>"; };
 		BBFFDC93C7B89077902A6557210CB3B5 /* Pods-tongueRecognition_iOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tongueRecognition_iOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BE45BA8634CA63589AC1F3F211510B05 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		C307E5129890B263834C5D51B59A6614 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		C8E8128110BB92E4277041D10C8AF84D /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		C9896336C91594A83D9EC0B8EE5275B7 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		D329B9A9C8F5B12557DC4A6184136229 /* JPSVolumeButtonHandler.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JPSVolumeButtonHandler.modulemap; sourceTree = "<group>"; };
 		D4B1F797FD09E9CDC7F600A15CA355FC /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		E63F367F44FC87833A1792B541781BB7 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		DD77482EAE53B03DC792A87179F10D0A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		E30737E8370DD621F872417A89876C0B /* JPSVolumeButtonHandler-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JPSVolumeButtonHandler-dummy.m"; sourceTree = "<group>"; };
+		E9F60E2503B1A103127E0F77AAD200D9 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		ED8776EDEB6C9AEC864C6265C3A705D8 /* JPSVolumeButtonHandler-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JPSVolumeButtonHandler-prefix.pch"; sourceTree = "<group>"; };
 		F3C11CBEA99415336D7919CDFA8CCD92 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		F9F16A7FB8419E979586DEFA22391273 /* Pods-tongueRecognition_iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tongueRecognition_iOS-umbrella.h"; sourceTree = "<group>"; };
-		FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1E1BCF1FB38104B0B408D09E599B3C50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5892D8E06CCEA94B4AEC831922823AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FDEBC1279186C4DE344C5D2CCE81B3D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6D0464BDCD6CE52FE613303A5558DE30 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2303BEC0CF15BABE686CF7CFD51298BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7582D09D21370469DF096FB198575C4C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,34 +187,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		724FA977BAEC31D4E1416E77BC0AA0E2 /* Frameworks */ = {
+		8CB6EE5A9A413E7648C734F9193E0512 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B72B72C8F4E3A5C4BE4C048708E0F097 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA94513C6F895D01B315E1E814F1A613 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F81024CD073F444496736AE0204FB771 /* Foundation.framework in Frameworks */,
+				CA1955C23B5B3CDC5B8CC3DFA49193A4 /* AVFoundation.framework in Frameworks */,
+				A00771B5E045664E6CFF85AFADF9E470 /* Foundation.framework in Frameworks */,
+				0195899306D8FDF8C659F997F53F6A23 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		087D2A8FC989FAE1D4D4975EBE1D7B13 /* Products */ = {
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
-				9E0EB897B1CB445974A912231592C23D /* Pods-tongueRecognition_iOS */,
-				21B058983350624D66CD6D89DEE6BCA3 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests */,
-				7CCF6639B83FC7FC7A2A06DE34768ED2 /* Pods-tongueRecognition_iOSTests */,
+				0CFEC631BE22FFC088D852A40FBF821D /* iOS */,
 			);
-			name = Products;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0CFEC631BE22FFC088D852A40FBF821D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				52D298C727DDCC1888B761AC24454BD5 /* AVFoundation.framework */,
+				24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */,
+				A4412D947E2BD0910003E8A367F9D540 /* MediaPlayer.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		30953402818043DB7E6CBC50EABF8732 /* Pods-tongueRecognition_iOS */ = {
@@ -185,12 +235,16 @@
 			path = "Target Support Files/Pods-tongueRecognition_iOS";
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		392F6F9691B824A2ED3E3169667E9AD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
+				1291E820F6ED8F0E93FB4421D7FA1B07 /* JPSVolumeButtonHandler */,
+				9E0EB897B1CB445974A912231592C23D /* Pods-tongueRecognition_iOS */,
+				21B058983350624D66CD6D89DEE6BCA3 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests */,
+				7CCF6639B83FC7FC7A2A06DE34768ED2 /* Pods-tongueRecognition_iOSTests */,
 			);
-			name = iOS;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		5860BEAE942240D777320CCEC8B22FF3 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests */ = {
@@ -210,6 +264,32 @@
 			path = "Target Support Files/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests";
 			sourceTree = "<group>";
 		};
+		6E894F66BDD6D73ABF9435DB112DE686 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				82E2AD3D52EED380971B5FB9D6492FED /* AFError.swift */,
+				146792F8ACF09BCCE3B6166321748BFA /* Alamofire.swift */,
+				1CFE02052A0DB66C65F66909CABEDBC5 /* DispatchQueue+Alamofire.swift */,
+				80F64C3EDE59CAE11692CB476BDE4E4D /* MultipartFormData.swift */,
+				8475183D4F5B099312A44E9D809F9903 /* NetworkReachabilityManager.swift */,
+				0DCAF77E99370B6EFEC0C3B78B9FB546 /* Notifications.swift */,
+				C8E8128110BB92E4277041D10C8AF84D /* ParameterEncoding.swift */,
+				BE45BA8634CA63589AC1F3F211510B05 /* Request.swift */,
+				E9F60E2503B1A103127E0F77AAD200D9 /* Response.swift */,
+				79F45E5951DB732E8D723DE90E3C0094 /* ResponseSerialization.swift */,
+				69E52D66F9766C4A93A37B643626C294 /* Result.swift */,
+				C307E5129890B263834C5D51B59A6614 /* ServerTrustPolicy.swift */,
+				74878BAA2E3EE245989E9285A014BC24 /* SessionDelegate.swift */,
+				89D45D1A4A9BFA7D1AD0F0EE6477A4AE /* SessionManager.swift */,
+				848E2F6EADBC7B74D0BF1A8F881B278F /* TaskDelegate.swift */,
+				38DCE3411AD073BBDE16A4A421158A60 /* Timeline.swift */,
+				C9896336C91594A83D9EC0B8EE5275B7 /* Validation.swift */,
+				F181C930D421481EA1E27AA006BBD4A5 /* Support Files */,
+			);
+			name = Alamofire;
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
 		759810D26BEDE9FBE5BBD53A24F70CEA /* Pods-tongueRecognition_iOSTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,72 +306,65 @@
 			path = "Target Support Files/Pods-tongueRecognition_iOSTests";
 			sourceTree = "<group>";
 		};
-		7D02D4600E8C814A4EF1D8C7FF8FA146 /* Support Files */ = {
+		BB1A1397C8FBC24D17811E322B418A1E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5ED047C2109FD8C989F0D93F032AAA29 /* Alamofire.modulemap */,
-				0389D0AFC58E73A075F3F7740CE1D441 /* Alamofire-dummy.m */,
-				A31DDF318E3E03B4DEA2F1B4182A555D /* Alamofire-Info.plist */,
-				5FEB2726D8D5B1A0A657204329BCF4BD /* Alamofire-prefix.pch */,
-				FFE4C558583FF9884EBA9DDF1C6F0DCD /* Alamofire-umbrella.h */,
-				2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */,
-				0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */,
+				D329B9A9C8F5B12557DC4A6184136229 /* JPSVolumeButtonHandler.modulemap */,
+				E30737E8370DD621F872417A89876C0B /* JPSVolumeButtonHandler-dummy.m */,
+				B9429D09AC9193E51C08FD63D1925DBD /* JPSVolumeButtonHandler-Info.plist */,
+				ED8776EDEB6C9AEC864C6265C3A705D8 /* JPSVolumeButtonHandler-prefix.pch */,
+				6F4C249CE3B7A19AE0C9BBA1F35DA79A /* JPSVolumeButtonHandler-umbrella.h */,
+				9FA22CCC5A9D57BA319DE3A072023889 /* JPSVolumeButtonHandler.debug.xcconfig */,
+				259000E93FCDBE74C19735E35248629B /* JPSVolumeButtonHandler.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
-			sourceTree = "<group>";
-		};
-		90FDDC7F5D24472360CA259A8D40AE98 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CC362FA3C7A87C2E5630BA06D8CB57BD /* Alamofire */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		CC362FA3C7A87C2E5630BA06D8CB57BD /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				E63F367F44FC87833A1792B541781BB7 /* AFError.swift */,
-				85FC5E8A366EFB3B0CF9816F6A90B258 /* Alamofire.swift */,
-				47D8FC88383C541917CFD5ADA31DD7AB /* DispatchQueue+Alamofire.swift */,
-				616062C81FDAB5C58156D8D00F0FC48D /* MultipartFormData.swift */,
-				7C36DA43AFF8C1CD3C666DACA78B91C2 /* NetworkReachabilityManager.swift */,
-				B86FC9B604FA843EF26A951C43C0CE8B /* Notifications.swift */,
-				F8D7A47A590ED08C21AB24503841C370 /* ParameterEncoding.swift */,
-				2EE101F8BE2F43D16C24A9874C79A94A /* Request.swift */,
-				B06A315E96FC5BCCAB1C5145D4BF1BCF /* Response.swift */,
-				AF15E9B6C2601FD9AD228CA2D657E44B /* ResponseSerialization.swift */,
-				F1DA11279AA1D6557BB10C9936E9B3A3 /* Result.swift */,
-				3D7B86CF47C1835EA00FE7A8B8D5CCC5 /* ServerTrustPolicy.swift */,
-				3EFB0C226D602EC371BECC5BD2CC9370 /* SessionDelegate.swift */,
-				98D3F4F1011789493720361780A1982D /* SessionManager.swift */,
-				A50DCBCED5F02570DDA9386825ACB4CF /* TaskDelegate.swift */,
-				58ACD677FD4B95B260E1B1C656D08B84 /* Timeline.swift */,
-				DF3AE0D4172A0ECD56EBFA08991A7C70 /* Validation.swift */,
-				7D02D4600E8C814A4EF1D8C7FF8FA146 /* Support Files */,
-			);
-			name = Alamofire;
-			path = Alamofire;
+			path = "../Target Support Files/JPSVolumeButtonHandler";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				90FDDC7F5D24472360CA259A8D40AE98 /* Pods */,
-				087D2A8FC989FAE1D4D4975EBE1D7B13 /* Products */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				D0B9918AD46B76C04395B912B96EE936 /* Pods */,
+				392F6F9691B824A2ED3E3169667E9AD6 /* Products */,
 				FF8EDA061D6F7A245D308E90E8B5CF1C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		D0B9918AD46B76C04395B912B96EE936 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				6E894F66BDD6D73ABF9435DB112DE686 /* Alamofire */,
+				E5AC293205A4D034E9F76AF9FCBBBF7B /* JPSVolumeButtonHandler */,
 			);
-			name = Frameworks;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E5AC293205A4D034E9F76AF9FCBBBF7B /* JPSVolumeButtonHandler */ = {
+			isa = PBXGroup;
+			children = (
+				2B11596E3115D5A1814A8FFE8623627A /* JPSVolumeButtonHandler.h */,
+				AD7F7CE292F24EDDFB5C41F658DEE084 /* JPSVolumeButtonHandler.m */,
+				BB1A1397C8FBC24D17811E322B418A1E /* Support Files */,
+			);
+			name = JPSVolumeButtonHandler;
+			path = JPSVolumeButtonHandler;
+			sourceTree = "<group>";
+		};
+		F181C930D421481EA1E27AA006BBD4A5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD77482EAE53B03DC792A87179F10D0A /* Alamofire.modulemap */,
+				178F2EDD400216673923776CDD0F0635 /* Alamofire-dummy.m */,
+				3804A1D79E623EC5D28EACC766FBE8DF /* Alamofire-Info.plist */,
+				5CDA4C804DBAB2B7C8B77E78E074919C /* Alamofire-prefix.pch */,
+				A521C9BC3F41EC4BA89AF3526B290ACB /* Alamofire-umbrella.h */,
+				2B1E76B8310BC8FFDD7BEDF89F2E9F11 /* Alamofire.debug.xcconfig */,
+				B7817C743566C96215BB59EBB3A8C016 /* Alamofire.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
 		FF8EDA061D6F7A245D308E90E8B5CF1C /* Targets Support Files */ = {
@@ -307,11 +380,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		1B546E3D50ED227984FAC11E95252CDB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82A67678EB785183F1EF448408AE021A /* Pods-tongueRecognition_iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34780194099E8F71DD7F88B56A338F91 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A145111D9CAB9830757D69237ABFD78D /* Pods-tongueRecognition_iOSTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C653459E7A83AC339EE34623DEAF64F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FD475F74241F3DA33670DBF88806ACD /* JPSVolumeButtonHandler.h in Headers */,
+				89FBF4782A012FDC216275979CE17CFE /* JPSVolumeButtonHandler-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,19 +413,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73DAD861A38B244BA6829286B1A714A5 /* Headers */ = {
+		7E8A6662A8792A1F23AFF1850AB732FE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19EF8DA889FB14DFDD889BB54F29E191 /* Pods-tongueRecognition_iOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8DB36E03018670A2376BB784B282ABFA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				314513C35D47EB33EFFC8321437E3AE9 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-umbrella.h in Headers */,
+				17D3BBB07AAA45A2F91B53C71C3079BC /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,21 +426,40 @@
 /* Begin PBXNativeTarget section */
 		2A6DE537D5F6AE328DA17753478E5AA7 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC5F82215440054E2CB2D4D2C2E020FE /* Build configuration list for PBXNativeTarget "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests" */;
+			buildConfigurationList = 95B2A97ACD75BA1917288C72E16630B9 /* Build configuration list for PBXNativeTarget "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests" */;
 			buildPhases = (
-				8DB36E03018670A2376BB784B282ABFA /* Headers */,
-				42EB25FD9A7E134A079830ED272E9205 /* Sources */,
-				FA94513C6F895D01B315E1E814F1A613 /* Frameworks */,
-				96F27E04E57987C1AF2FF489D32763AF /* Resources */,
+				7E8A6662A8792A1F23AFF1850AB732FE /* Headers */,
+				659F8BCAC767FAE333B53FD0CA0A1DD0 /* Sources */,
+				2303BEC0CF15BABE686CF7CFD51298BB /* Frameworks */,
+				B0655DCA1831171B0F28AE6756D3D58E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				79ABC4222FC33279C21A121A4FD055BA /* PBXTargetDependency */,
+				2A20BF82E9B53BB01ADD81F0A07D3952 /* PBXTargetDependency */,
+				FB0F2F3CD78C59C789E1B489ABB911D2 /* PBXTargetDependency */,
 			);
 			name = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests";
 			productName = Pods_tongueRecognition_iOS_tongueRecognition_iOSUITests;
 			productReference = 21B058983350624D66CD6D89DEE6BCA3 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		35B6AC0A7EF19650ADE76C22449ACB77 /* JPSVolumeButtonHandler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E71322F047BD63FF563555ED2EE905E /* Build configuration list for PBXNativeTarget "JPSVolumeButtonHandler" */;
+			buildPhases = (
+				3C653459E7A83AC339EE34623DEAF64F /* Headers */,
+				6C502EBF0E92366563E8D0C0D1B16462 /* Sources */,
+				8CB6EE5A9A413E7648C734F9193E0512 /* Frameworks */,
+				70F11BBAB8B958C5E58AAC7CC98E10E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JPSVolumeButtonHandler;
+			productName = JPSVolumeButtonHandler;
+			productReference = 1291E820F6ED8F0E93FB4421D7FA1B07 /* JPSVolumeButtonHandler */;
 			productType = "com.apple.product-type.framework";
 		};
 		8298D8C82D0F1D9E970394F06D951F1E /* Pods-tongueRecognition_iOSTests */ = {
@@ -373,7 +474,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				245EBE584DFBE52B36E7844091C1738D /* PBXTargetDependency */,
+				2F3ACA6976171E7CA3FA5D95C3845874 /* PBXTargetDependency */,
 			);
 			name = "Pods-tongueRecognition_iOSTests";
 			productName = Pods_tongueRecognition_iOSTests;
@@ -382,17 +483,18 @@
 		};
 		B0897864A0FF53CDC09D47A63E3052A8 /* Pods-tongueRecognition_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE0D4692843ADF7776C1D58530A00EF8 /* Build configuration list for PBXNativeTarget "Pods-tongueRecognition_iOS" */;
+			buildConfigurationList = FA309E39AB61A785BB3C0FFB878C1EA7 /* Build configuration list for PBXNativeTarget "Pods-tongueRecognition_iOS" */;
 			buildPhases = (
-				73DAD861A38B244BA6829286B1A714A5 /* Headers */,
-				9D7348FAFC744DC92E3225D8B70E08FD /* Sources */,
-				724FA977BAEC31D4E1416E77BC0AA0E2 /* Frameworks */,
-				17002112D67F8D3BFC738284D979EDBB /* Resources */,
+				1B546E3D50ED227984FAC11E95252CDB /* Headers */,
+				7B465FA719F2A89AF3CB2862A9C782B1 /* Sources */,
+				1E1BCF1FB38104B0B408D09E599B3C50 /* Frameworks */,
+				8B3132C984200A5BA63DBD2C384BA4D1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4598E5F2F5F08320998755B8CA7B0262 /* PBXTargetDependency */,
+				914885CA293B48202E9D1D27ACD1BC6F /* PBXTargetDependency */,
+				201591D90E56E13CF6DFF0A349560324 /* PBXTargetDependency */,
 			);
 			name = "Pods-tongueRecognition_iOS";
 			productName = Pods_tongueRecognition_iOS;
@@ -435,11 +537,12 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 087D2A8FC989FAE1D4D4975EBE1D7B13 /* Products */;
+			productRefGroup = 392F6F9691B824A2ED3E3169667E9AD6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
+				35B6AC0A7EF19650ADE76C22449ACB77 /* JPSVolumeButtonHandler */,
 				B0897864A0FF53CDC09D47A63E3052A8 /* Pods-tongueRecognition_iOS */,
 				2A6DE537D5F6AE328DA17753478E5AA7 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests */,
 				8298D8C82D0F1D9E970394F06D951F1E /* Pods-tongueRecognition_iOSTests */,
@@ -448,7 +551,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		17002112D67F8D3BFC738284D979EDBB /* Resources */ = {
+		70F11BBAB8B958C5E58AAC7CC98E10E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -462,7 +565,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96F27E04E57987C1AF2FF489D32763AF /* Resources */ = {
+		8B3132C984200A5BA63DBD2C384BA4D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0655DCA1831171B0F28AE6756D3D58E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -479,11 +589,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		42EB25FD9A7E134A079830ED272E9205 /* Sources */ = {
+		659F8BCAC767FAE333B53FD0CA0A1DD0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1812380D67A8C0EC4D77F8BF4BB1C407 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-dummy.m in Sources */,
+				7AFD3E1474711214D5398E59F94766DE /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C502EBF0E92366563E8D0C0D1B16462 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C5758BDCBFB5C7C537426F301A2A0DD /* JPSVolumeButtonHandler.m in Sources */,
+				A8F0FE7A03E97942897E2A1A34ABA5E9 /* JPSVolumeButtonHandler-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B465FA719F2A89AF3CB2862A9C782B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F69C8B3BB3C452461B85007CAE026E31 /* Pods-tongueRecognition_iOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,14 +639,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D7348FAFC744DC92E3225D8B70E08FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				349DBC8607852A0993D8A1501851689B /* Pods-tongueRecognition_iOS-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B16B28441E0409F4C081DC8B194FD6D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -531,30 +650,42 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		245EBE584DFBE52B36E7844091C1738D /* PBXTargetDependency */ = {
+		201591D90E56E13CF6DFF0A349560324 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JPSVolumeButtonHandler;
+			target = 35B6AC0A7EF19650ADE76C22449ACB77 /* JPSVolumeButtonHandler */;
+			targetProxy = 58A4AD2601271AE0A0287638378007EA /* PBXContainerItemProxy */;
+		};
+		2A20BF82E9B53BB01ADD81F0A07D3952 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 66DDA2393BB90072B637387DD1DC3999 /* PBXContainerItemProxy */;
+		};
+		2F3ACA6976171E7CA3FA5D95C3845874 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-tongueRecognition_iOS";
 			target = B0897864A0FF53CDC09D47A63E3052A8 /* Pods-tongueRecognition_iOS */;
-			targetProxy = EDB85FB48357DF668086978E17A37C22 /* PBXContainerItemProxy */;
+			targetProxy = 5E63D42E9630F2C48F6574AC4F4424AA /* PBXContainerItemProxy */;
 		};
-		4598E5F2F5F08320998755B8CA7B0262 /* PBXTargetDependency */ = {
+		914885CA293B48202E9D1D27ACD1BC6F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 0A65230F149CD0E5DFB5AD6F57E4557B /* PBXContainerItemProxy */;
+			targetProxy = 991313FFC584754405D2362CF11EDB8E /* PBXContainerItemProxy */;
 		};
-		79ABC4222FC33279C21A121A4FD055BA /* PBXTargetDependency */ = {
+		FB0F2F3CD78C59C789E1B489ABB911D2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 56929A403E7F66004158846B84F70444 /* PBXContainerItemProxy */;
+			name = JPSVolumeButtonHandler;
+			target = 35B6AC0A7EF19650ADE76C22449ACB77 /* JPSVolumeButtonHandler */;
+			targetProxy = 6B4A0A41FED5CF6D32FB994A275A9F83 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1CD4B4620470A6D46D11E6D452EE71DE /* Release */ = {
+		248A73146B3B9AAC3E183FF2FDFA9634 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AB877B77E2A4D9F1C5C1A32188DB530 /* Pods-tongueRecognition_iOS.release.xcconfig */;
+			baseConfigurationReference = 788CF3101356A4A33EF786B3946FD814 /* Pods-tongueRecognition_iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -583,11 +714,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -655,7 +785,78 @@
 			};
 			name = Debug;
 		};
-		54DD4C44D65A77E6745A40836B0B5490 /* Release */ = {
+		2A96F9E3D8256B6CC0278600588DDCFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AB877B77E2A4D9F1C5C1A32188DB530 /* Pods-tongueRecognition_iOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-tongueRecognition_iOS/Pods-tongueRecognition_iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tongueRecognition_iOS/Pods-tongueRecognition_iOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2D46676308FED0F7B3BB00CE9B1A6CEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FA22CCC5A9D57BA319DE3A072023889 /* JPSVolumeButtonHandler.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler.modulemap";
+				PRODUCT_MODULE_NAME = JPSVolumeButtonHandler;
+				PRODUCT_NAME = JPSVolumeButtonHandler;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		322E7A45EAD63F6303730797950C9682 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F441CCEC33FE4512DBBCE0106C7F8E2 /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.release.xcconfig */;
 			buildSettings = {
@@ -692,9 +893,80 @@
 			};
 			name = Release;
 		};
+		4C3C59F5D56317DDF7B46AB1FE759445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4B1F797FD09E9CDC7F600A15CA355FC /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4C6A49944539E5E4B7D74B2ACD86A323 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 259000E93FCDBE74C19735E35248629B /* JPSVolumeButtonHandler.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler.modulemap";
+				PRODUCT_MODULE_NAME = JPSVolumeButtonHandler;
+				PRODUCT_NAME = JPSVolumeButtonHandler;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		68B1AE02C35B3BF9B0A358B7D7F26055 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C96CDEC4805F115B4225E4EBFC020B7 /* Alamofire.release.xcconfig */;
+			baseConfigurationReference = B7817C743566C96215BB59EBB3A8C016 /* Alamofire.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -763,45 +1035,9 @@
 			};
 			name = Debug;
 		};
-		ACE4C3C2C0F52C1E4BADBB82C9931F0A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 788CF3101356A4A33EF786B3946FD814 /* Pods-tongueRecognition_iOS.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-tongueRecognition_iOS/Pods-tongueRecognition_iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tongueRecognition_iOS/Pods-tongueRecognition_iOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		CA22C334E2940B21EB576035F44AD294 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C50F83F93296D01A5B9009365A2671D /* Alamofire.debug.xcconfig */;
+			baseConfigurationReference = 2B1E76B8310BC8FFDD7BEDF89F2E9F11 /* Alamofire.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -932,42 +1168,6 @@
 			};
 			name = Release;
 		};
-		FCDA85D34267ED2AF0FFA24E0F16BC1E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4B1F797FD09E9CDC7F600A15CA355FC /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -989,6 +1189,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4E71322F047BD63FF563555ED2EE905E /* Build configuration list for PBXNativeTarget "JPSVolumeButtonHandler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D46676308FED0F7B3BB00CE9B1A6CEB /* Debug */,
+				4C6A49944539E5E4B7D74B2ACD86A323 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		887CAE7F79D14F7AF2714DC8BABA9E38 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -998,20 +1207,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC5F82215440054E2CB2D4D2C2E020FE /* Build configuration list for PBXNativeTarget "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests" */ = {
+		95B2A97ACD75BA1917288C72E16630B9 /* Build configuration list for PBXNativeTarget "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FCDA85D34267ED2AF0FFA24E0F16BC1E /* Debug */,
-				54DD4C44D65A77E6745A40836B0B5490 /* Release */,
+				4C3C59F5D56317DDF7B46AB1FE759445 /* Debug */,
+				322E7A45EAD63F6303730797950C9682 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE0D4692843ADF7776C1D58530A00EF8 /* Build configuration list for PBXNativeTarget "Pods-tongueRecognition_iOS" */ = {
+		FA309E39AB61A785BB3C0FFB878C1EA7 /* Build configuration list for PBXNativeTarget "Pods-tongueRecognition_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACE4C3C2C0F52C1E4BADBB82C9931F0A /* Debug */,
-				1CD4B4620470A6D46D11E6D452EE71DE /* Release */,
+				248A73146B3B9AAC3E183FF2FDFA9634 /* Debug */,
+				2A96F9E3D8256B6CC0278600588DDCFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

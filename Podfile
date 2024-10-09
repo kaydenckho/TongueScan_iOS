@@ -7,6 +7,7 @@ target 'tongueRecognition_iOS' do
 
   # Pods for tongueRecognition_iOS
   pod 'Alamofire'
+  pod 'JPSVolumeButtonHandler'
 
   target 'tongueRecognition_iOSTests' do
     inherit! :search_paths

@@ -1,4 +1,5 @@
 import SwiftUI
+import JPSVolumeButtonHandler
 
 struct CameraView: View {
     
@@ -19,6 +20,8 @@ struct CameraView: View {
     @State var hideRectangle:DispatchWorkItem? = nil
     
     @StateObject private var vm = CameraViewVM()
+    
+    @State private var volumeHandler: JPSVolumeButtonHandler?
     
     var body: some View {
         NavigationStack{
@@ -173,8 +176,20 @@ struct CameraView: View {
                 .toolbarBackground(.visible, for: .navigationBar)
                 .onAppear(){
                     vm.startCamera(mode: mode)
+                    volumeHandler = JPSVolumeButtonHandler(up: {
+                        if (!vm.isCapturing && mode == .Manual){
+                            vm.takePicture()
+                        }
+                    }, downBlock: {
+                        if (!vm.isCapturing && mode == .Manual){
+                            vm.takePicture()
+                        }
+                    })
+                    volumeHandler?.start(true)
                 }
                 .onDisappear(){
+                    volumeHandler?.start(false)
+                    volumeHandler = nil
                     vm.stopCamera()
                 }
                 .alert("upload_failed_msg".localizedString(language: language), isPresented: $vm.uploadFailed){
