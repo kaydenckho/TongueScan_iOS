@@ -47,6 +47,10 @@ struct CameraView: View {
                             .frame(maxWidth: geometry.size.width/1.2)
                             .position(x:geometry.size.width/2, y: geometry.size.height/1.6)
                             .multilineTextAlignment(.center)
+                            Slider(value: $vm.zoomRatio, in: 0...100)
+                                .rotationEffect(.degrees(270), anchor: .topLeading)
+                                .frame(width: geometry.size.height/2.4)
+                                .offset(x: geometry.size.width * 0.79, y: geometry.size.height/4.6)
                         Button(action: {
                             if (!vm.isCapturing){
                                 vm.takePicture()
@@ -175,22 +179,27 @@ struct CameraView: View {
                 .toolbarBackground(Color("toolbarBackground"), for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .onAppear(){
-                    vm.startCamera(mode: mode)
-                    volumeHandler = JPSVolumeButtonHandler(up: {
-                        if (!vm.isCapturing && mode == .Manual){
-                            vm.takePicture()
-                        }
-                    }, downBlock: {
-                        if (!vm.isCapturing && mode == .Manual){
-                            vm.takePicture()
-                        }
-                    })
-                    volumeHandler?.start(true)
+                    Task{
+                        vm.startCamera(mode: mode)
+                        volumeHandler = JPSVolumeButtonHandler(up: {
+                            if (!vm.isCapturing && mode == .Manual){
+                                vm.takePicture()
+                            }
+                        }, downBlock: {
+                            if (!vm.isCapturing && mode == .Manual){
+                                vm.takePicture()
+                            }
+                        })
+                        volumeHandler?.start(true)
+                    }
+                
                 }
                 .onDisappear(){
-                    volumeHandler?.start(false)
-                    volumeHandler = nil
-                    vm.stopCamera()
+                    Task{
+                        volumeHandler?.start(false)
+                        volumeHandler = nil
+                        vm.stopCamera()
+                    }
                 }
                 .alert("upload_failed_msg".localizedString(language: language), isPresented: $vm.uploadFailed){
                     Button("confirm".localizedString(language: language), role: .cancel) { vm.uploadFailed.toggle() }

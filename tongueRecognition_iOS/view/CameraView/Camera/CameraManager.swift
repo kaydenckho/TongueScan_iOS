@@ -210,5 +210,18 @@ class CameraManager: ObservableObject {
             self.session.stopRunning()
         }
     }
+    
+    func zoom(_ scale: CGFloat) {
+        let captureDevice = device
+        do {
+            try captureDevice?.lockForConfiguration()
+            let ratio = scale / 100 * 4
+            captureDevice?.videoZoomFactor = ratio+1
+
+            captureDevice?.unlockForConfiguration()
+        } catch {
+            print("ERROR: locking configuration")
+        }
+    }
 
 }

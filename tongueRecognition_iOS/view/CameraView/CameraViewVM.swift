@@ -17,6 +17,12 @@ class CameraViewVM: ObservableObject {
     @Published var frame: CGImage? = nil
     @Published var capturedPhoto: CGImage?
     
+    @Published var zoomRatio: CGFloat = 0{
+        didSet {
+            cameraManager.zoom(zoomRatio)
+        }
+    }
+    
     let preferenceUtil = PreferenceUtil()
     
     private let frameManager = FrameManager()
