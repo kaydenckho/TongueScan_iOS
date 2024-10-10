@@ -47,10 +47,12 @@ struct CameraView: View {
                             .frame(maxWidth: geometry.size.width/1.2)
                             .position(x:geometry.size.width/2, y: geometry.size.height/1.6)
                             .multilineTextAlignment(.center)
+                        if (mode == .Manual){
                             Slider(value: $vm.zoomRatio, in: 0...100)
                                 .rotationEffect(.degrees(270), anchor: .topLeading)
                                 .frame(width: geometry.size.height/2.4)
                                 .offset(x: geometry.size.width * 0.79, y: geometry.size.height/4.6)
+                        }
                         Button(action: {
                             if (!vm.isCapturing){
                                 vm.takePicture()
