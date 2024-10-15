@@ -33,6 +33,8 @@
 		6AAB4CBD2C8574A200A1487E /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAB4CBC2C8574A200A1487E /* ClearButton.swift */; };
 		6AE05B9F2AAAF70300A3E5B7 /* YoloUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE05B9E2AAAF70300A3E5B7 /* YoloUtil.swift */; };
 		6AE05BA12AAAF74B00A3E5B7 /* v8.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 6AE05BA02AAAF74B00A3E5B7 /* v8.mlpackage */; };
+		6AEE15992CBCF69700886D4F /* DummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE15982CBCF69700886D4F /* DummyModel.swift */; };
+		6AEE159B2CBCFC5B00886D4F /* ContentViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE159A2CBCFC5B00886D4F /* ContentViewVM.swift */; };
 		ABA836284EA7E8DAC3A65104 /* Pods_tongueRecognition_iOS_tongueRecognition_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0DF0D184F010C9F6B79B3C /* Pods_tongueRecognition_iOS_tongueRecognition_iOSUITests.framework */; };
 		C7661679BE71AFDCB6647644 /* Pods_tongueRecognition_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52CCABAB2FEF607C0999F36 /* Pods_tongueRecognition_iOSTests.framework */; };
 		CE9036C02A32DFDC00184900 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE9036C22A32DFDC00184900 /* Localizable.strings */; };
@@ -110,6 +112,8 @@
 		6AD8E8992B33FACD00D90D99 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6AE05B9E2AAAF70300A3E5B7 /* YoloUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoloUtil.swift; sourceTree = "<group>"; };
 		6AE05BA02AAAF74B00A3E5B7 /* v8.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = v8.mlpackage; sourceTree = "<group>"; };
+		6AEE15982CBCF69700886D4F /* DummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyModel.swift; sourceTree = "<group>"; };
+		6AEE159A2CBCFC5B00886D4F /* ContentViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewVM.swift; sourceTree = "<group>"; };
 		90F3102CE5B0BD852A8E321D /* Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A301C88236D0CFF7F53C654A /* Pods-tongueRecognition_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tongueRecognition_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-tongueRecognition_iOSTests/Pods-tongueRecognition_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A43DC9D89991E2634F31F18D /* Pods-tongueRecognition_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tongueRecognition_iOS.debug.xcconfig"; path = "Target Support Files/Pods-tongueRecognition_iOS/Pods-tongueRecognition_iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9036D82A36C82A00184900 /* Webservice.swift */,
+				6AEE15982CBCF69700886D4F /* DummyModel.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				CE96E2C32A32C6A300EFE49C /* view */,
 				CE96E2982A31DBC000EFE49C /* tongueRecognition_iOSApp.swift */,
 				CE96E29A2A31DBC000EFE49C /* ContentView.swift */,
+				6AEE159A2CBCFC5B00886D4F /* ContentViewVM.swift */,
 				CE96E29E2A31DBC200EFE49C /* tongueRecognition_iOS.entitlements */,
 				CE96E29F2A31DBC200EFE49C /* Preview Content */,
 				CE9036D52A36C67300184900 /* Constant.swift */,
@@ -687,6 +693,7 @@
 				6A5FF0EF2A8A145800CC9905 /* ImageModel.swift in Sources */,
 				6A26B6D82B85FDBD006C58C3 /* String.swift in Sources */,
 				6A4F43262A8DC3C500C0F06D /* FrameManager.swift in Sources */,
+				6AEE159B2CBCFC5B00886D4F /* ContentViewVM.swift in Sources */,
 				CEDBAB742A415C30004C2947 /* CameraViewVM.swift in Sources */,
 				6A8B516C2C27EDF1008FF12B /* LoginVM.swift in Sources */,
 				CE9036E42A404F4E00184900 /* WebView.swift in Sources */,
@@ -696,6 +703,7 @@
 				6A105EA12B83401000CFE441 /* Button1View.swift in Sources */,
 				6AE05BA12AAAF74B00A3E5B7 /* v8.mlpackage in Sources */,
 				6A26B6D12B85B0B7006C58C3 /* ButtonStyle.swift in Sources */,
+				6AEE15992CBCF69700886D4F /* DummyModel.swift in Sources */,
 				6A13F4D52B8756A8004A2A56 /* TextDialog.swift in Sources */,
 				6A17AD652C61C9B30032D337 /* iOSCheckboxToggleStyle.swift in Sources */,
 				6A25BAC32C2FCCC000A9568A /* PersonalInfoView.swift in Sources */,

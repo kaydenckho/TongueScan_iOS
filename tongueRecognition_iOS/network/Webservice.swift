@@ -253,5 +253,100 @@ struct Webservice {
                 }
             }
         }
+    
+    func userInfo(token:String, completion: @escaping (Result<APIResponse<LoginModel>?>) -> Void){
+            Alamofire.upload(multipartFormData: { multipartFormData in
+                multipartFormData.append(token.data(using: .utf8)!,withName:"token",mimeType: "text/plain")
+            },to:Constant.BASE_URL+Constant.USER_INFO)
+            { (result) in
+                print(result)
+                switch result {
+                case .success(let upload, _, _):
+                    //                    upload.uploadProgress(closure: { (progress) in
+                    //                        print("Upload Progress: \(progress.fractionCompleted)")
+                    //                    })
+                    var model = APIResponse<LoginModel>()
+                    upload.responseJSON { response in
+                        do{
+                            if let data = response.data{
+                                let decoder = JSONDecoder()
+                                model = try decoder.decode(APIResponse<LoginModel>.self, from: data)
+                            }
+                            print(model)
+                        } catch {
+                            print(error)
+                            completion(.failure(error))
+                        }
+                        completion(.success(model))
+                    }
+                case .failure(let encodingError):
+                    completion(.failure(encodingError))
+                }
+            }
+        }
+    
+    func tongueFeedBack(surveyId:String, feedBack:String, completion: @escaping (Result<APIResponse<DummyModel>?>) -> Void){
+            Alamofire.upload(multipartFormData: { multipartFormData in
+                multipartFormData.append(surveyId.data(using: .utf8)!,withName:"survey_id",mimeType: "text/plain")
+                multipartFormData.append(feedBack.data(using: .utf8)!,withName:"feedBack",mimeType: "text/plain")
+            },to:Constant.BASE_URL+Constant.USER_INFO)
+            { (result) in
+                print(result)
+                switch result {
+                case .success(let upload, _, _):
+                    //                    upload.uploadProgress(closure: { (progress) in
+                    //                        print("Upload Progress: \(progress.fractionCompleted)")
+                    //                    })
+                    var model = APIResponse<DummyModel>()
+                    upload.responseJSON { response in
+                        do{
+                            if let data = response.data{
+                                let decoder = JSONDecoder()
+                                model = try decoder.decode(APIResponse<DummyModel>.self, from: data)
+                            }
+                            print(model)
+                        } catch {
+                            print(error)
+                            completion(.failure(error))
+                        }
+                        completion(.success(model))
+                    }
+                case .failure(let encodingError):
+                    completion(.failure(encodingError))
+                }
+            }
+        }
+    
+    func saveResult(token:String, surveyId:String, completion: @escaping (Result<APIResponse<DummyModel>?>) -> Void){
+            Alamofire.upload(multipartFormData: { multipartFormData in
+                multipartFormData.append(token.data(using: .utf8)!,withName:"token",mimeType: "text/plain")
+                multipartFormData.append(surveyId.data(using: .utf8)!,withName:"surveyId",mimeType: "text/plain")
+            },to:Constant.BASE_URL+Constant.USER_INFO)
+            { (result) in
+                print(result)
+                switch result {
+                case .success(let upload, _, _):
+                    //                    upload.uploadProgress(closure: { (progress) in
+                    //                        print("Upload Progress: \(progress.fractionCompleted)")
+                    //                    })
+                    var model = APIResponse<DummyModel>()
+                    upload.responseJSON { response in
+                        do{
+                            if let data = response.data{
+                                let decoder = JSONDecoder()
+                                model = try decoder.decode(APIResponse<DummyModel>.self, from: data)
+                            }
+                            print(model)
+                        } catch {
+                            print(error)
+                            completion(.failure(error))
+                        }
+                        completion(.success(model))
+                    }
+                case .failure(let encodingError):
+                    completion(.failure(encodingError))
+                }
+            }
+        }
 }
 

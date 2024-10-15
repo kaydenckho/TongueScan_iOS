@@ -23,6 +23,10 @@ struct ContentView: View {
     
     @State var loginPageState : LoginView.PageState = .Login
     
+    @StateObject private var vm = ContentViewVM()
+    
+    @State var tokenExpiredDialog = false
+    
     var body: some View {
         if (isAutoCameraView){
             CameraView(isPageActive: $isAutoCameraView, language: $language, mode: .Auto)
@@ -74,14 +78,39 @@ struct ContentView: View {
             }
             .onAppear(){
                 if (preferenceUtil.isRememberLogin ?? false){
-                    loginPageState = .LoggedIn
-                    tongueRecognition_iOSApp.loginModel = LoginModel(token: preferenceUtil.token, username: preferenceUtil.username)
+                    if let token = preferenceUtil.token{
+                        Task{
+                            await vm.userInfo(token:token,onSuccess:{
+                                loginPageState = .LoggedIn
+                                tongueRecognition_iOSApp.loginModel = LoginModel(token: vm.userInfoModel?.data?.token, username: vm.userInfoModel?.data?.username)
+                                preferenceUtil.token = vm.userInfoModel?.data?.token
+                            }, onFailure:{
+                                tokenExpiredDialog = true
+                                loginPageState = .Login
+                                tongueRecognition_iOSApp.loginModel = nil
+                                preferenceUtil.token = vm.userInfoModel?.data?.token
+                            })
+                        }
+                    }
                 } else{
                     loginPageState = .Login
                 }
                 language = preferenceUtil.language
             }
-          
+            .alert(isPresented: $tokenExpiredDialog) {
+                Alert(
+                    title: "hint".localizedText(language: language),
+                    message: "login_expired".localizedText(language: language),
+                    primaryButton: .default(
+                        "go_to_login".localizedText(language: language),
+                        action: { selection = 4 }
+                    ),
+                    secondaryButton: .destructive(
+                        "notNow".localizedText(language: language),
+                        action: { tokenExpiredDialog = false }
+                    )
+                )
+            }
         }
        
 

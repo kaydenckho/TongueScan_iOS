@@ -105,3 +105,5 @@
 "isUseBiometricLogin" = "是否开启生物识别登录?";
 "enable" = "开启";
 "dontAskAgain" = "不再提示";
+"login_expired" = "登录已过期，请重新登录";
+"notNow" = "现在不用";

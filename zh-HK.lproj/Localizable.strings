@@ -105,3 +105,5 @@
 "isUseBiometricLogin" = "是否開啟生物識別登錄?";
 "enable" = "開啟";
 "dontAskAgain" = "不再提示";
+"login_expired" = "登錄已過期，請重新登錄";
+"notNow" = "現在不用";

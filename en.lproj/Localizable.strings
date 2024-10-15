@@ -105,3 +105,5 @@
 "isUseBiometricLogin" = "Enable biometric login?";
 "enable" = "Yes";
 "dontAskAgain" = "Don't ask again";
+"login_expired" = "Login expired, please login again";
+"notNow" = "Not now";
