@@ -93,16 +93,25 @@ struct HomeView: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                                Task{
-                                    mode = .Auto
-                                    if (tongueRecognition_iOSApp.loginModel == nil){
-                                        isShowLoginDialog = true
+                                mode = .Auto
+                                if (tongueRecognition_iOSApp.loginModel == nil){
+                                    isShowLoginDialog = true
+                                } else{
+                                    if (preferenceUtil.isAgreedTerms ?? false){
+                                        isAutoCameraView = true
                                     } else{
-                                        if (preferenceUtil.isAgreedTerms ?? false){
-                                            isAutoCameraView = true
-                                        } else{
-                                            isShowTermsAndConditionDialogWithDisagree = true
-                                        }
+                                        isShowTermsAndConditionDialogWithDisagree = true
+                                    }
+                                }
+                                if let token = preferenceUtil.token{
+                                    Task{
+                                        await vm.userInfo(token:token,onSuccess:{
+                                            tongueRecognition_iOSApp.loginModel = LoginModel(token: vm.userInfoModel?.data?.token, username: vm.userInfoModel?.data?.username)
+                                            preferenceUtil.token = vm.userInfoModel?.data?.token
+                                            preferenceUtil.username = vm.userInfoModel?.data?.username
+                                            print(vm.userInfoModel?.data?.token)
+                                            print(vm.userInfoModel?.data?.username)
+                                        }, onFailure:{})
                                     }
                                 }
                             }){
@@ -111,18 +120,27 @@ struct HomeView: View {
                             .padding([.leading, .trailing], 5)
                             .buttonStyle(ClickScaleDown())
                             Button(action: {
-                                Task{
-                                    mode = .Manual
-                                    if (tongueRecognition_iOSApp.loginModel == nil){
-                                        isShowLoginDialog = true
+                                
+                                mode = .Manual
+                                if (tongueRecognition_iOSApp.loginModel == nil){
+                                    isShowLoginDialog = true
+                                } else{
+                                    if (preferenceUtil.isAgreedTerms ?? false){
+                                        isManualCameraView = true
                                     } else{
-                                        if (preferenceUtil.isAgreedTerms ?? false){
-                                            isManualCameraView = true
-                                        } else{
-                                            isShowTermsAndConditionDialogWithDisagree = true
-                                        }
+                                        isShowTermsAndConditionDialogWithDisagree = true
                                     }
                                 }
+                                if let token = preferenceUtil.token{
+                                    Task{
+                                        await vm.userInfo(token:token,onSuccess:{
+                                            tongueRecognition_iOSApp.loginModel = LoginModel(token: vm.userInfoModel?.data?.token, username: vm.userInfoModel?.data?.username)
+                                            preferenceUtil.token = vm.userInfoModel?.data?.token
+                                            preferenceUtil.username = vm.userInfoModel?.data?.username
+                                        }, onFailure:{})
+                                    }
+                                }
+                                
                             }){
                                 Button1View(text: "manual_mode".localizedString(language: language), width: 120, color: Color("button_green2"), topLeading:10, bottomLeading:10, topTrailing:10, bottomTrailing:10,verticalPadding:15, textSize: Font.headline, textColor:.white)
                             }
@@ -261,9 +279,6 @@ struct HomeView: View {
                         }
                     }, trigger: $scrollbarFlash)
                 }
-            }
-            .alert("upload_failed_msg", isPresented: $vm.uploadFailed){
-                Button("confirm".localizedString(language: language), role: .cancel) { vm.uploadFailed = false }
             }
             .animation(.easeOut(duration: 0.16))
         }

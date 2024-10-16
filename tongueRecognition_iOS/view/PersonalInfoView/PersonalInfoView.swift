@@ -15,6 +15,8 @@ struct PersonalInfoView: View {
     
     @Binding var state : LoginView.PageState
     
+    @StateObject private var vm = PersonalInfoViewVM()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -191,6 +193,15 @@ struct PersonalInfoView: View {
         .onAppear(){
             if (!(preferenceUtil.isUseBiometricLogin ?? false)){
                 isUseBiometricLoginDialog = true
+            }
+            if let token = preferenceUtil.token{
+                Task{
+                    await vm.userInfo(token:token,onSuccess:{
+                        tongueRecognition_iOSApp.loginModel = LoginModel(token: vm.userInfoModel?.data?.token, username: vm.userInfoModel?.data?.username)
+                        preferenceUtil.token = vm.userInfoModel?.data?.token
+                        preferenceUtil.username = vm.userInfoModel?.data?.username
+                    }, onFailure:{})
+                }
             }
         }
         .ignoresSafeArea()

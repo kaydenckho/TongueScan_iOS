@@ -84,11 +84,13 @@ struct ContentView: View {
                                 loginPageState = .LoggedIn
                                 tongueRecognition_iOSApp.loginModel = LoginModel(token: vm.userInfoModel?.data?.token, username: vm.userInfoModel?.data?.username)
                                 preferenceUtil.token = vm.userInfoModel?.data?.token
+                                preferenceUtil.username = vm.userInfoModel?.data?.username
                             }, onFailure:{
+                                tongueRecognition_iOSApp.loginModel = nil
+                                preferenceUtil.token = nil
+                                preferenceUtil.username = nil
                                 tokenExpiredDialog = true
                                 loginPageState = .Login
-                                tongueRecognition_iOSApp.loginModel = nil
-                                preferenceUtil.token = vm.userInfoModel?.data?.token
                             })
                         }
                     }

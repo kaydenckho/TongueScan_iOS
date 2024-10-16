@@ -1,14 +1,13 @@
 //
-//  HomeVM.swift
+//  PersonalInfoViewVM.swift
 //  tongueRecognition_iOS
 //
-//  Created by user on 2023/6/14.
+//  Created by kayd3nckh on 15/10/2024.
 //
 
 import Foundation
-import Combine
 
-class HomeVM: ObservableObject {
+class PersonalInfoViewVM: ObservableObject {
     
     @Published var uploading: Bool = false
     
