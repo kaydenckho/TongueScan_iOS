@@ -23,6 +23,8 @@ struct CameraView: View {
     
     @State private var volumeHandler: JPSVolumeButtonHandler?
     
+    @State var isEnterFirstTime = true
+    
     var body: some View {
         NavigationStack{
             GeometryReader { geometry in
@@ -184,12 +186,20 @@ struct CameraView: View {
                     Task{
                         vm.startCamera(mode: mode)
                         volumeHandler = JPSVolumeButtonHandler(up: {
-                            if (!vm.isCapturing && mode == .Manual){
-                                vm.takePicture()
+                            if (isEnterFirstTime){
+                                isEnterFirstTime.toggle()
+                            } else{
+                                if (!vm.isCapturing && mode == .Manual){
+                                    vm.takePicture()
+                                }
                             }
                         }, downBlock: {
-                            if (!vm.isCapturing && mode == .Manual){
-                                vm.takePicture()
+                            if (isEnterFirstTime){
+                                isEnterFirstTime.toggle()
+                            } else{
+                                if (!vm.isCapturing && mode == .Manual){
+                                    vm.takePicture()
+                                }
                             }
                         })
                         volumeHandler?.start(true)

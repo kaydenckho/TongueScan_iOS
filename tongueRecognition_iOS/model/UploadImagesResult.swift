@@ -11,6 +11,8 @@ struct UploadImagesResult:Codable{
     var result: ResultArray?
     var image: String?
     var image_name: String?
+    var survey_id: Int?
+    var recommend: [Recommend]?
 }
 
 struct ResultArray:Codable{
@@ -27,3 +29,11 @@ struct ResultArray:Codable{
     var diabetes_prob: String?
     var diabetes_tongue_description_explain: String?
 }
+
+struct Recommend:Codable{
+    var name: String?
+    var food: [ProductModel]?
+}
+
+
+

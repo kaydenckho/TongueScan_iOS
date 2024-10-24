@@ -107,3 +107,5 @@
 "dontAskAgain" = "不再提示";
 "login_expired" = "登录已过期，请重新登录";
 "notNow" = "现在不用";
+"food_recommendation" = "调理推荐";
+"questionnaire_result_more_product" = "更多相关产品";

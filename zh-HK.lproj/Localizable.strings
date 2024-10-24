@@ -107,3 +107,5 @@
 "dontAskAgain" = "不再提示";
 "login_expired" = "登錄已過期，請重新登錄";
 "notNow" = "現在不用";
+"food_recommendation" = "調理推薦";
+"questionnaire_result_more_product" = "更多相關產品";

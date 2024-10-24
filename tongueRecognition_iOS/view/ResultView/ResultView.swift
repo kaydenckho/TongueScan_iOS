@@ -287,7 +287,36 @@ struct ResultView: View {
                                             .foregroundColor(Color("light_grey"))
                                         Spacer()
                                     }
-                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 40, trailing: 20))
+                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
+                                    // Recommendation
+                                    if let foodList = result?.recommend?[0].food{
+                                        Button(action: {
+                                            let url = Constant.SHOPIFY + "?token=\(tongueRecognition_iOSApp.loginModel?.token ?? "")"
+                                            openURL(URL(string: url)!)
+                                        }){
+                                            ZStack{
+                                                Color("green1")
+                                                    .cornerRadius(10)
+                                                VStack{
+                                                    HStack{
+                                                        "food_recommendation".localizedText(language: language)
+                                                            .foregroundColor(.black)
+                                                            .fontWeight(.semibold)
+                                                            .font(.headline)
+                                                        Spacer()
+                                                        "questionnaire_result_more_product".localizedText(language: language)
+                                                            .font(.subheadline)
+                                                            .foregroundColor(Color("indicator_grey"))
+                                                    }
+                                                    .padding(EdgeInsets(top: 15, leading: 30, bottom: 0, trailing: 30))
+                                                    RecommendListView(list: foodList)
+                                                        .padding(EdgeInsets(top: 5, leading: 20, bottom: 20, trailing: 20))
+                                                }
+                                            }
+                                        }
+                                        .padding(EdgeInsets(top: 20, leading: 15, bottom: 30, trailing: 15))
+                                    }
+                                    // Recommendation
                                     // Buttons
                                     Group{
                                         HStack(spacing:50){

@@ -29,7 +29,7 @@ struct Constant {
     static let BASE_URL_2 = "http://43.129.194.142:5000/"
     static let TONGUE_EXPLAIN = "tongue_explain"
     static let RESULT_APPOINTMENT = "https://shop.ecbothk.com/products/%E9%A0%90%E7%B4%84%E5%92%A8%E8%A9%A2"
-    static let RESULT_QUESTIONNAIRE = "https://ecbothk.com"
+    static let RESULT_QUESTIONNAIRE = "https://ecbothk.com/healthManage/index"
     
     // Shop
     static let SHOPIFY = "https://shop.ecbothk.com"

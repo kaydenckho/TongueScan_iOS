@@ -10,6 +10,8 @@ import PhotosUI
 
 struct HomeView: View {
     
+    @Environment(\.openURL) var openURL
+    
     @Environment(PreferenceUtil.self) var preferenceUtil
     
     @Binding var language : String?
