@@ -25,6 +25,8 @@ struct CameraView: View {
     
     @State var isEnterFirstTime = true
     
+    @Binding var tabViewSelection:Int
+    
     var body: some View {
         NavigationStack{
             GeometryReader { geometry in
@@ -120,7 +122,7 @@ struct CameraView: View {
                                 }
                                 .buttonStyle(ClickScaleUp())
                                 .navigationDestination(isPresented: $vm.uploadSuccess){
-                                    ResultView(isPageActive: $isPageActive, language: $language, result: vm.uploadImagesResult?.data)
+                                    ResultView(isPageActive: $isPageActive, language: $language, result: vm.uploadImagesResult?.data, tabViewSelection: $tabViewSelection)
                                 }
                                 Spacer()
                                 Button(action: {

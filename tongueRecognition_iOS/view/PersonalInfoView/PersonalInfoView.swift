@@ -99,6 +99,10 @@ struct PersonalInfoView: View {
                             
                             Button(action: {
                                 tongueRecognition_iOSApp.loginModel = nil
+                                preferenceUtil.token = nil
+                                preferenceUtil.username = nil
+                                preferenceUtil.isAgreedTerms = false
+                                preferenceUtil.isUseBiometricLogin = false
                                 preferenceUtil.isRememberLogin = false
                                 state = .Login
                             }){

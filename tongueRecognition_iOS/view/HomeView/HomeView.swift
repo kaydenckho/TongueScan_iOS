@@ -111,8 +111,6 @@ struct HomeView: View {
                                             tongueRecognition_iOSApp.loginModel = LoginModel(token: vm.userInfoModel?.data?.token, username: vm.userInfoModel?.data?.username)
                                             preferenceUtil.token = vm.userInfoModel?.data?.token
                                             preferenceUtil.username = vm.userInfoModel?.data?.username
-                                            print(vm.userInfoModel?.data?.token)
-                                            print(vm.userInfoModel?.data?.username)
                                         }, onFailure:{})
                                     }
                                 }

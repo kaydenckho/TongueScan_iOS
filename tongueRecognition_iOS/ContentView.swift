@@ -29,13 +29,13 @@ struct ContentView: View {
     
     var body: some View {
         if (isAutoCameraView){
-            CameraView(isPageActive: $isAutoCameraView, language: $language, mode: .Auto)
+            CameraView(isPageActive: $isAutoCameraView, language: $language, mode: .Auto, tabViewSelection: $selection)
                 .onAppear(){
                     isLoading = false
                     language = preferenceUtil.language
                 }
         } else if (isManualCameraView){
-            CameraView(isPageActive: $isManualCameraView, language: $language, mode: .Manual)
+            CameraView(isPageActive: $isManualCameraView, language: $language, mode: .Manual, tabViewSelection: $selection)
                 .onAppear(){
                     isLoading = false
                     language = preferenceUtil.language
