@@ -68,6 +68,9 @@ struct LoginView: View {
     @State var biometricNotSupportedDialog = false
     @State var biometricFirstTimeDialog = false
     
+    @State var isShowTermsAndConditionDialog = false
+    @State var scrollbarFlash: Int = 0
+    
     var body: some View {
         if (state == .LoggedIn){
             PersonalInfoView(language: $language, state: $state)
@@ -400,9 +403,6 @@ struct LoginView: View {
                                                     Button1View(text: isStartCountdown ? "\(sendCodeCountdown)s" : "send_verification_code".localizedString(language: language), width: 100, color: isStartCountdown ? Color.gray : Color("toolbarBackground"), topLeading:0, bottomLeading:0, topTrailing:20, bottomTrailing:20, verticalPadding:15, textSize: .footnote, textColor:.white)
                                                 }
                                                 .buttonStyle(ClickScaleDown())
-                                                .alert(vm.sendCodeModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.sendCodeCompleted){
-                                                    Button("confirm".localizedString(language: language), role: .cancel) { vm.sendCodeCompleted = false }
-                                                }
                                             }
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                             .overlay(
@@ -466,12 +466,22 @@ struct LoginView: View {
                                         
                                         if (state == .Register && inputType == .Email){
                                             (
-                                                "registerEmailHint1".localizedText(language: language)
-                                                    .font(.footnote)
-                                                    .foregroundColor(Color("toolbarBackground")) +
-                                                "registerEmailHint2".localizedText(language: language)
-                                                    .font(.footnote)
-                                                    .foregroundColor(Color("orange"))
+                                                Button(action: {
+                                                    Task{
+                                                        withAnimation(.linear(duration: 2.0)){
+                                                            isShowTermsAndConditionDialog = true
+                                                        }completion: {
+                                                            scrollbarFlash += 1
+                                                        }
+                                                    }
+                                                }){
+                                                    "registerEmailHint1".localizedText(language: language)
+                                                        .font(.footnote)
+                                                        .foregroundColor(Color("toolbarBackground")) +
+                                                    "registerEmailHint2".localizedText(language: language)
+                                                        .font(.footnote)
+                                                        .foregroundColor(Color("orange"))
+                                                }
                                             )
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 40, trailing: 20))
                                             .fixedSize(horizontal: false, vertical: true)
@@ -532,6 +542,13 @@ struct LoginView: View {
                         Button("confirm".localizedString(language: language), role: .cancel) { vm.verifyCodeCompleted = false }
                     }
                     LoadingView(text:"loading".localizedString(language: language)).opacity(vm.uploading ? 1 : 0)
+                    if (isShowTermsAndConditionDialog){
+                        TextDialog(isActive: $isShowTermsAndConditionDialog,titleArr: ["termsAndConditions_title".localizedString(language: language)],
+                                   description: "termsAndConditions_description".localizedText(language: language),
+                                   rightButtonText: "guide_agree_btn_text".localizedString(language: language), rightBtnAction:{
+                            isShowTermsAndConditionDialog = false
+                        }, trigger: $scrollbarFlash)
+                    }
                 }
                 .onTapGesture {
                     usernameIsFocused = false

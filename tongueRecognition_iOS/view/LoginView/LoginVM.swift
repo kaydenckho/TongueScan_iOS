@@ -85,6 +85,8 @@ class LoginVM: ObservableObject {
                         self.sendCodeModel = model
                         if (model?.code == 0){
                             callback()
+                        } else{
+                            self.sendCodeCompleted = true
                         }
                     }
                 case .failure(_):

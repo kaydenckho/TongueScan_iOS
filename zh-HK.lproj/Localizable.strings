@@ -26,7 +26,7 @@
 "taking_photo" = "拍照開始，請勿移動兩秒。";
 "take_photo_success" = "拍照已完成";
 "tongueDemoDescription" = "拍攝前請開啟手機音量，根據語音提示拍攝舌頭";
-"guideTitle" = "使用指南";
+"guideTitle" = "使用須知";
 "guideDescription" = "拍攝時請使用手機的後置攝像頭，請調整舌頭的位置，確保其完整且恰當地置於攝像範圍的核心區域。\n\n在進行拍攝時，務必確保周圍光照環境優良，應避免使用可能造成異色燈光干擾的照明設備。我們建議您選擇自然光源或白光光源下進行拍攝，以獲取最為真實、細致的舌象圖像效果。\n\n同時，請您仔細檢查並確保舌頭上無任何異物附著，無非正常顏色變異現象，並且讓舌面保持充分伸展與平坦，如此才能取得清晰、全面的舌診影像。\n\n須注意的是，由於光線照射、拍照角度、裝置性能等因素可能對結果產生影響，本功能所提供的舌診影像僅供參考。如有疑問或需進一步診斷，建議您直接聯繫專業中醫師進行問診。";
 "guide_agree_btn_text" = "我已知曉";
 "termsAndConditions" = "隱私政策";
@@ -98,7 +98,7 @@
 "inputUsernameDescription" = "您可以選擇任何您喜歡的內容，並且之後可以隨時更改。如果您跳過此步驟，系統會自動為您分配一個預設的暱稱。";
 "inputPasswordDescription" = "爲了您的賬戶安全，您的密碼須滿足以下條件";
 "registerEmailHint1" = "繼續使用，即表示您已閱讀並同意我們的";
-"registerEmailHint2" = "私隱政策及服務條款。";
+"registerEmailHint2" = "隱私政策";
 "next" = "下一步";
 "deleteAccount" = "刪除帳戶";
 "deleteAccountDescription" = "您可以發送電子郵件至info@ecbothk.com提交刪除帳戶要求，我們的管理員會在七個工作天內與您聯絡。";
