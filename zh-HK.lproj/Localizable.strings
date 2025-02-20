@@ -110,3 +110,4 @@
 "food_recommendation" = "調理推薦";
 "questionnaire_result_more_product" = "更多相關產品";
 "explanations" = "舌象解釋";
+"emailExist" = "郵箱已存在，請登錄";

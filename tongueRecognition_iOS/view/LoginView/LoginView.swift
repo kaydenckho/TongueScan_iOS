@@ -531,12 +531,12 @@ struct LoginView: View {
                             }
                             Spacer()
                         }
-                        .alert(vm.registerModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.registerCompleted){
-                            Button("confirm".localizedString(language: language), role: .cancel) { vm.registerCompleted = false }
+                        .alert("emailExist".localizedString(language: language), isPresented: $vm.sendCodeCompleted){
+                            Button("confirm".localizedString(language: language), role: .cancel) { vm.sendCodeCompleted = false }
                         }
                     }
-                    .alert(vm.sendCodeModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.sendCodeCompleted){
-                        Button("confirm".localizedString(language: language), role: .cancel) { vm.sendCodeCompleted = false }
+                    .alert(vm.registerModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.registerCompleted){
+                        Button("confirm".localizedString(language: language), role: .cancel) { vm.registerCompleted = false }
                     }
                     .alert(vm.verifyCodeModel?.message ?? "network_error".localizedString(language: language), isPresented: $vm.verifyCodeCompleted){
                         Button("confirm".localizedString(language: language), role: .cancel) { vm.verifyCodeCompleted = false }

@@ -110,4 +110,4 @@
 "food_recommendation" = "Recommendation";
 "questionnaire_result_more_product" = "More products";
 "explanations" = "Explanations";
-
+"emailExist" = "Email already exists, please login";

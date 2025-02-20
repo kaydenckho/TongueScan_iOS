@@ -110,3 +110,4 @@
 "food_recommendation" = "调理推荐";
 "questionnaire_result_more_product" = "更多相关产品";
 "explanations" = "舌像解释";
+"emailExist" = "邮箱已存在，请登录";
