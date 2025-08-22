@@ -292,6 +292,42 @@ struct ResultView: View {
                                         }
                                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20))
                                         
+                                        // Recommendation
+                                        if let foodList = result?.recommend?[0].food{
+                                            let shopify = Constant.SHOPIFY + "?token=\(tongueRecognition_iOSApp.loginModel?.token ?? "")"
+                                                ZStack{
+                                                    Color("green1")
+                                                        .cornerRadius(10)
+                                                    VStack{
+                                                        HStack{
+                                                            "food_recommendation".localizedText(language: language)
+                                                                .foregroundColor(.black)
+                                                                .fontWeight(.semibold)
+                                                                .font(.headline)
+                                                            Spacer()
+                                                            "questionnaire_result_more_product".localizedText(language: language)
+                                                                .font(.subheadline)
+                                                                .foregroundColor(Color("indicator_grey"))
+                                                                .onTapGesture{
+                                                                    openURL(URL(string: shopify)!)
+                                                                }
+                                                        }
+                                                        .padding(EdgeInsets(top: 15, leading: 30, bottom: 0, trailing: 30))
+                                                        RecommendListView(list: foodList){ selectedProduct in
+                                                            if let link = selectedProduct.jump_link{
+                                                                openURL(URL(string: link)!)
+                                                            } else{
+                                                                openURL(URL(string: shopify)!)
+                                                            }
+                                                        }
+                                                        .padding(EdgeInsets(top: 5, leading: 20, bottom: 20, trailing: 20))
+                                                    }
+                                                }
+                                            
+                                            .padding(EdgeInsets(top: 20, leading: 15, bottom: 30, trailing: 15))
+                                        }
+                                        // Recommendation
+                                        
                                         // Explanation
                                         VStack {
                                             "explanations".localizedText(language: language)
@@ -354,11 +390,23 @@ struct ResultView: View {
                                                         Text(otherFindingDescription)
                                                             .font(.subheadline)
                                                             .foregroundColor(Color("light_grey"))
+                                                            .padding([.bottom], 20)
                                                     }
+                                                    
                                                 }
                                                 Spacer()
                                             }
                                             .padding([.bottom], 20)
+                                            
+                                            //Reference
+                                            Group{
+                                                if let reference = result?.reference {
+                                                    Text(reference)
+                                                        .font(.subheadline)
+                                                        .foregroundColor(Color("light_grey"))
+                                                        .padding([.bottom], 10)
+                                                }
+                                            }
                                         }
                                         .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity)
                                         .padding()
@@ -370,36 +418,6 @@ struct ResultView: View {
                                         )
                                         .padding(20)
                                         
-                                        
-                                        // Recommendation
-                                        if let foodList = result?.recommend?[0].food{
-                                            Button(action: {
-                                                let url = Constant.SHOPIFY + "?token=\(tongueRecognition_iOSApp.loginModel?.token ?? "")"
-                                                openURL(URL(string: url)!)
-                                            }){
-                                                ZStack{
-                                                    Color("green1")
-                                                        .cornerRadius(10)
-                                                    VStack{
-                                                        HStack{
-                                                            "food_recommendation".localizedText(language: language)
-                                                                .foregroundColor(.black)
-                                                                .fontWeight(.semibold)
-                                                                .font(.headline)
-                                                            Spacer()
-                                                            "questionnaire_result_more_product".localizedText(language: language)
-                                                                .font(.subheadline)
-                                                                .foregroundColor(Color("indicator_grey"))
-                                                        }
-                                                        .padding(EdgeInsets(top: 15, leading: 30, bottom: 0, trailing: 30))
-                                                        RecommendListView(list: foodList)
-                                                            .padding(EdgeInsets(top: 5, leading: 20, bottom: 20, trailing: 20))
-                                                    }
-                                                }
-                                            }
-                                            .padding(EdgeInsets(top: 20, leading: 15, bottom: 30, trailing: 15))
-                                        }
-                                        // Recommendation
                                         // Buttons
                                         Group{
                                             HStack(spacing:50){
@@ -527,11 +545,10 @@ struct ResultView: View {
                             .replacingOccurrences(of: "\">", with: "")
                         let linkText = link.replacingOccurrences(of: "https://", with: "")
                         tongueDiabetesDescription = result?.result?.diabetes_tongue_description_explain?.replacingOccurrences(of: "<a href=\"\(link)\">\(linkText)</a>", with: "[\(linkText)](\(link))") ?? ""
-                        tongueDiabetesDescription += "\n[Hsu PC, Wu HK, Huang YC, Chang HH, Lee TC, Chen YP, Chiang JY, Lo LC. The tongue features associated with type 2 diabetes mellitus. Medicine. 2019 May 1;98(19):e15567.](https://journals.lww.com/md-journal/fulltext/2019/05100/the_tongue_features_associated_with_type_2.78.aspx)"
-                        tongueBodyColorDescription = (result?.result?.tontue_color_description_explain ?? "") + "\n\n[Seerangaiyan K, Jüch F, Winkel EG. Tongue coating: Its characteristics and role in intra-oral halitosis and general health—A review. Journal of breath research. 2018 Mar 6;12(3):034001.](https://pure.rug.nl/ws/portalfiles/portal/511957725/Tongue_coating_its_characteristics_and_role_in_intra_oral_halitosis_and_general_health_a_review.pdf)"
-                        tongueCoatingColorDescription = (result?.result?.coating_color_description_explain ?? "") + "\n\n[Lundgren T, Mobilia A, Hallström H, Egelberg J. Evaluation of tongue coating indices. Oral diseases. 2007 Mar;13(2):177-80.](https://onlinelibrary.wiley.com/doi/10.1111/j.1601-0825.2006.01261.x)"
-                        tongueCoatingThicknessDescription = (result?.result?.think_coating_description_explain ?? "") + "\n\n[Van Gils LM, Slot DE, Van der Sluijs E, Hennequin‐Hoenderdos NL, Van der Weijden F. Tongue coating in relationship to gender, plaque, gingivitis and tongue cleaning behaviour in systemically healthy young adults. International journal of dental hygiene. 2020 Feb;18(1):62-72.](https://www.researchgate.net/publication/334489576_Tongue_coating_in_relationship_to_gender_plaque_gingivitis_and_tongue_cleaning_behavior_in_systemically_healthy_young_adults)"
-                        otherFindingDescription = (result?.result?.think_coating_description_explain ?? "") + "\n\n[Balamanikandan P, Shetty P, Shetty U. Diabetic tongue–a review. Romanian Journal of Diabetes Nutrition and Metabolic Diseases. 2021 Jun 30;28(2):218-22.](https://www.researchgate.net/publication/355256419_Rom_J_Diabetes_Nutr_Metab_Dis_Diabetic_tongue_-a_review)"
+                        tongueBodyColorDescription = (result?.result?.tontue_color_description_explain ?? "")
+                        tongueCoatingColorDescription = (result?.result?.coating_color_description_explain ?? "")
+                        tongueCoatingThicknessDescription = (result?.result?.think_coating_description_explain ?? "")
+                        otherFindingDescription = (result?.result?.think_coating_description_explain ?? "")
                         
                     }
                
@@ -560,7 +577,7 @@ struct ResultView: View {
     func getCurrentDate() -> String{
         let today = Date.now
         let formatter = DateFormatter()
-        formatter.dateFormat = (preferenceUtil.language == "en") ? "yyyy-MMM-dd HH:mm" : "yyyy年MM月dd日 HH:mm"
+        formatter.dateFormat = (preferenceUtil.language == "en") ? "dd/MM/yyyy HH:mm" : "yyyy/MM/dd HH:mm"
         return formatter.string(from: today)
     }
 }

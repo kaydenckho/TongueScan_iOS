@@ -13,6 +13,7 @@ struct UploadImagesResult:Codable{
     var image_name: String?
     var survey_id: Int?
     var recommend: [Recommend]?
+    var reference: String?
 }
 
 struct ResultArray:Codable{

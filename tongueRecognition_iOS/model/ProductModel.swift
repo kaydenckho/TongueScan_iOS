@@ -19,4 +19,5 @@ struct ProductModel:Codable, Hashable{
     var merchant: String?
     var ingredient: String?
     var tutorial: String?
+    var jump_link: String?
 }

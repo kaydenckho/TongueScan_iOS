@@ -9,7 +9,8 @@ import SwiftUI
 
 struct RecommendListView: View {
     
-    let list:[ProductModel]
+    let list: [ProductModel]
+    var onItemClick: (ProductModel) -> Void // Closure for click action
     
     var body: some View {
         
@@ -34,11 +35,13 @@ struct RecommendListView: View {
                     }
                     .frame(width: 140, height: 220)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                    .onTapGesture {
+                        onItemClick(item) // Handle click action
+                    }
                 }
                 .listStyle(.plain)
             }
         }
-        
     }
 }
 
