@@ -1,6 +1,6 @@
 /* 
   InfoPlist.strings
-  tongueRecognition_iOS
+  tongueScan_iOS
 
   Created by user on 2023/6/20.
   
@@ -8,5 +8,5 @@
 
 NSCameraUsageDescription = "需要開啟相機以拍攝舌象照片。";
 NSPhotoLibraryAddUsageDescription = "需要開啟權限以儲存舌象照片到圖庫。";
-CFBundleDisplayName = "觀舌辨食";
-NSFaceIDUsageDescription = "需要生物識別憑據以登入觀舌辨食";
+CFBundleDisplayName = "智舌鏡";
+NSFaceIDUsageDescription = "需要生物識別憑據以登入智舌鏡";
