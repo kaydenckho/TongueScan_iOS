@@ -14,17 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests.xcscheme</key>
+		<key>Pods-TongueScan_iOS-TongueScan_iOSUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-tongueRecognition_iOS.xcscheme</key>
+		<key>Pods-TongueScan_iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-tongueRecognition_iOSTests.xcscheme</key>
+		<key>Pods-TongueScan_iOSTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
