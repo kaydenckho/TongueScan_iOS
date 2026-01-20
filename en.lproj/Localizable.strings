@@ -1,4 +1,4 @@
-"appName" = "Tongue Scan";
+"appName" = "Tongue HealthChecker";
 "home" = "Home page";
 "course" = "Courses";
 "healthTest" = "Management";
@@ -8,7 +8,7 @@
 "manual_mode" = "Manual";
 "uploading" = "Uploading";
 "loading" = "Loading";
-"result_title" = "Tongue scan result";
+"result_title" = "Tongue examination report";
 "result_description" = "The A.I. analysis results are for reference only. Please consult professionals for detail explanation of the tongue image.";
 "result_color1" = "Tongue Colour";
 "result_color2" = "Tongue Coating Colour";
@@ -39,7 +39,7 @@
 "share_tongue" = "Redirect image";
 "retry" = "Reshoot";
 "result_click_to_see_full_image" = "Click to see full image";
-"result_test_date" = "Scan date: ";
+"result_test_date" = "Test date: ";
 "result_tongue_health_index" = "Health condition of tongue coating:";
 "result_tongue_health_index_good" = "Healthy";
 "result_tongue_health_index_bad" = "Unhealthy";
@@ -70,7 +70,7 @@
 "newPassword" = "New password";
 "resetPassword" = "Reset Password";
 "hint" = "Hint";
-"hint_login" = "After logging in, the system can record your tongue image.";
+"hint_login" = "After logging in, the system can record your tongue information and make food recommendations more accurate.";
 "go_to_login" = "Login";
 "continue_to_test" = "Not now";
 "logout" = "Logout";
@@ -111,5 +111,3 @@
 "questionnaire_result_more_product" = "More products";
 "explanations" = "Explanations";
 "emailExist" = "Email already exists, please login";
-"resultDesc" = "Please review the tongue picture for clarity and completeness; redo the shot of you see blur or missing areas. Once it is satisfactory, click the following link to access your analysis";
-"gotoWeb" = "Visit the official website";

@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests/Pods-tongueRecognition_iOS-tongueRecognition_iOSUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/JPSVolumeButtonHandler/JPSVolumeButtonHandler.framework

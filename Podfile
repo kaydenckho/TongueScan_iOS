@@ -1,20 +1,20 @@
 # Uncomment the next line to define a global platform for your project
   platform :ios, '9.0'
 
-target 'TongueScan_iOS' do
+target 'tongueRecognition_iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for tongueScan_iOS
+  # Pods for tongueRecognition_iOS
   pod 'Alamofire'
   pod 'JPSVolumeButtonHandler'
 
-  target 'TongueScan_iOSTests' do
+  target 'tongueRecognition_iOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'TongueScan_iOSUITests' do
+  target 'tongueRecognition_iOSUITests' do
     # Pods for testing
   end
 

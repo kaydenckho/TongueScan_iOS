@@ -1,6 +1,6 @@
 /* 
   InfoPlist.strings
-  tongueScan_iOS
+  tongueRecognition_iOS
 
   Created by user on 2023/6/20.
   
@@ -8,5 +8,5 @@
 
 NSCameraUsageDescription = "Camera is required to capture tongue image.";
 NSPhotoLibraryAddUsageDescription = "Permission required for saving tongue image to photo library.";
-CFBundleDisplayName = "Tongue Scan";
-NSFaceIDUsageDescription = "Biometric credentials is required to log in to Tongue Scan";
+CFBundleDisplayName = "Tongue HealthChecker";
+NSFaceIDUsageDescription = "Biometric credentials is required to log in to Tongue HealthChecker";

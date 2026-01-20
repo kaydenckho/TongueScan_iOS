@@ -1,4 +1,4 @@
-"appName" = "智舌鏡";
+"appName" = "觀舌辨食";
 "home" = "首頁";
 "course" = "課程";
 "healthTest" = "健康管理";
@@ -8,7 +8,7 @@
 "manual_mode" = "手動拍攝";
 "uploading" = "上傳照片中";
 "loading" = "加載中";
-"result_title" = "舌象拍照結果";
+"result_title" = "舌象檢測報告";
 "result_description" = "舌象檢測使用圖像分析技術和捲積神經網絡對您的舌象進行處理和分析。結果如下，僅供參考。";
 "result_color1" = "舌質顏色";
 "result_color2" = "舌苔顏色";
@@ -22,7 +22,7 @@
 "camera_error" = "無法打開相機";
 "retake_photo" = "重新拍照";
 "save_photo" = "儲存圖片";
-"upload_photo" = "上傳照片";
+"upload_photo" = "上傳分析";
 "taking_photo" = "拍照開始，請勿移動兩秒。";
 "take_photo_success" = "拍照已完成";
 "tongueDemoDescription" = "拍攝前請開啟手機音量，根據語音提示拍攝舌頭";
@@ -39,7 +39,7 @@
 "share_tongue" = "轉發舌圖";
 "retry" = "重新拍攝";
 "result_click_to_see_full_image" = "點擊查看原圖";
-"result_test_date" = "拍照日期：";
+"result_test_date" = "檢測日期：";
 "result_tongue_health_index" = "舌苔健康狀況：";
 "result_tongue_health_index_good" = "健康";
 "result_tongue_health_index_bad" = "不健康";
@@ -70,9 +70,9 @@
 "newPassword" = "新密碼";
 "resetPassword" = "重置密碼";
 "hint" = "提示";
-"hint_login" = "登錄後系統可記錄您的舌象";
+"hint_login" = "登錄後系統可記錄您的舌象訊息，餐品推薦更準確哦";
 "go_to_login" = "前往登錄";
-"continue_to_test" = "繼續拍照";
+"continue_to_test" = "繼續測試";
 "logout" = "退出登錄";
 "diabetesTongueTitle" = "與高血糖人群舌象的相似度";
 "cancel" = "取消";
@@ -111,5 +111,3 @@
 "questionnaire_result_more_product" = "更多相關產品";
 "explanations" = "舌象解釋";
 "emailExist" = "郵箱已存在，請登錄";
-"resultDesc" = "請檢視舌像照片品質。若影像模糊或不完整，請重拍；若清晰完整，請點擊以下鏈接查看分析。";
-"gotoWeb" = "前往官網";
