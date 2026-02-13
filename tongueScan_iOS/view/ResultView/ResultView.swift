@@ -175,15 +175,16 @@ struct ResultView: View {
                                         }
                                         .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
                                         HStack{
+                                            Spacer()
                                             Button(action:{
-                                                url = Constant.SHOPIFY
-                                                openWebView.toggle()
+                                                if let url = URL(string: Constant.SHOPIFY) {
+                                                    openURL(url)
+                                                }
                                             }){
-                                                Text("gotoWeb".localizedString(language: language))
-                                                    .foregroundColor(Color("result_grey"))
-                                                    .fontWeight(.bold)
-                                                    .font(.body)
+                                                DialogButtonView(text: "gotoWeb".localizedString(language: language), width: 100, backgroundColor: Color("transparent"), borderColor: Color("toolbarBackground"), textColor: Color("toolbarBackground"), isTextBold: true,
+                                                                 fontSize: .footnote, cornerRadius: 20)
                                             }
+                                            .buttonStyle(ClickScaleDown())
                                             Spacer()
                                         }
                                         .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))

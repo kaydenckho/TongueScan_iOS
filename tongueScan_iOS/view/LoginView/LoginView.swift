@@ -70,6 +70,8 @@ struct LoginView: View {
     
     @State var isShowTermsAndConditionDialog = false
     @State var scrollbarFlash: Int = 0
+    @State var isPrivacyPolicyAgreed = false
+    @State var isShowPrivacyPolicyRequiredAlert = false
     
     var body: some View {
         if (state == .LoggedIn){
@@ -465,27 +467,38 @@ struct LoginView: View {
                                         .buttonStyle(ClickScaleDown())
                                         
                                         if (state == .Register && inputType == .Email){
-                                            (
-                                                Button(action: {
-                                                    Task{
-                                                        withAnimation(.linear(duration: 2.0)){
-                                                            isShowTermsAndConditionDialog = true
-                                                        }completion: {
-                                                            scrollbarFlash += 1
-                                                        }
+                                            HStack(alignment: .top, spacing: 8){
+                                                Spacer()
+                                                HStack(alignment: .top, spacing: 8){
+                                                    Button(action: { isPrivacyPolicyAgreed.toggle() }) {
+                                                        Image(systemName: isPrivacyPolicyAgreed ? "checkmark.circle.fill" : "circle")
+                                                            .foregroundColor(isPrivacyPolicyAgreed ? Color("green1") : Color("indicator_grey"))
                                                     }
-                                                }){
-                                                    "registerEmailHint1".localizedText(language: language)
+                                                    .buttonStyle(.plain)
+                                                    Button(action: {
+                                                        Task{
+                                                            withAnimation(.linear(duration: 2.0)){
+                                                                isShowTermsAndConditionDialog = true
+                                                            }completion: {
+                                                                scrollbarFlash += 1
+                                                            }
+                                                        }
+                                                    }){
+                                                        (Text("registerEmailHint1".localizedString(language: language) + " ")
+                                                            .foregroundColor(Color("toolbarBackground"))
+                                                        + Text("registerEmailHint2".localizedString(language: language))
+                                                            .foregroundColor(Color("orange")))
                                                         .font(.footnote)
-                                                        .foregroundColor(Color("toolbarBackground")) +
-                                                    "registerEmailHint2".localizedText(language: language)
-                                                        .font(.footnote)
-                                                        .foregroundColor(Color("orange"))
+                                                        .multilineTextAlignment(.center)
+                                                    }
+                                                    .buttonStyle(.plain)
                                                 }
-                                            )
+                                                .frame(maxWidth: .infinity)
+                                                Spacer()
+                                            }
+                                            .frame(maxWidth: .infinity)
                                             .padding(EdgeInsets(top: 0, leading: 20, bottom: 40, trailing: 20))
                                             .fixedSize(horizontal: false, vertical: true)
-                                            .multilineTextAlignment(.center)
                                         }
                                         
                                         if (state == .Login){
@@ -581,6 +594,9 @@ struct LoginView: View {
             }
             .alert("biometric_first_time".localizedString(language: language), isPresented: $biometricFirstTimeDialog){
                 Button("confirm".localizedString(language: language), role: .cancel) { biometricFirstTimeDialog = false }
+            }
+            .alert("please_agree_privacy_policy".localizedString(language: language), isPresented: $isShowPrivacyPolicyRequiredAlert){
+                Button("confirm".localizedString(language: language), role: .cancel) { isShowPrivacyPolicyRequiredAlert = false }
             }
             .onAppear(){
                 clearData()
@@ -693,7 +709,9 @@ struct LoginView: View {
     func handleRegister(){
         switch inputType {
             case .Email:
-                if (!email.isEmpty){
+                if (!isPrivacyPolicyAgreed){
+                    isShowPrivacyPolicyRequiredAlert = true
+                } else if (!email.isEmpty){
                     Task{
                         await vm.sendCode(email: email) {
                             inputType = .Code
@@ -803,6 +821,7 @@ struct LoginView: View {
         confirmpasswordIsNotValid = false
         emailIsNotValid = false
         codeIsEmpty = false
+        isPrivacyPolicyAgreed = false
     }
 
 }

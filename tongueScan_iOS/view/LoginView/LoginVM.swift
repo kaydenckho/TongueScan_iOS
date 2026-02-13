@@ -114,7 +114,6 @@ class LoginVM: ObservableObject {
                         if (model?.code == 0){
                             callback()
                         }
-                        self.sendCodeCompleted = true
                     }
                 case .failure(_):
                     DispatchQueue.main.async {

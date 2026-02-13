@@ -7,79 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		002ED083FE2A754216B121210036E50E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
-		0195899306D8FDF8C659F997F53F6A23 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4412D947E2BD0910003E8A367F9D540 /* MediaPlayer.framework */; };
-		0FD475F74241F3DA33670DBF88806ACD /* JPSVolumeButtonHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B11596E3115D5A1814A8FFE8623627A /* JPSVolumeButtonHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		119B37D7E7D3A59C6685FC0EFEE881CE /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E2F6EADBC7B74D0BF1A8F881B278F /* TaskDelegate.swift */; };
-		2119BBBDD76C9B182007C9E8D3BD8DDA /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DCE3411AD073BBDE16A4A421158A60 /* Timeline.swift */; };
-		35994BF776CC11BBA9A10E0A0A0F7808 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A00D05762B239A65A2F5015DF9D77EE /* Pods-TongueScan_iOS-TongueScan_iOSUITests-dummy.m */; };
-		3A9544DE2378C8266BF2FE84F3AC0DC0 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 432ECB3433A61982595065EA5281B4BA /* Pods-TongueScan_iOS-TongueScan_iOSUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3DE8AA12C52787A0BA570717BB27AAB0 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C307E5129890B263834C5D51B59A6614 /* ServerTrustPolicy.swift */; };
-		43C3C17BFDFD71F45C5A7AFB0C0BEF45 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F45E5951DB732E8D723DE90E3C0094 /* ResponseSerialization.swift */; };
-		47624CB0C7DB4DA3180EC2D6719F1A1E /* Pods-TongueScan_iOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFC2DA464891AE08662F74DF88FF770 /* Pods-TongueScan_iOSTests-dummy.m */; };
-		4C301CCA81AAFB4453B6B827F846E0AC /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9896336C91594A83D9EC0B8EE5275B7 /* Validation.swift */; };
-		537D7452E6C8C82D9C1908EA29706E35 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCAF77E99370B6EFEC0C3B78B9FB546 /* Notifications.swift */; };
-		5CECD168465CF59B489253695D3FB51F /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475183D4F5B099312A44E9D809F9903 /* NetworkReachabilityManager.swift */; };
-		649AC6ECA3960FDBAD5401289696E04C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
-		67F1550CD3A53CE9B505134AFA997F3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
-		6D0464BDCD6CE52FE613303A5558DE30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
-		6DF154F51210D4C446AA021F2DBA34A4 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F64C3EDE59CAE11692CB476BDE4E4D /* MultipartFormData.swift */; };
-		70EA6F068498CEC1B273D6BB1E74EB4E /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146792F8ACF09BCCE3B6166321748BFA /* Alamofire.swift */; };
-		75CFA7BF102558AB52A5EEBC3D2AC314 /* Pods-TongueScan_iOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AA560B7C5B16D1E42C799AEBC94529A /* Pods-TongueScan_iOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8023EECE8437F0311A065A9C2F420E2E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D45D1A4A9BFA7D1AD0F0EE6477A4AE /* SessionManager.swift */; };
-		85379CCF081FC9C36F082E71D2DF4D2F /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74878BAA2E3EE245989E9285A014BC24 /* SessionDelegate.swift */; };
-		89FBF4782A012FDC216275979CE17CFE /* JPSVolumeButtonHandler-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4C249CE3B7A19AE0C9BBA1F35DA79A /* JPSVolumeButtonHandler-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C5758BDCBFB5C7C537426F301A2A0DD /* JPSVolumeButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7F7CE292F24EDDFB5C41F658DEE084 /* JPSVolumeButtonHandler.m */; };
-		90E42B43904F2F22CA3A8BBD0155D9A2 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2AD3D52EED380971B5FB9D6492FED /* AFError.swift */; };
-		9146510540C8DAF109CC4BCCB0CA74A9 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A521C9BC3F41EC4BA89AF3526B290ACB /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BCBBFE03318F5DD172F9E1F3100F67B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F60E2503B1A103127E0F77AAD200D9 /* Response.swift */; };
-		A00771B5E045664E6CFF85AFADF9E470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */; };
-		A8F0FE7A03E97942897E2A1A34ABA5E9 /* JPSVolumeButtonHandler-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E30737E8370DD621F872417A89876C0B /* JPSVolumeButtonHandler-dummy.m */; };
-		AB70DA7586B75BDBB8548C870D3A8609 /* Pods-TongueScan_iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 769AAE5582CF5CF3DD77946CA056B4EA /* Pods-TongueScan_iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C27C72B2D755F3A7B2D97089CA75146F /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F2EDD400216673923776CDD0F0635 /* Alamofire-dummy.m */; };
-		CA1955C23B5B3CDC5B8CC3DFA49193A4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D298C727DDCC1888B761AC24454BD5 /* AVFoundation.framework */; };
-		D46CB5AF7BE345C5D27ABF9DCF692881 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E52D66F9766C4A93A37B643626C294 /* Result.swift */; };
-		D593E5BEB4221FF272DBF69E51945319 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45BA8634CA63589AC1F3F211510B05 /* Request.swift */; };
-		F5C92DC8E274C4FC541267A97575BC05 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8128110BB92E4277041D10C8AF84D /* ParameterEncoding.swift */; };
-		F93AEAF3659818E2308E0E5C70B66423 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE02052A0DB66C65F66909CABEDBC5 /* DispatchQueue+Alamofire.swift */; };
-		FBB0057F852D104F118B3FE63D73BA89 /* Pods-TongueScan_iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE23D76395023F7C265EFA41337309B /* Pods-TongueScan_iOS-dummy.m */; };
+		0140E116C89D4DA1734B3DD6C0472F7A /* JPSVolumeButtonHandler-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E30737E8370DD621F872417A89876C0B /* JPSVolumeButtonHandler-dummy.m */; };
+		173569C23C63F22130A37A189DA8AE3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCB9694DF8033FC6C02675088DAB45B /* Foundation.framework */; };
+		2090156DA6C522B1B8FCFDBBB3CA0C4A /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74878BAA2E3EE245989E9285A014BC24 /* SessionDelegate.swift */; };
+		24DD60DC4516CDD7B31B37547F0AAD67 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED259D6E69FC0FBBB789311BA68DA62 /* MediaPlayer.framework */; };
+		2937D03EEE8D1A854A602D65A3FF7183 /* Pods-TongueScan_iOSTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFC2DA464891AE08662F74DF88FF770 /* Pods-TongueScan_iOSTests-dummy.m */; };
+		3058080B1A0F281677C20F3800252477 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE02052A0DB66C65F66909CABEDBC5 /* DispatchQueue+Alamofire.swift */; };
+		32536533B40A48B37D477A78D82CD026 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCB9694DF8033FC6C02675088DAB45B /* Foundation.framework */; };
+		32B325309337B99D72544C9DBC959A6E /* Pods-TongueScan_iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 769AAE5582CF5CF3DD77946CA056B4EA /* Pods-TongueScan_iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35A092EC2D83C247E92D897935E33EE0 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C307E5129890B263834C5D51B59A6614 /* ServerTrustPolicy.swift */; };
+		370FFC78DBAE8A2237CC38BE0E7F13F3 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F45E5951DB732E8D723DE90E3C0094 /* ResponseSerialization.swift */; };
+		387061136B6DDFFDED26AA8590F93107 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9896336C91594A83D9EC0B8EE5275B7 /* Validation.swift */; };
+		42BF55769C777459F20D24991909536D /* Pods-TongueScan_iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE23D76395023F7C265EFA41337309B /* Pods-TongueScan_iOS-dummy.m */; };
+		48133100A05F0A2DF0D38F158C70122D /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D45D1A4A9BFA7D1AD0F0EE6477A4AE /* SessionManager.swift */; };
+		4D7D8C5F9731F6BCB33618642BA9CCFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCB9694DF8033FC6C02675088DAB45B /* Foundation.framework */; };
+		4E3AA59955ABD7E40C95133C21A688E9 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475183D4F5B099312A44E9D809F9903 /* NetworkReachabilityManager.swift */; };
+		660DD3CD243D9FF153B0C2A7D6F84A05 /* JPSVolumeButtonHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B11596E3115D5A1814A8FFE8623627A /* JPSVolumeButtonHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AAD22242F1F3E86006EBEB7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD22232F1F3E86006EBEB7 /* PrivacyInfo.xcprivacy */; };
+		6DB6DCD8283B2E33E5ED165933D2B915 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E8128110BB92E4277041D10C8AF84D /* ParameterEncoding.swift */; };
+		7C77F9473A6CC97B0B36624F10B417C6 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A00D05762B239A65A2F5015DF9D77EE /* Pods-TongueScan_iOS-TongueScan_iOSUITests-dummy.m */; };
+		7E8EAB14AEB3E25781B8A95AEA6E49A4 /* JPSVolumeButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7F7CE292F24EDDFB5C41F658DEE084 /* JPSVolumeButtonHandler.m */; };
+		7F27F85995181B8BD126AD09AD3DB3C9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F60E2503B1A103127E0F77AAD200D9 /* Response.swift */; };
+		83D3996519563C6EF0DCE8B8E5D0E99B /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F64C3EDE59CAE11692CB476BDE4E4D /* MultipartFormData.swift */; };
+		884A285037C1218936F7CC2451CCC81E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCB9694DF8033FC6C02675088DAB45B /* Foundation.framework */; };
+		936C476618F77CC4545D37E0303F11BA /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848E2F6EADBC7B74D0BF1A8F881B278F /* TaskDelegate.swift */; };
+		B2F0E8B1A2868D943F3F51D008A043B2 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCAF77E99370B6EFEC0C3B78B9FB546 /* Notifications.swift */; };
+		B70D6EAFA3E132C689C12AAA67D746DF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E52D66F9766C4A93A37B643626C294 /* Result.swift */; };
+		BA5F64F1C97F2ECBF3E838ED19CFCB5E /* Pods-TongueScan_iOSTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AA560B7C5B16D1E42C799AEBC94529A /* Pods-TongueScan_iOSTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C07D6284223549B65BE4AE58C3F847DC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE45BA8634CA63589AC1F3F211510B05 /* Request.swift */; };
+		C1430FD235208F3A461E2BDD2632C715 /* JPSVolumeButtonHandler-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4C249CE3B7A19AE0C9BBA1F35DA79A /* JPSVolumeButtonHandler-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF5A217D0888F7D7D7D7ACADAAF9E048 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A521C9BC3F41EC4BA89AF3526B290ACB /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D371AC950FB6847BF5D88F36CA45E5A0 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 178F2EDD400216673923776CDD0F0635 /* Alamofire-dummy.m */; };
+		D8D28D0FC4E863DCF0B7C4036F67D207 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCB9694DF8033FC6C02675088DAB45B /* Foundation.framework */; };
+		DA3B58FE16512709D94A6D218D3D3534 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2AD3D52EED380971B5FB9D6492FED /* AFError.swift */; };
+		E23BEF1D4AD9E155D11A45AE53B1BC30 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146792F8ACF09BCCE3B6166321748BFA /* Alamofire.swift */; };
+		E366A9D5E0FEABE6010203EFD8F3AA15 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DCE3411AD073BBDE16A4A421158A60 /* Timeline.swift */; };
+		E5DD09A9F38CF915D67AA8355920D288 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F5FF5314F106D6D288F389BA457186 /* AVFoundation.framework */; };
+		FB633E37C89BEB4A9C3E8D5FD80CCA63 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 432ECB3433A61982595065EA5281B4BA /* Pods-TongueScan_iOS-TongueScan_iOSUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		373C61ECD339422D0C6FA5F05352953D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
-		};
-		7BEA83EBF3064F02383C582C429721E0 /* PBXContainerItemProxy */ = {
+		8622F857DC901D2BA612584B0087184A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 35B6AC0A7EF19650ADE76C22449ACB77;
 			remoteInfo = JPSVolumeButtonHandler;
 		};
-		7C809AEF13A1B28FB3991972904E15DB /* PBXContainerItemProxy */ = {
+		A482045C6A45A9D5777F25DBFC719980 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
 		};
-		8610E9AAE5776E274FA6CD6987A53CC6 /* PBXContainerItemProxy */ = {
+		DE60D8A6E38E85353B29BCEE8044DB28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		EAFAD371CA16B7D33B6C4473381AADF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35B6AC0A7EF19650ADE76C22449ACB77;
+			remoteInfo = JPSVolumeButtonHandler;
+		};
+		FFD0D07FC2CCC1D1E9126BD2586E8162 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EDF5301C43F4682011EBA24616D69885;
 			remoteInfo = "Pods-TongueScan_iOS";
-		};
-		DFDEA086361896458030AF450559B4EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 35B6AC0A7EF19650ADE76C22449ACB77;
-			remoteInfo = JPSVolumeButtonHandler;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -87,12 +88,12 @@
 		0A00D05762B239A65A2F5015DF9D77EE /* Pods-TongueScan_iOS-TongueScan_iOSUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TongueScan_iOS-TongueScan_iOSUITests-dummy.m"; sourceTree = "<group>"; };
 		0A0A06FA1A48EA27CE4647A1F0A0888B /* Pods-TongueScan_iOSTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TongueScan_iOSTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0DCAF77E99370B6EFEC0C3B78B9FB546 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		1291E820F6ED8F0E93FB4421D7FA1B07 /* JPSVolumeButtonHandler */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JPSVolumeButtonHandler; path = JPSVolumeButtonHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1291E820F6ED8F0E93FB4421D7FA1B07 /* JPSVolumeButtonHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JPSVolumeButtonHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		146792F8ACF09BCCE3B6166321748BFA /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		178F2EDD400216673923776CDD0F0635 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		17EF5806241BAC9392C31BD6405BBE11 /* Pods-TongueScan_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TongueScan_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		1CFE02052A0DB66C65F66909CABEDBC5 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1FCB9694DF8033FC6C02675088DAB45B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		259000E93FCDBE74C19735E35248629B /* JPSVolumeButtonHandler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JPSVolumeButtonHandler.release.xcconfig; sourceTree = "<group>"; };
 		263CF447CF584C07E07F448A95AFE391 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TongueScan_iOS-TongueScan_iOSUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		26DE0D7BE194E88936BD08DC56ED0E31 /* Pods-TongueScan_iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TongueScan_iOS-Info.plist"; sourceTree = "<group>"; };
@@ -103,10 +104,10 @@
 		41E53F58A445F61A90C24B8EFE0AD4E2 /* Pods-TongueScan_iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TongueScan_iOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		432ECB3433A61982595065EA5281B4BA /* Pods-TongueScan_iOS-TongueScan_iOSUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TongueScan_iOS-TongueScan_iOSUITests-umbrella.h"; sourceTree = "<group>"; };
 		4FFC2DA464891AE08662F74DF88FF770 /* Pods-TongueScan_iOSTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TongueScan_iOSTests-dummy.m"; sourceTree = "<group>"; };
-		52D298C727DDCC1888B761AC24454BD5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		5CDA4C804DBAB2B7C8B77E78E074919C /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E52D66F9766C4A93A37B643626C294 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		6AAD22232F1F3E86006EBEB7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		6C0EC02CFD4813B8A1CFD33AF6C1CF74 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TongueScan_iOS-TongueScan_iOSUITests-Info.plist"; sourceTree = "<group>"; };
 		6ED7B4E1E20B26F63E1D329FC710F0FF /* Pods-TongueScan_iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TongueScan_iOS-frameworks.sh"; sourceTree = "<group>"; };
 		6F4C249CE3B7A19AE0C9BBA1F35DA79A /* JPSVolumeButtonHandler-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JPSVolumeButtonHandler-umbrella.h"; sourceTree = "<group>"; };
@@ -124,10 +125,11 @@
 		8CC75E12F271F06630CCCE8B37921683 /* Pods-TongueScan_iOS-TongueScan_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TongueScan_iOS-TongueScan_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96FEF94486A8095631DC6099C8EAE960 /* Pods-TongueScan_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TongueScan_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D6BF45A90AFCFFAFD50C39A3E53CBFB /* Pods-TongueScan_iOS-TongueScan_iOSUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TongueScan_iOS-TongueScan_iOSUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9ED259D6E69FC0FBBB789311BA68DA62 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		9FA22CCC5A9D57BA319DE3A072023889 /* JPSVolumeButtonHandler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JPSVolumeButtonHandler.debug.xcconfig; sourceTree = "<group>"; };
-		A4412D947E2BD0910003E8A367F9D540 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		A521C9BC3F41EC4BA89AF3526B290ACB /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		A9F5FF5314F106D6D288F389BA457186 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		AB58751018B9FCDDC26A4EEEBA01AE7D /* Pods-TongueScan_iOS-TongueScan_iOSUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TongueScan_iOS-TongueScan_iOSUITests.modulemap"; sourceTree = "<group>"; };
 		ABA251CCC95C8BAA756CB4882E344542 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TongueScan_iOS-TongueScan_iOSUITests-frameworks.sh"; sourceTree = "<group>"; };
 		AD7F7CE292F24EDDFB5C41F658DEE084 /* JPSVolumeButtonHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JPSVolumeButtonHandler.m; path = JPSVolumeButtonHandler/JPSVolumeButtonHandler.m; sourceTree = "<group>"; };
@@ -142,58 +144,58 @@
 		CFB1AB822E376D4A0EC369441982D7D8 /* Pods-TongueScan_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TongueScan_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D0587E12B0950D0EE3ED94438FCA515D /* Pods-TongueScan_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TongueScan_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D11D6CCDE7151AEE00348F9D8656A850 /* Pods-TongueScan_iOS-TongueScan_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TongueScan_iOS-TongueScan_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		D1738074ECB382E0CA0C7DE7358B8319 /* Pods-TongueScan_iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TongueScan_iOS"; path = Pods_TongueScan_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1738074ECB382E0CA0C7DE7358B8319 /* Pods_TongueScan_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TongueScan_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D329B9A9C8F5B12557DC4A6184136229 /* JPSVolumeButtonHandler.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JPSVolumeButtonHandler.modulemap; sourceTree = "<group>"; };
-		D51C6751BACD856CF842BEFA0EF9A2B0 /* Pods-TongueScan_iOS-TongueScan_iOSUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TongueScan_iOS-TongueScan_iOSUITests"; path = Pods_TongueScan_iOS_TongueScan_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D51C6751BACD856CF842BEFA0EF9A2B0 /* Pods_TongueScan_iOS_TongueScan_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TongueScan_iOS_TongueScan_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60AF14104B67681497752E1ED73EAAA /* Pods-TongueScan_iOSTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TongueScan_iOSTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		DD77482EAE53B03DC792A87179F10D0A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		E30737E8370DD621F872417A89876C0B /* JPSVolumeButtonHandler-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JPSVolumeButtonHandler-dummy.m"; sourceTree = "<group>"; };
 		E9F60E2503B1A103127E0F77AAD200D9 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		ED8776EDEB6C9AEC864C6265C3A705D8 /* JPSVolumeButtonHandler-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JPSVolumeButtonHandler-prefix.pch"; sourceTree = "<group>"; };
 		EEE23D76395023F7C265EFA41337309B /* Pods-TongueScan_iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TongueScan_iOS-dummy.m"; sourceTree = "<group>"; };
-		F6DD1ADE35DC23C99F3947827FCCCD5E /* Pods-TongueScan_iOSTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TongueScan_iOSTests"; path = Pods_TongueScan_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6DD1ADE35DC23C99F3947827FCCCD5E /* Pods_TongueScan_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TongueScan_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1FDEBC1279186C4DE344C5D2CCE81B3D /* Frameworks */ = {
+		46484538CA43F4B11CD4F32F42BCE5EA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D0464BDCD6CE52FE613303A5558DE30 /* Foundation.framework in Frameworks */,
+				32536533B40A48B37D477A78D82CD026 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52E4392E045561EEB8ECFE2CACDB19A2 /* Frameworks */ = {
+		69F0BB8A7B61A5704A0C55C77BB9D308 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				002ED083FE2A754216B121210036E50E /* Foundation.framework in Frameworks */,
+				D8D28D0FC4E863DCF0B7C4036F67D207 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		60711F80D52C9C688D74A0B78DB4007A /* Frameworks */ = {
+		AAD6EF92A791A1407B2B7676F6112723 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67F1550CD3A53CE9B505134AFA997F3F /* Foundation.framework in Frameworks */,
+				173569C23C63F22130A37A189DA8AE3E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CB6EE5A9A413E7648C734F9193E0512 /* Frameworks */ = {
+		C99B89C1374B406F235DE0E748214D70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA1955C23B5B3CDC5B8CC3DFA49193A4 /* AVFoundation.framework in Frameworks */,
-				A00771B5E045664E6CFF85AFADF9E470 /* Foundation.framework in Frameworks */,
-				0195899306D8FDF8C659F997F53F6A23 /* MediaPlayer.framework in Frameworks */,
+				E5DD09A9F38CF915D67AA8355920D288 /* AVFoundation.framework in Frameworks */,
+				884A285037C1218936F7CC2451CCC81E /* Foundation.framework in Frameworks */,
+				24DD60DC4516CDD7B31B37547F0AAD67 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD6F48CF5E37019E2B17E31766015040 /* Frameworks */ = {
+		FD28403CE8D23591D6F081458C55DED0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				649AC6ECA3960FDBAD5401289696E04C /* Foundation.framework in Frameworks */,
+				4D7D8C5F9731F6BCB33618642BA9CCFB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,29 +205,19 @@
 		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0CFEC631BE22FFC088D852A40FBF821D /* iOS */,
+				F4765E1EEE2DB543AF4AB7B532A32802 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0CFEC631BE22FFC088D852A40FBF821D /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				52D298C727DDCC1888B761AC24454BD5 /* AVFoundation.framework */,
-				24FAEAB2BC488DCB007D4C69FF7CCFFC /* Foundation.framework */,
-				A4412D947E2BD0910003E8A367F9D540 /* MediaPlayer.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		29168664460B94DA5EA29C5C2897A9D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
-				1291E820F6ED8F0E93FB4421D7FA1B07 /* JPSVolumeButtonHandler */,
-				D1738074ECB382E0CA0C7DE7358B8319 /* Pods-TongueScan_iOS */,
-				D51C6751BACD856CF842BEFA0EF9A2B0 /* Pods-TongueScan_iOS-TongueScan_iOSUITests */,
-				F6DD1ADE35DC23C99F3947827FCCCD5E /* Pods-TongueScan_iOSTests */,
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
+				1291E820F6ED8F0E93FB4421D7FA1B07 /* JPSVolumeButtonHandler.framework */,
+				D1738074ECB382E0CA0C7DE7358B8319 /* Pods_TongueScan_iOS.framework */,
+				D51C6751BACD856CF842BEFA0EF9A2B0 /* Pods_TongueScan_iOS_TongueScan_iOSUITests.framework */,
+				F6DD1ADE35DC23C99F3947827FCCCD5E /* Pods_TongueScan_iOSTests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,8 +270,8 @@
 				38DCE3411AD073BBDE16A4A421158A60 /* Timeline.swift */,
 				C9896336C91594A83D9EC0B8EE5275B7 /* Validation.swift */,
 				F181C930D421481EA1E27AA006BBD4A5 /* Support Files */,
+				6AAD22232F1F3E86006EBEB7 /* PrivacyInfo.xcprivacy */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -341,7 +333,6 @@
 				AD7F7CE292F24EDDFB5C41F658DEE084 /* JPSVolumeButtonHandler.m */,
 				BB1A1397C8FBC24D17811E322B418A1E /* Support Files */,
 			);
-			name = JPSVolumeButtonHandler;
 			path = JPSVolumeButtonHandler;
 			sourceTree = "<group>";
 		};
@@ -377,47 +368,57 @@
 			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
+		F4765E1EEE2DB543AF4AB7B532A32802 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A9F5FF5314F106D6D288F389BA457186 /* AVFoundation.framework */,
+				1FCB9694DF8033FC6C02675088DAB45B /* Foundation.framework */,
+				9ED259D6E69FC0FBBB789311BA68DA62 /* MediaPlayer.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3C653459E7A83AC339EE34623DEAF64F /* Headers */ = {
+		41AFE43D211988FDA6F389CD1DD337E4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FD475F74241F3DA33670DBF88806ACD /* JPSVolumeButtonHandler.h in Headers */,
-				89FBF4782A012FDC216275979CE17CFE /* JPSVolumeButtonHandler-umbrella.h in Headers */,
+				32B325309337B99D72544C9DBC959A6E /* Pods-TongueScan_iOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A654116FFA8D294B71B66B9A36E3957 /* Headers */ = {
+		425A72EB37968B0051EF63DA25F476F4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A9544DE2378C8266BF2FE84F3AC0DC0 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-umbrella.h in Headers */,
+				FB633E37C89BEB4A9C3E8D5FD80CCA63 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5538666276E1C8CF0BC1D6F5AA304B07 /* Headers */ = {
+		476273354C5CD04C363A83BFFA985019 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB70DA7586B75BDBB8548C870D3A8609 /* Pods-TongueScan_iOS-umbrella.h in Headers */,
+				660DD3CD243D9FF153B0C2A7D6F84A05 /* JPSVolumeButtonHandler.h in Headers */,
+				C1430FD235208F3A461E2BDD2632C715 /* JPSVolumeButtonHandler-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DABE40D8284946A924A02B546257DE2 /* Headers */ = {
+		8787D5919B0E4D2819971C0006EB5618 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9146510540C8DAF109CC4BCCB0CA74A9 /* Alamofire-umbrella.h in Headers */,
+				CF5A217D0888F7D7D7D7ACADAAF9E048 /* Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F0748E22D544D5148DFB338E6C4D97E9 /* Headers */ = {
+		CA0B479ABD150EF69F87B87CFA65195F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75CFA7BF102558AB52A5EEBC3D2AC314 /* Pods-TongueScan_iOSTests-umbrella.h in Headers */,
+				BA5F64F1C97F2ECBF3E838ED19CFCB5E /* Pods-TongueScan_iOSTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,12 +427,12 @@
 /* Begin PBXNativeTarget section */
 		35B6AC0A7EF19650ADE76C22449ACB77 /* JPSVolumeButtonHandler */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E71322F047BD63FF563555ED2EE905E /* Build configuration list for PBXNativeTarget "JPSVolumeButtonHandler" */;
+			buildConfigurationList = 3240398B098876B54DA5ADDD5ACECA2E /* Build configuration list for PBXNativeTarget "JPSVolumeButtonHandler" */;
 			buildPhases = (
-				3C653459E7A83AC339EE34623DEAF64F /* Headers */,
-				6C502EBF0E92366563E8D0C0D1B16462 /* Sources */,
-				8CB6EE5A9A413E7648C734F9193E0512 /* Frameworks */,
-				70F11BBAB8B958C5E58AAC7CC98E10E6 /* Resources */,
+				476273354C5CD04C363A83BFFA985019 /* Headers */,
+				ED4C9C212076F55A1CC578691B62C71C /* Sources */,
+				C99B89C1374B406F235DE0E748214D70 /* Frameworks */,
+				5FD47CF748444E956DB0B9A6F2D281B8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -439,36 +440,36 @@
 			);
 			name = JPSVolumeButtonHandler;
 			productName = JPSVolumeButtonHandler;
-			productReference = 1291E820F6ED8F0E93FB4421D7FA1B07 /* JPSVolumeButtonHandler */;
+			productReference = 1291E820F6ED8F0E93FB4421D7FA1B07 /* JPSVolumeButtonHandler.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		38480D93FA350356A948AD6FA96E1AE2 /* Pods-TongueScan_iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C695891EF2A856AEF0E75B2B0207A7B0 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOSTests" */;
+			buildConfigurationList = E7D3B695FACF481DC0EDCB27FBBAAEAD /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOSTests" */;
 			buildPhases = (
-				F0748E22D544D5148DFB338E6C4D97E9 /* Headers */,
-				92479A03794950C871EDF0EAD90C56C3 /* Sources */,
-				52E4392E045561EEB8ECFE2CACDB19A2 /* Frameworks */,
-				2A0C53E5AA1749B8A99B70334E8402B8 /* Resources */,
+				CA0B479ABD150EF69F87B87CFA65195F /* Headers */,
+				90C569E1B13D715D9AA520C2021FE8D7 /* Sources */,
+				46484538CA43F4B11CD4F32F42BCE5EA /* Frameworks */,
+				109E1DB622AC7AB25D2080F0774CC0BF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B8A26352D6875F829F6CD7F168872D1C /* PBXTargetDependency */,
+				2D839CE75E0E88FFA9BDC5845F24285F /* PBXTargetDependency */,
 			);
 			name = "Pods-TongueScan_iOSTests";
 			productName = Pods_TongueScan_iOSTests;
-			productReference = F6DD1ADE35DC23C99F3947827FCCCD5E /* Pods-TongueScan_iOSTests */;
+			productReference = F6DD1ADE35DC23C99F3947827FCCCD5E /* Pods_TongueScan_iOSTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 887CAE7F79D14F7AF2714DC8BABA9E38 /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildConfigurationList = 51A77ACA53802A88012F333C342AE693 /* Build configuration list for PBXNativeTarget "Alamofire" */;
 			buildPhases = (
-				5DABE40D8284946A924A02B546257DE2 /* Headers */,
-				91DE88C3249026C72068864CF85B8193 /* Sources */,
-				1FDEBC1279186C4DE344C5D2CCE81B3D /* Frameworks */,
-				C2B76647EA315A3658A600739CC6D453 /* Resources */,
+				8787D5919B0E4D2819971C0006EB5618 /* Headers */,
+				C193985731DC7DB2EBAB8726B8870984 /* Sources */,
+				FD28403CE8D23591D6F081458C55DED0 /* Frameworks */,
+				058A2E185EA0CA54BBABB300712F2056 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -476,47 +477,47 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EC82127FE23F4987D4DEACBB8BF95F04 /* Pods-TongueScan_iOS-TongueScan_iOSUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4FF134B9A0FB38A87E3FE0A80AF1FC1 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOS-TongueScan_iOSUITests" */;
+			buildConfigurationList = 1D9265686F6D15B18C08FCBBA493A7A9 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOS-TongueScan_iOSUITests" */;
 			buildPhases = (
-				4A654116FFA8D294B71B66B9A36E3957 /* Headers */,
-				88142F041ACC86BECCC365EE877220C6 /* Sources */,
-				60711F80D52C9C688D74A0B78DB4007A /* Frameworks */,
-				5C93147181AB96C1ED93E1A3D25D3952 /* Resources */,
+				425A72EB37968B0051EF63DA25F476F4 /* Headers */,
+				26FFFC01AB271EA19ABD7B8073AE224C /* Sources */,
+				69F0BB8A7B61A5704A0C55C77BB9D308 /* Frameworks */,
+				1078DB843428402267D7B01927FA9A69 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6D274C7AC8FD46113A061B30C4011FAF /* PBXTargetDependency */,
-				8B36FF10A3439F93F1ACE2FD9A80D88F /* PBXTargetDependency */,
+				B9593EB1BF138396CEAC6A1A74D94666 /* PBXTargetDependency */,
+				42D6B1DF447E7DC81891A5446AFF902F /* PBXTargetDependency */,
 			);
 			name = "Pods-TongueScan_iOS-TongueScan_iOSUITests";
 			productName = Pods_TongueScan_iOS_TongueScan_iOSUITests;
-			productReference = D51C6751BACD856CF842BEFA0EF9A2B0 /* Pods-TongueScan_iOS-TongueScan_iOSUITests */;
+			productReference = D51C6751BACD856CF842BEFA0EF9A2B0 /* Pods_TongueScan_iOS_TongueScan_iOSUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EDF5301C43F4682011EBA24616D69885 /* Pods-TongueScan_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6F8684565C2D76E52B1EAF664F4FAC74 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOS" */;
+			buildConfigurationList = DEC29BCC162D04B4C1725F120D0043D2 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOS" */;
 			buildPhases = (
-				5538666276E1C8CF0BC1D6F5AA304B07 /* Headers */,
-				C6B3558F5A0D3894E08B18781BDB1A15 /* Sources */,
-				DD6F48CF5E37019E2B17E31766015040 /* Frameworks */,
-				A95C5EF8E6CDF0C95D0DDF9B7DF09380 /* Resources */,
+				41AFE43D211988FDA6F389CD1DD337E4 /* Headers */,
+				D8C04D045F14D701FDD5D69CC2566A8A /* Sources */,
+				AAD6EF92A791A1407B2B7676F6112723 /* Frameworks */,
+				B589A7BC4C8F49A8C782F79E844B1D63 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				810A0408651EE2C61DAB1292CA8DF04F /* PBXTargetDependency */,
-				50F15A6B9357A317A7315BBEEE23A73D /* PBXTargetDependency */,
+				911D73426E05FC2ECA044436C8686A57 /* PBXTargetDependency */,
+				7914CE27467443FE872E9DCC8236AB6E /* PBXTargetDependency */,
 			);
 			name = "Pods-TongueScan_iOS";
 			productName = Pods_TongueScan_iOS;
-			productReference = D1738074ECB382E0CA0C7DE7358B8319 /* Pods-TongueScan_iOS */;
+			productReference = D1738074ECB382E0CA0C7DE7358B8319 /* Pods_TongueScan_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -525,8 +526,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -551,35 +552,36 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2A0C53E5AA1749B8A99B70334E8402B8 /* Resources */ = {
+		058A2E185EA0CA54BBABB300712F2056 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AAD22242F1F3E86006EBEB7 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1078DB843428402267D7B01927FA9A69 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C93147181AB96C1ED93E1A3D25D3952 /* Resources */ = {
+		109E1DB622AC7AB25D2080F0774CC0BF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		70F11BBAB8B958C5E58AAC7CC98E10E6 /* Resources */ = {
+		5FD47CF748444E956DB0B9A6F2D281B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A95C5EF8E6CDF0C95D0DDF9B7DF09380 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C2B76647EA315A3658A600739CC6D453 /* Resources */ = {
+		B589A7BC4C8F49A8C782F79E844B1D63 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -589,101 +591,101 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6C502EBF0E92366563E8D0C0D1B16462 /* Sources */ = {
+		26FFFC01AB271EA19ABD7B8073AE224C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C5758BDCBFB5C7C537426F301A2A0DD /* JPSVolumeButtonHandler.m in Sources */,
-				A8F0FE7A03E97942897E2A1A34ABA5E9 /* JPSVolumeButtonHandler-dummy.m in Sources */,
+				7C77F9473A6CC97B0B36624F10B417C6 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88142F041ACC86BECCC365EE877220C6 /* Sources */ = {
+		90C569E1B13D715D9AA520C2021FE8D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35994BF776CC11BBA9A10E0A0A0F7808 /* Pods-TongueScan_iOS-TongueScan_iOSUITests-dummy.m in Sources */,
+				2937D03EEE8D1A854A602D65A3FF7183 /* Pods-TongueScan_iOSTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		91DE88C3249026C72068864CF85B8193 /* Sources */ = {
+		C193985731DC7DB2EBAB8726B8870984 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90E42B43904F2F22CA3A8BBD0155D9A2 /* AFError.swift in Sources */,
-				70EA6F068498CEC1B273D6BB1E74EB4E /* Alamofire.swift in Sources */,
-				C27C72B2D755F3A7B2D97089CA75146F /* Alamofire-dummy.m in Sources */,
-				F93AEAF3659818E2308E0E5C70B66423 /* DispatchQueue+Alamofire.swift in Sources */,
-				6DF154F51210D4C446AA021F2DBA34A4 /* MultipartFormData.swift in Sources */,
-				5CECD168465CF59B489253695D3FB51F /* NetworkReachabilityManager.swift in Sources */,
-				537D7452E6C8C82D9C1908EA29706E35 /* Notifications.swift in Sources */,
-				F5C92DC8E274C4FC541267A97575BC05 /* ParameterEncoding.swift in Sources */,
-				D593E5BEB4221FF272DBF69E51945319 /* Request.swift in Sources */,
-				9BCBBFE03318F5DD172F9E1F3100F67B /* Response.swift in Sources */,
-				43C3C17BFDFD71F45C5A7AFB0C0BEF45 /* ResponseSerialization.swift in Sources */,
-				D46CB5AF7BE345C5D27ABF9DCF692881 /* Result.swift in Sources */,
-				3DE8AA12C52787A0BA570717BB27AAB0 /* ServerTrustPolicy.swift in Sources */,
-				85379CCF081FC9C36F082E71D2DF4D2F /* SessionDelegate.swift in Sources */,
-				8023EECE8437F0311A065A9C2F420E2E /* SessionManager.swift in Sources */,
-				119B37D7E7D3A59C6685FC0EFEE881CE /* TaskDelegate.swift in Sources */,
-				2119BBBDD76C9B182007C9E8D3BD8DDA /* Timeline.swift in Sources */,
-				4C301CCA81AAFB4453B6B827F846E0AC /* Validation.swift in Sources */,
+				DA3B58FE16512709D94A6D218D3D3534 /* AFError.swift in Sources */,
+				E23BEF1D4AD9E155D11A45AE53B1BC30 /* Alamofire.swift in Sources */,
+				D371AC950FB6847BF5D88F36CA45E5A0 /* Alamofire-dummy.m in Sources */,
+				3058080B1A0F281677C20F3800252477 /* DispatchQueue+Alamofire.swift in Sources */,
+				83D3996519563C6EF0DCE8B8E5D0E99B /* MultipartFormData.swift in Sources */,
+				4E3AA59955ABD7E40C95133C21A688E9 /* NetworkReachabilityManager.swift in Sources */,
+				B2F0E8B1A2868D943F3F51D008A043B2 /* Notifications.swift in Sources */,
+				6DB6DCD8283B2E33E5ED165933D2B915 /* ParameterEncoding.swift in Sources */,
+				C07D6284223549B65BE4AE58C3F847DC /* Request.swift in Sources */,
+				7F27F85995181B8BD126AD09AD3DB3C9 /* Response.swift in Sources */,
+				370FFC78DBAE8A2237CC38BE0E7F13F3 /* ResponseSerialization.swift in Sources */,
+				B70D6EAFA3E132C689C12AAA67D746DF /* Result.swift in Sources */,
+				35A092EC2D83C247E92D897935E33EE0 /* ServerTrustPolicy.swift in Sources */,
+				2090156DA6C522B1B8FCFDBBB3CA0C4A /* SessionDelegate.swift in Sources */,
+				48133100A05F0A2DF0D38F158C70122D /* SessionManager.swift in Sources */,
+				936C476618F77CC4545D37E0303F11BA /* TaskDelegate.swift in Sources */,
+				E366A9D5E0FEABE6010203EFD8F3AA15 /* Timeline.swift in Sources */,
+				387061136B6DDFFDED26AA8590F93107 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		92479A03794950C871EDF0EAD90C56C3 /* Sources */ = {
+		D8C04D045F14D701FDD5D69CC2566A8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47624CB0C7DB4DA3180EC2D6719F1A1E /* Pods-TongueScan_iOSTests-dummy.m in Sources */,
+				42BF55769C777459F20D24991909536D /* Pods-TongueScan_iOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C6B3558F5A0D3894E08B18781BDB1A15 /* Sources */ = {
+		ED4C9C212076F55A1CC578691B62C71C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBB0057F852D104F118B3FE63D73BA89 /* Pods-TongueScan_iOS-dummy.m in Sources */,
+				7E8EAB14AEB3E25781B8A95AEA6E49A4 /* JPSVolumeButtonHandler.m in Sources */,
+				0140E116C89D4DA1734B3DD6C0472F7A /* JPSVolumeButtonHandler-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		50F15A6B9357A317A7315BBEEE23A73D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JPSVolumeButtonHandler;
-			target = 35B6AC0A7EF19650ADE76C22449ACB77 /* JPSVolumeButtonHandler */;
-			targetProxy = DFDEA086361896458030AF450559B4EF /* PBXContainerItemProxy */;
-		};
-		6D274C7AC8FD46113A061B30C4011FAF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 373C61ECD339422D0C6FA5F05352953D /* PBXContainerItemProxy */;
-		};
-		810A0408651EE2C61DAB1292CA8DF04F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 7C809AEF13A1B28FB3991972904E15DB /* PBXContainerItemProxy */;
-		};
-		8B36FF10A3439F93F1ACE2FD9A80D88F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JPSVolumeButtonHandler;
-			target = 35B6AC0A7EF19650ADE76C22449ACB77 /* JPSVolumeButtonHandler */;
-			targetProxy = 7BEA83EBF3064F02383C582C429721E0 /* PBXContainerItemProxy */;
-		};
-		B8A26352D6875F829F6CD7F168872D1C /* PBXTargetDependency */ = {
+		2D839CE75E0E88FFA9BDC5845F24285F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-TongueScan_iOS";
 			target = EDF5301C43F4682011EBA24616D69885 /* Pods-TongueScan_iOS */;
-			targetProxy = 8610E9AAE5776E274FA6CD6987A53CC6 /* PBXContainerItemProxy */;
+			targetProxy = FFD0D07FC2CCC1D1E9126BD2586E8162 /* PBXContainerItemProxy */;
+		};
+		42D6B1DF447E7DC81891A5446AFF902F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JPSVolumeButtonHandler;
+			target = 35B6AC0A7EF19650ADE76C22449ACB77 /* JPSVolumeButtonHandler */;
+			targetProxy = EAFAD371CA16B7D33B6C4473381AADF3 /* PBXContainerItemProxy */;
+		};
+		7914CE27467443FE872E9DCC8236AB6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JPSVolumeButtonHandler;
+			target = 35B6AC0A7EF19650ADE76C22449ACB77 /* JPSVolumeButtonHandler */;
+			targetProxy = 8622F857DC901D2BA612584B0087184A /* PBXContainerItemProxy */;
+		};
+		911D73426E05FC2ECA044436C8686A57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = A482045C6A45A9D5777F25DBFC719980 /* PBXContainerItemProxy */;
+		};
+		B9593EB1BF138396CEAC6A1A74D94666 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = DE60D8A6E38E85353B29BCEE8044DB28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0FEE07C79EC33EC1D6EBAF4B88642C0C /* Release */ = {
+		1AE56DC2B64232B306F5476F56C0D8AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D11D6CCDE7151AEE00348F9D8656A850 /* Pods-TongueScan_iOS-TongueScan_iOSUITests.release.xcconfig */;
 			buildSettings = {
@@ -719,42 +721,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		210D6E248728A38C333A8C737D186D69 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFB1AB822E376D4A0EC369441982D7D8 /* Pods-TongueScan_iOS.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TongueScan_iOS/Pods-TongueScan_iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TongueScan_iOS/Pods-TongueScan_iOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -822,10 +788,11 @@
 			};
 			name = Debug;
 		};
-		2D46676308FED0F7B3BB00CE9B1A6CEB /* Debug */ = {
+		4B246C97D6637805F5A160AFDFD56081 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FA22CCC5A9D57BA319DE3A072023889 /* JPSVolumeButtonHandler.debug.xcconfig */;
+			baseConfigurationReference = CFB1AB822E376D4A0EC369441982D7D8 /* Pods-TongueScan_iOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -834,8 +801,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TongueScan_iOS/Pods-TongueScan_iOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -843,20 +809,22 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler.modulemap";
-				PRODUCT_MODULE_NAME = JPSVolumeButtonHandler;
-				PRODUCT_NAME = JPSVolumeButtonHandler;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TongueScan_iOS/Pods-TongueScan_iOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		3A21674699EFFF3C45A6E71961A82B0A /* Debug */ = {
+		52FE5BF60671F271210C2D7C1F8A723D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0587E12B0950D0EE3ED94438FCA515D /* Pods-TongueScan_iOSTests.debug.xcconfig */;
 			buildSettings = {
@@ -892,10 +860,11 @@
 			};
 			name = Debug;
 		};
-		4C6A49944539E5E4B7D74B2ACD86A323 /* Release */ = {
+		5F9FB494CF25413309EB593FAF2C1902 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 259000E93FCDBE74C19735E35248629B /* JPSVolumeButtonHandler.release.xcconfig */;
+			baseConfigurationReference = 8CC75E12F271F06630CCCE8B37921683 /* Pods-TongueScan_iOS-TongueScan_iOSUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -904,8 +873,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TongueScan_iOS-TongueScan_iOSUITests/Pods-TongueScan_iOS-TongueScan_iOSUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -913,13 +881,51 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler.modulemap";
-				PRODUCT_MODULE_NAME = JPSVolumeButtonHandler;
-				PRODUCT_NAME = JPSVolumeButtonHandler;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TongueScan_iOS-TongueScan_iOSUITests/Pods-TongueScan_iOS-TongueScan_iOSUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		88EEA0A8D01472E101E3266FE22D0EC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96FEF94486A8095631DC6099C8EAE960 /* Pods-TongueScan_iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TongueScan_iOSTests/Pods-TongueScan_iOSTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TongueScan_iOSTests/Pods-TongueScan_iOSTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -927,7 +933,7 @@
 			};
 			name = Release;
 		};
-		68B1AE02C35B3BF9B0A358B7D7F26055 /* Release */ = {
+		8A5DA9EF7744110804E6C07C2139C358 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7817C743566C96215BB59EBB3A8C016 /* Alamofire.release.xcconfig */;
 			buildSettings = {
@@ -962,7 +968,41 @@
 			};
 			name = Release;
 		};
-		A3C054FEB793404DC0C7C4633EFB2621 /* Release */ = {
+		8AE81F774CBE334F23709D0B28E33750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FA22CCC5A9D57BA319DE3A072023889 /* JPSVolumeButtonHandler.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler.modulemap";
+				PRODUCT_MODULE_NAME = JPSVolumeButtonHandler;
+				PRODUCT_NAME = JPSVolumeButtonHandler;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8E98E1C28D48D0C4505090D92F84A409 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17EF5806241BAC9392C31BD6405BBE11 /* Pods-TongueScan_iOS.release.xcconfig */;
 			buildSettings = {
@@ -999,45 +1039,9 @@
 			};
 			name = Release;
 		};
-		AEC5CD78238F3A17384D6829C04C9F09 /* Debug */ = {
+		C01F097430D42D12B2A81D94A10213FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CC75E12F271F06630CCCE8B37921683 /* Pods-TongueScan_iOS-TongueScan_iOSUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TongueScan_iOS-TongueScan_iOSUITests/Pods-TongueScan_iOS-TongueScan_iOSUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TongueScan_iOS-TongueScan_iOSUITests/Pods-TongueScan_iOS-TongueScan_iOSUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CA22C334E2940B21EB576035F44AD294 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B1E76B8310BC8FFDD7BEDF89F2E9F11 /* Alamofire.debug.xcconfig */;
+			baseConfigurationReference = 259000E93FCDBE74C19735E35248629B /* JPSVolumeButtonHandler.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1047,8 +1051,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1056,18 +1060,19 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				PRODUCT_MODULE_NAME = Alamofire;
-				PRODUCT_NAME = Alamofire;
+				MODULEMAP_FILE = "Target Support Files/JPSVolumeButtonHandler/JPSVolumeButtonHandler.modulemap";
+				PRODUCT_MODULE_NAME = JPSVolumeButtonHandler;
+				PRODUCT_NAME = JPSVolumeButtonHandler;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1131,11 +1136,10 @@
 			};
 			name = Release;
 		};
-		FC3843512FE4B4141A1C824DBE4C8814 /* Release */ = {
+		EB92EFD9D5B5753855904D32D11D8B56 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96FEF94486A8095631DC6099C8EAE960 /* Pods-TongueScan_iOSTests.release.xcconfig */;
+			baseConfigurationReference = 2B1E76B8310BC8FFDD7BEDF89F2E9F11 /* Alamofire.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1144,7 +1148,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TongueScan_iOSTests/Pods-TongueScan_iOSTests-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1152,25 +1157,40 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TongueScan_iOSTests/Pods-TongueScan_iOSTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D9265686F6D15B18C08FCBBA493A7A9 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOS-TongueScan_iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F9FB494CF25413309EB593FAF2C1902 /* Debug */,
+				1AE56DC2B64232B306F5476F56C0D8AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3240398B098876B54DA5ADDD5ACECA2E /* Build configuration list for PBXNativeTarget "JPSVolumeButtonHandler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE81F774CBE334F23709D0B28E33750 /* Debug */,
+				C01F097430D42D12B2A81D94A10213FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1180,47 +1200,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E71322F047BD63FF563555ED2EE905E /* Build configuration list for PBXNativeTarget "JPSVolumeButtonHandler" */ = {
+		51A77ACA53802A88012F333C342AE693 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D46676308FED0F7B3BB00CE9B1A6CEB /* Debug */,
-				4C6A49944539E5E4B7D74B2ACD86A323 /* Release */,
+				EB92EFD9D5B5753855904D32D11D8B56 /* Debug */,
+				8A5DA9EF7744110804E6C07C2139C358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6F8684565C2D76E52B1EAF664F4FAC74 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOS" */ = {
+		DEC29BCC162D04B4C1725F120D0043D2 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				210D6E248728A38C333A8C737D186D69 /* Debug */,
-				A3C054FEB793404DC0C7C4633EFB2621 /* Release */,
+				4B246C97D6637805F5A160AFDFD56081 /* Debug */,
+				8E98E1C28D48D0C4505090D92F84A409 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		887CAE7F79D14F7AF2714DC8BABA9E38 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+		E7D3B695FACF481DC0EDCB27FBBAAEAD /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CA22C334E2940B21EB576035F44AD294 /* Debug */,
-				68B1AE02C35B3BF9B0A358B7D7F26055 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C695891EF2A856AEF0E75B2B0207A7B0 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3A21674699EFFF3C45A6E71961A82B0A /* Debug */,
-				FC3843512FE4B4141A1C824DBE4C8814 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4FF134B9A0FB38A87E3FE0A80AF1FC1 /* Build configuration list for PBXNativeTarget "Pods-TongueScan_iOS-TongueScan_iOSUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEC5CD78238F3A17384D6829C04C9F09 /* Debug */,
-				0FEE07C79EC33EC1D6EBAF4B88642C0C /* Release */,
+				52FE5BF60671F271210C2D7C1F8A723D /* Debug */,
+				88EEA0A8D01472E101E3266FE22D0EC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

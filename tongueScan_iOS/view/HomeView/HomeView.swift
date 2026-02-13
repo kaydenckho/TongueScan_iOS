@@ -257,7 +257,7 @@ struct HomeView: View {
                 if (isShowTermsAndConditionDialog){
                     TextDialog(isActive: $isShowTermsAndConditionDialog,titleArr: ["termsAndConditions_title".localizedString(language: language)],
                                description: "termsAndConditions_description".localizedText(language: language),
-                               rightButtonText: "guide_agree_btn_text".localizedString(language: language), rightBtnAction:{
+                               rightButtonText: "termsAndConditions_agree_btn_text".localizedString(language: language), rightBtnAction:{
                         isShowTermsAndConditionDialog = false
                     }, trigger: $scrollbarFlash)
                 }
