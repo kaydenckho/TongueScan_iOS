@@ -29,16 +29,26 @@ struct tongueScan_iOSApp: App {
 
 extension String {
     
-    func localizedString(language:String?) -> String{
-        let path = Bundle.main.path(forResource: language ?? "zh-Hans", ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    func localizedString(language: String?) -> String {
+        let locale = language ?? "zh-Hans"
+        let bundle: Bundle
+        if let path = Bundle.main.path(forResource: locale, ofType: "lproj"), let locBundle = Bundle(path: path) {
+            bundle = locBundle
+        } else {
+            bundle = Bundle.main
+        }
+        return NSLocalizedString(self, tableName: nil, bundle: bundle, value: self, comment: "")
     }
     
-    func localizedText(language:String?) -> Text{
-        let path = Bundle.main.path(forResource: language ?? "zh-Hans", ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        return Text(LocalizedStringKey(self), tableName: nil, bundle: bundle!, comment: "")
+    func localizedText(language: String?) -> Text {
+        let locale = language ?? "zh-Hans"
+        let bundle: Bundle
+        if let path = Bundle.main.path(forResource: locale, ofType: "lproj"), let locBundle = Bundle(path: path) {
+            bundle = locBundle
+        } else {
+            bundle = Bundle.main
+        }
+        return Text(LocalizedStringKey(self), tableName: nil, bundle: bundle, comment: "")
     }
 }
 

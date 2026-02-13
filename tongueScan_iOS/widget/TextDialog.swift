@@ -25,7 +25,9 @@ struct TextDialog: View {
                     }
                 
                 VStack {
-                    if (titleArr.count > 1) {
+                    if titleArr.isEmpty {
+                        EmptyView()
+                    } else if titleArr.count > 1 {
                         VStack {
                             ForEach(titleArr, id: \.self) { string in
                                 Text(string).fontWeight(.bold)
