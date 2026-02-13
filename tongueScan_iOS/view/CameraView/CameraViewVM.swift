@@ -41,7 +41,10 @@ class CameraViewVM: ObservableObject {
     @Published var showSavedPhotoAlert = false
     @Published var isSavedPhoto = false
     
-    func takePicture() {
+    /// Delay before first shot when using front camera in auto mode (gives user time to fully expand tongue)
+    private let frontCameraAutoModePreCaptureDelay: TimeInterval = 1.5
+    
+    func takePicture(preCaptureDelay: TimeInterval = 0) {
         isCapturing = true
         speak(msg: "taking_photo")
         let dateFormatter = DateFormatter()
@@ -65,8 +68,16 @@ class CameraViewVM: ObservableObject {
             }
         }
 
-        frameManager.takePicture(flashMode: .off)
-        frameManager.takePicture(flashMode: .on)
+        let captureBlock = {
+            self.frameManager.takePicture(flashMode: .off)
+            self.frameManager.takePicture(flashMode: .on)
+        }
+        
+        if preCaptureDelay > 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + preCaptureDelay, execute: captureBlock)
+        } else {
+            captureBlock()
+        }
     }
     
     func cropAndAppendImage(filename: String, cgImage: CGImage) {
@@ -83,8 +94,12 @@ class CameraViewVM: ObservableObject {
         let orientation: Int32 = isFrontCamera ? 8 : 6
         
         // Mirror if front camera
-        let finalCroppedImg = isFrontCamera ? mirrorImage(cgImage: croppedImg) ?? croppedImg : croppedImg
-        let finalOriginalImg = isFrontCamera ? mirrorImage(cgImage: cgImage) ?? cgImage : cgImage
+        var finalCroppedImg = isFrontCamera ? mirrorImage(cgImage: croppedImg) ?? croppedImg : croppedImg
+        var finalOriginalImg = isFrontCamera ? mirrorImage(cgImage: cgImage) ?? cgImage : cgImage
+        
+        // Apply sharpening to improve clarity (helps all cameras and modes)
+        finalCroppedImg = sharpenImage(cgImage: finalCroppedImg) ?? finalCroppedImg
+        finalOriginalImg = sharpenImage(cgImage: finalOriginalImg) ?? finalOriginalImg
         
         // Convert to UIImage and get JPEG data
         let croppedImgData = rotateImage(cgImage: finalCroppedImg, orientation: orientation).jpegData(compressionQuality: 0.8)
@@ -117,6 +132,19 @@ class CameraViewVM: ObservableObject {
         
         return context.makeImage()
     }
+    
+    /// Applies CISharpenLuminance to improve perceived sharpness (helps front camera's often soft focus)
+    func sharpenImage(cgImage: CGImage, intensity: Float = 0.8) -> CGImage? {
+        let ciImage = CIImage(cgImage: cgImage)
+        guard let filter = CIFilter(name: "CISharpenLuminance") else { return nil }
+        filter.setValue(ciImage, forKey: kCIInputImageKey)
+        filter.setValue(intensity, forKey: "inputSharpness")
+        guard let outputImage = filter.outputImage else { return nil }
+        
+        let context = CIContext()
+        guard let cgResult = context.createCGImage(outputImage, from: outputImage.extent) else { return nil }
+        return cgResult
+    }
 
     func rotateImage(cgImage: CGImage, orientation: Int32) -> UIImage {
         let temp = CIImage(cgImage: cgImage).oriented(forExifOrientation: orientation)
@@ -143,7 +171,8 @@ class CameraViewVM: ObservableObject {
                                         let confidence = results[0].confidence
                                         if (confidence > 0.90 && angle > 60){
                                             self.isDetecting = false
-                                            self.takePicture()
+                                            let delay = (mode == .Auto && self.cameraManager.isUsingFrontCamera()) ? self.frontCameraAutoModePreCaptureDelay : 0
+                                            self.takePicture(preCaptureDelay: delay)
                                         }
                                     }
                                 }
@@ -178,8 +207,12 @@ class CameraViewVM: ObservableObject {
         frameManager.capturedPhoto = nil
         frameManager.current = nil
         images.removeAll()
-        isDetecting.toggle()
-        isSavedPhoto.toggle()
+        // Explicit reset - toggle() was buggy: after first auto-capture isDetecting=false,
+        // and toggle could fail to restore correctly depending on call order
+        isDetecting = true
+        isSavedPhoto = false
+        isCapturing = false
+        finished = true
     }
     
     @Published var uploadImagesResult: APIResponse<UploadImagesResult>?

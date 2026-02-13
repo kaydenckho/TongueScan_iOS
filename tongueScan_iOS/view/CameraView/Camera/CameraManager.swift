@@ -96,6 +96,7 @@ class CameraManager: ObservableObject {
                 if self.session.canAddInput(newInput) {
                     self.session.addInput(newInput)
                     self.device = newDevice
+                    self.configureFocusForCurrentDevice()
                 } else {
                     self.session.addInput(currentInput)
                 }
@@ -118,16 +119,71 @@ class CameraManager: ObservableObject {
             }
         }
     }
+    
+    /// Configures focus and exposure for the current camera device (especially important for front camera)
+    private func configureFocusForCurrentDevice() {
+        guard let device = self.device else { return }
+        
+        do {
+            try device.lockForConfiguration()
+            
+            // For front camera: prioritize close-up focus (tongue is ~15-25cm away)
+            if device.position == .front && device.isAutoFocusRangeRestrictionSupported {
+                device.autoFocusRangeRestriction = .near
+            }
+            
+            // Configure focus - front camera typically doesn't support tap-to-focus, use continuous auto focus
+            if device.isFocusModeSupported(.continuousAutoFocus) {
+                device.focusMode = .continuousAutoFocus
+            } else if device.isFocusModeSupported(.autoFocus) {
+                device.focusMode = .autoFocus
+            }
+            
+            // Configure exposure - helps with focus perception, especially on front camera
+            if device.isExposureModeSupported(.continuousAutoExposure) {
+                device.exposureMode = .continuousAutoExposure
+            }
+            
+            device.unlockForConfiguration()
+        } catch {
+            print("Error configuring focus: \(error)")
+        }
+    }
 
     
-    func touchToFocus(point:CGPoint){
-        do {
-            try device?.lockForConfiguration()
-            device?.focusPointOfInterest = point
-            device?.focusMode = AVCaptureDevice.FocusMode.autoFocus
-            device?.unlockForConfiguration()
-        } catch {
+    func touchToFocus(point: CGPoint) {
+        sessionQueue.async {
+            guard let device = self.session.inputs.first.flatMap({ $0 as? AVCaptureDeviceInput })?.device ?? self.device else { return }
             
+            // For front camera, mirror the x coordinate (preview is mirrored)
+            var adjustedPoint = point
+            if device.position == .front {
+                adjustedPoint.x = 1.0 - point.x
+            }
+            
+            // Clamp to valid range
+            adjustedPoint.x = max(0, min(1, adjustedPoint.x))
+            adjustedPoint.y = max(0, min(1, adjustedPoint.y))
+            
+            do {
+                try device.lockForConfiguration()
+                
+                // Try tap-to-focus first (back camera supports this)
+                if device.isFocusPointOfInterestSupported && device.isFocusModeSupported(.autoFocus) {
+                    device.focusPointOfInterest = adjustedPoint
+                    device.focusMode = .autoFocus
+                }
+                
+                // Tap-to-exposure helps perceived sharpness (front camera often supports this when focus doesn't)
+                if device.isExposurePointOfInterestSupported && device.isExposureModeSupported(.autoExpose) {
+                    device.exposurePointOfInterest = adjustedPoint
+                    device.exposureMode = .autoExpose
+                }
+                
+                device.unlockForConfiguration()
+            } catch {
+                print("Error setting focus: \(error)")
+            }
         }
     }
     
@@ -194,6 +250,8 @@ class CameraManager: ObservableObject {
       let cameraInput = try AVCaptureDeviceInput(device: camera)
       if session.canAddInput(cameraInput) {
         session.addInput(cameraInput)
+        self.device = camera
+        configureFocusForCurrentDevice()
       } else {
         set(error: .cannotAddInput)
         status = .failed
