@@ -3,16 +3,16 @@ import JPSVolumeButtonHandler
 
 struct CameraView: View {
     
-    var onDismiss: () -> Void
+    @Binding var isPageActive: Bool
     
-    @Binding var language: String?
+    @Binding var language : String?
     
     enum Mode {
         case Auto
         case Manual
     }
 
-    let mode: Mode
+    let mode :Mode
     
     @State var isTouched = false
     @State var touchedX = 0.0
@@ -79,13 +79,11 @@ struct CameraView: View {
 
                         ZStack{
                             TabView {
-                                    ForEach(vm.images, id: \.filename) { imageModel in
-                                        if let imgData = imageModel.originalImg, let uiImage = UIImage(data: imgData) {
-                                            Image(uiImage: uiImage)
-                                                .resizable()
-                                                .scaledToFill()
-                                                .frame(width: geometry.size.width, height: geometry.size.height * 0.8)
-                                        }
+                                    ForEach(0..<vm.images.count, id: \.self) { index in
+                                        Image(uiImage: UIImage(data: vm.images[index].originalImg!)!)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width:geometry.size.width,height:geometry.size.height*0.8)
                                     }
                             }
                             .tabViewStyle(.page)
@@ -130,13 +128,8 @@ struct CameraView: View {
                                     }
                                 }
                                 .buttonStyle(ClickScaleUp())
-                                .navigationDestination(isPresented: $vm.uploadSuccess) {
-                                    ResultView(
-                                        onDismiss: onDismiss,
-                                        language: $language,
-                                        result: vm.uploadImagesResult?.data,
-                                        tabViewSelection: $tabViewSelection
-                                    )
+                                .navigationDestination(isPresented: $vm.uploadSuccess){
+                                    ResultView(isPageActive: $isPageActive, language: $language, result: vm.uploadImagesResult?.data, tabViewSelection: $tabViewSelection)
                                 }
                                 Spacer()
                                 Button(action: {
@@ -162,10 +155,7 @@ struct CameraView: View {
                         }
                         .opacity((vm.error == nil && vm.images.count == 2) ? 1.0 : 0.0)
                         .onAppear(){
-                            // Reverse display order once (flash photo first, then no-flash) - use task to avoid re-running on view reappear
-                            if vm.images.count == 2 && vm.images.first?.filename.contains("flash") == false {
-                                vm.images.reverse()
-                            }
+                            vm.images.reverse()
                         }
                     LoadingView(text:"uploading".localizedString(language: language)).opacity(vm.uploading ? 1 : 0)
                 }
@@ -187,7 +177,7 @@ struct CameraView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button(action: onDismiss) {
+                        Button(action:{isPageActive.toggle()}){
                             Image(systemName: "chevron.backward").foregroundColor(.white)
                         }
                     }

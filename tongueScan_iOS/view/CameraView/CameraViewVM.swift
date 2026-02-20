@@ -85,7 +85,7 @@ class CameraViewVM: ObservableObject {
         var croppedImg = cgImage
         
         if let result = result, result.count > 0 {
-            croppedImg = cgImage.cropping(to: result[0].box) ?? croppedImg
+            croppedImg = cgImage.cropping(to: result[0].box)!
         }
         
         let isFrontCamera = cameraManager.isUsingFrontCamera()
@@ -257,14 +257,14 @@ class CameraViewVM: ObservableObject {
         }
     }
     
-    func minimize(img: CGImage) -> CGImage {
+    func minimize(img:CGImage) -> CGImage{
         let scaledCropArea = CGRect(
             x: Double(img.width) * 0.15,
             y: 0,
             width: Double(img.width) - Double(img.width) * 0.3,
             height: Double(img.height) - Double(img.height) * 0.5
         )
-        return img.cropping(to: scaledCropArea) ?? img
+        return img.cropping(to: scaledCropArea)!
     }
     
     func calculateAngle(x1:CGFloat, y1:CGFloat, x2:CGFloat, y2:CGFloat, x3:CGFloat, y3:CGFloat) -> CGFloat{
@@ -273,10 +273,8 @@ class CameraViewVM: ObservableObject {
         let c2 = lengthSquare(x1: x1, y1: y1, x2: x2, y2: y2)
         let b = sqrt(b2)
         let c = sqrt(c2)
-        guard b > 0, c > 0 else { return 0 }
-        let cosAlpha = (b2 + c2 - a2) / (2 * b * c)
-        let clamped = min(1, max(-1, cosAlpha))
-        var alpha = acos(clamped) * 180 / CGFloat.pi
+        var alpha = acos((b2 + c2 - a2) / (2 * b * c))
+        alpha = alpha * 180 / CGFloat.pi
         return alpha
     }
     
@@ -287,14 +285,11 @@ class CameraViewVM: ObservableObject {
     }
     
     func saveImage(){
-        guard images.count >= 2,
-              let img0 = images[0].originalImg, let uiImg0 = UIImage(data: img0),
-              let img1 = images[1].originalImg, let uiImg1 = UIImage(data: img1) else { return }
         Task{
-            UIImageWriteToSavedPhotosAlbum(uiImg0, nil, nil, nil)
-            UIImageWriteToSavedPhotosAlbum(uiImg1, nil, nil, nil)
+            UIImageWriteToSavedPhotosAlbum(UIImage(data: images[0].originalImg!)!, nil, nil, nil)
+            UIImageWriteToSavedPhotosAlbum(UIImage(data: images[1].originalImg!)!, nil, nil, nil)
         }
-        isSavedPhoto = true
+        isSavedPhoto.toggle()
     }
     
     func speak(msg:String){

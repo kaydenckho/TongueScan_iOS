@@ -7,62 +7,47 @@
 
 import SwiftUI
 
-/// Centralized app navigation - single source of truth for page routing
-enum AppRoute: Equatable {
-    case mainTabs
-    case camera(CameraView.Mode)
-}
-
 struct ContentView: View {
     
     @Environment(PreferenceUtil.self) var preferenceUtil
     
-    @State private var route: AppRoute = .mainTabs
-    @State private var isLoading = false
-    @State private var language: String?
-    @State private var selection = 0
-    @State private var loginPageState: LoginView.PageState = .Login
+    @State var isShowTabView = true
+    
+    @State var isAutoCameraView = false
+    @State var isManualCameraView = false
+    @State var isLoading = false
+    
+    @State var language : String?
+    
+    @State var selection = 0
+    
+    @State var loginPageState : LoginView.PageState = .Login
     
     @StateObject private var vm = ContentViewVM()
     
-    @State private var tokenExpiredDialog = false
+    @State var tokenExpiredDialog = false
     
     var body: some View {
-        Group {
-            switch route {
-            case .mainTabs:
-                mainTabsView
-            case .camera(let mode):
-                CameraView(
-                    onDismiss: { route = .mainTabs },
-                    language: $language,
-                    mode: mode,
-                    tabViewSelection: $selection
-                )
-                .onAppear {
+        if (isAutoCameraView){
+            CameraView(isPageActive: $isAutoCameraView, language: $language, mode: .Auto, tabViewSelection: $selection)
+                .onAppear(){
                     isLoading = false
                     language = preferenceUtil.language
                 }
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .animation(.none, value: route)
-    }
-    
-    private var mainTabsView: some View {
-        ZStack {
-            TabView(selection: $selection) {
-                HomeView(
-                    language: $language,
-                    onNavigateToCamera: { mode in route = .camera(mode) },
-                    isLoading: $isLoading,
-                    tabViewSelection: $selection
-                )
-                .tabItem {
-                    selection == 0 ? Image("home_icon_selected") : Image("home_icon")
-                    "home".localizedText(language: language)
+        } else if (isManualCameraView){
+            CameraView(isPageActive: $isManualCameraView, language: $language, mode: .Manual, tabViewSelection: $selection)
+                .onAppear(){
+                    isLoading = false
+                    language = preferenceUtil.language
                 }
-                .tag(0)
+        } else{
+            ZStack{
+                TabView (selection: $selection){
+                    HomeView(language: $language, isAutoCameraView: $isAutoCameraView, isManualCameraView: $isManualCameraView, isLoading: $isLoading, tabViewSelection: $selection)
+                       .tabItem {
+                           selection == 0 ? Image("home_icon_selected"): Image("home_icon")
+                           "home".localizedText(language: language)
+                       }.tag(0)
 //                    ResultView(isPageActive: $a, language: $language, result: model)
 //                       .tabItem {
 //                           selection == 1 ? Image("course_icon_selected"): Image("course_icon")
@@ -128,5 +113,9 @@ struct ContentView: View {
                     )
                 )
             }
+        }
+       
+
     }
 }
+

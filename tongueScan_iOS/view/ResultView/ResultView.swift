@@ -13,11 +13,11 @@ struct ResultView: View {
     
     @StateObject private var vm = ResultViewVM()
     
-    var onDismiss: () -> Void
+    @Binding var isPageActive: Bool
     
     @Environment(PreferenceUtil.self) var preferenceUtil
     
-    @Binding var language: String?
+    @Binding var language : String?
     
     let result: UploadImagesResult?
     
@@ -99,8 +99,8 @@ struct ResultView: View {
                                                                 isShowLoginDialog.toggle()
                                                             }
                                                         }){
-                                                            if let img = vm.resultImage, let uiImage = UIImage(data: img){
-                                                                Image(uiImage: uiImage)
+                                                            if let img = vm.resultImage{
+                                                                Image(uiImage: UIImage(data: img)!)
                                                                     .resizable()
                                                                     .cornerRadius(25)
                                                                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 20))
@@ -133,9 +133,9 @@ struct ResultView: View {
                                                     }
                                                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
                                                     .buttonStyle(ClickScaleDown())
-                                                    if let imageData = vm.resultImage, let shareImage = UIImage(data: imageData){
+                                                    if let image = vm.resultImage{
                                                         let title = "share_tongue".localizedString(language: language)
-                                                        let item = Image(uiImage: shareImage)
+                                                        let item  = Image(uiImage: UIImage(data: image)!)
                                                         ShareLink(item: item, preview: SharePreview(title, image: item)){
                                                             DialogButtonView(text: "share_tongue".localizedString(language: language), width: 100, backgroundColor: Color("transparent"), borderColor: Color("toolbarBackground"), textColor: Color("toolbarBackground"), isTextBold: true,
                                                                              fontSize: .footnote, cornerRadius: 20
@@ -144,7 +144,9 @@ struct ResultView: View {
                                                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
                                                         .buttonStyle(ClickScaleDown())
                                                     }
-                                                    Button(action: onDismiss) {
+                                                    Button(action: {
+                                                        isPageActive.toggle()
+                                                    }){
                                                         DialogButtonView(text: "retry".localizedString(language: language), width: 100, backgroundColor: Color("transparent"), borderColor: Color("toolbarBackground"), textColor: Color("toolbarBackground"), isTextBold: true,
                                                                          fontSize: .footnote, cornerRadius: 20)
                                                     }
@@ -190,7 +192,7 @@ struct ResultView: View {
                                     .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .topLeading)
                                     .toolbar {
                                         ToolbarItem(placement: .topBarLeading) {
-                                            Button(action: onDismiss) {
+                                            Button(action:{isPageActive.toggle()}){
                                                 Image(systemName: "chevron.backward").foregroundColor(.white)
                                             }
                                         }
@@ -205,8 +207,8 @@ struct ResultView: View {
                                     .toolbarBackground(.visible, for: .navigationBar)
                                 }
                             }
-                            if isShowFullPhoto, let resultImage = vm.resultImage {
-                                ImageDialog(isActive: $isShowFullPhoto, image: resultImage)
+                            if (isShowFullPhoto){
+                                ImageDialog(isActive: $isShowFullPhoto, image: vm.resultImage!)
                             }
                             if (isShowDiabetesTongueExp){
                                 TextDialog(isActive: $isShowDiabetesTongueExp,
@@ -263,7 +265,7 @@ struct ResultView: View {
                                     action: {
                                         isShowLoginDialog.toggle()
                                         tabViewSelection = 4
-                                        onDismiss()
+                                        isPageActive = false
                                     }
                                 )
                             )
@@ -274,26 +276,24 @@ struct ResultView: View {
                 .onAppear(){
                     let inputString = result?.result?.diabetes_tongue_description_explain ?? ""
                     let pattern = "(<a href=\").*(\">)"
-                    if let regex = try? NSRegularExpression(pattern: pattern),
-                       !inputString.isEmpty {
+                    if let regex = try? NSRegularExpression(pattern: pattern) {
                         let matches = regex.matches(in: inputString, range: NSRange(inputString.startIndex..., in: inputString))
-                        if let firstMatch = matches.first,
-                           let range = Range(firstMatch.range, in: inputString) {
-                            let matchStr = String(inputString[range])
-                            let link = matchStr.replacingOccurrences(of: "<a href=\"", with: "")
-                                .replacingOccurrences(of: "\">", with: "")
-                            let linkText = link.replacingOccurrences(of: "https://", with: "")
-                            tongueDiabetesDescription = result?.result?.diabetes_tongue_description_explain?
-                                .replacingOccurrences(of: "<a href=\"\(link)\">\(linkText)</a>", with: "[\(linkText)](\(link))") ?? ""
+                        let matchStrings = matches.map { match in
+                            String(inputString[Range(match.range, in: inputString)!])
                         }
+                        let link = (matchStrings[0] as String).replacingOccurrences(of: "<a href=\"", with: "")
+                            .replacingOccurrences(of: "\">", with: "")
+                        let linkText = link.replacingOccurrences(of: "https://", with: "")
+                        tongueDiabetesDescription = result?.result?.diabetes_tongue_description_explain?.replacingOccurrences(of: "<a href=\"\(link)\">\(linkText)</a>", with: "[\(linkText)](\(link))") ?? ""
                         tongueBodyColorDescription = (result?.result?.tontue_color_description_explain ?? "")
                         tongueCoatingColorDescription = (result?.result?.coating_color_description_explain ?? "")
                         tongueCoatingThicknessDescription = (result?.result?.think_coating_description_explain ?? "")
                         otherFindingDescription = (result?.result?.think_coating_description_explain ?? "")
+                        
                     }
                
-                    if let image = result?.image, let url = URL(string: image) {
-                        vm.getData(from: url) { data, response, error in
+                    if let image = result?.image{
+                        vm.getData(from: URL(string: image)!) { data, response, error in
                             guard let data = data, error == nil else { return }
                             vm.resultImage = data
                         }
