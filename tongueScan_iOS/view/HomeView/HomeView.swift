@@ -14,28 +14,27 @@ struct HomeView: View {
     
     @Environment(PreferenceUtil.self) var preferenceUtil
     
-    @Binding var language : String?
+    @Binding var language: String?
+    
+    var onNavigateToCamera: (CameraView.Mode) -> Void
+    
+    @Binding var isLoading: Bool
+    
+    @Binding var tabViewSelection: Int
     
     @StateObject private var vm = HomeVM()
     
     @State private var selectedItems: [PhotosPickerItem] = []
     
-    @Binding var isAutoCameraView :Bool
-    @Binding var isManualCameraView :Bool
-    
-    @Binding var isLoading:Bool
-    
-    @State var isShowGuideDialog = false
+    @State private var isShowGuideDialog = false
     @State var isShowTermsAndConditionDialog = false
-    @State var isShowTermsAndConditionDialogWithDisagree = false
+    @State private var isShowTermsAndConditionDialogWithDisagree = false
     
-    @State var isShowLoginDialog = false
+    @State private var isShowLoginDialog = false
     
-    @State var mode: CameraView.Mode = .Auto
+    @State private var mode: CameraView.Mode = .Auto
     
-    @State var scrollbarFlash: Int = 0
-    
-    @Binding var tabViewSelection:Int
+    @State private var scrollbarFlash: Int = 0
     
     var body: some View {
         
@@ -96,16 +95,14 @@ struct HomeView: View {
                             Spacer()
                             Button(action: {
                                 mode = .Auto
-                                if (tongueScan_iOSApp.loginModel == nil){
+                                if tongueScan_iOSApp.loginModel == nil {
                                     isShowLoginDialog = true
-                                } else{
-                                    if (preferenceUtil.isAgreedTerms ?? false){
-                                        isAutoCameraView = true
-                                    } else{
-                                        isShowTermsAndConditionDialogWithDisagree = true
-                                    }
+                                } else if preferenceUtil.isAgreedTerms ?? false {
+                                    onNavigateToCamera(.Auto)
+                                } else {
+                                    isShowTermsAndConditionDialogWithDisagree = true
                                 }
-                                if let token = preferenceUtil.token{
+                                if let token = preferenceUtil.token {
                                     Task{
                                         await vm.userInfo(token:token,onSuccess:{
                                             tongueScan_iOSApp.loginModel = LoginModel(token: vm.userInfoModel?.data?.token, username: vm.userInfoModel?.data?.username)
@@ -120,18 +117,15 @@ struct HomeView: View {
                             .padding([.leading, .trailing], 5)
                             .buttonStyle(ClickScaleDown())
                             Button(action: {
-                                
                                 mode = .Manual
-                                if (tongueScan_iOSApp.loginModel == nil){
+                                if tongueScan_iOSApp.loginModel == nil {
                                     isShowLoginDialog = true
-                                } else{
-                                    if (preferenceUtil.isAgreedTerms ?? false){
-                                        isManualCameraView = true
-                                    } else{
-                                        isShowTermsAndConditionDialogWithDisagree = true
-                                    }
+                                } else if preferenceUtil.isAgreedTerms ?? false {
+                                    onNavigateToCamera(.Manual)
+                                } else {
+                                    isShowTermsAndConditionDialogWithDisagree = true
                                 }
-                                if let token = preferenceUtil.token{
+                                if let token = preferenceUtil.token {
                                     Task{
                                         await vm.userInfo(token:token,onSuccess:{
                                             tongueScan_iOSApp.loginModel = LoginModel(token: vm.userInfoModel?.data?.token, username: vm.userInfoModel?.data?.username)
@@ -151,13 +145,9 @@ struct HomeView: View {
                         .padding([.bottom], 20)
                         .alert("hint".localizedText(language: language), isPresented: $isShowLoginDialog) {
                             Button("continue_to_test".localizedString(language: language)) {
-                                if (preferenceUtil.isAgreedTerms ?? false){
-                                    if (mode == .Auto){
-                                        isAutoCameraView = true
-                                    } else{
-                                        isManualCameraView = true
-                                    }
-                                } else{
+                                if preferenceUtil.isAgreedTerms ?? false {
+                                    onNavigateToCamera(mode)
+                                } else {
                                     isShowTermsAndConditionDialogWithDisagree = true
                                 }
                             }
@@ -269,14 +259,10 @@ struct HomeView: View {
                                leftBtnAction:{
                         isShowTermsAndConditionDialogWithDisagree = false
                     },
-                               rightBtnAction:{
+                               rightBtnAction: {
                         isShowTermsAndConditionDialogWithDisagree = false
                         preferenceUtil.isAgreedTerms = true
-                        if (mode == .Auto){
-                            isAutoCameraView = true
-                        } else{
-                            isManualCameraView = true
-                        }
+                        onNavigateToCamera(mode)
                     }, trigger: $scrollbarFlash)
                 }
             }
