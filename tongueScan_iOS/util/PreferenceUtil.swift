@@ -17,6 +17,9 @@ class PreferenceUtil{
     let IS_USE_BIOMETRIC_LOGIN = "IS_USE_BIOMETRIC_LOGIN"
     let USERNAME = "USERNAME"
     let TOKEN = "TOKEN"
+    let HAS_PROFILE_PHOTO = "HAS_PROFILE_PHOTO"
+    
+    static let profilePhotoFilename = "profile_photo.jpg"
     
     init() {
         language = UserDefaults.standard.string(forKey: LANGUAGE)
@@ -26,6 +29,7 @@ class PreferenceUtil{
         isUseBiometricLogin = UserDefaults.standard.bool(forKey: IS_USE_BIOMETRIC_LOGIN)
         username = UserDefaults.standard.string(forKey: USERNAME)
         token = UserDefaults.standard.string(forKey: TOKEN)
+        hasProfilePhoto = UserDefaults.standard.bool(forKey: HAS_PROFILE_PHOTO)
     }
 
     
@@ -77,4 +81,16 @@ class PreferenceUtil{
                 UserDefaults.standard.set(self.token, forKey: TOKEN)
             }
         }
+    
+    var hasProfilePhoto: Bool = false {
+        didSet {
+            guard oldValue != self.hasProfilePhoto else { return }
+            UserDefaults.standard.set(self.hasProfilePhoto, forKey: HAS_PROFILE_PHOTO)
+        }
+    }
+    
+    var profilePhotoURL: URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            .appendingPathComponent(PreferenceUtil.profilePhotoFilename)
+    }
 }

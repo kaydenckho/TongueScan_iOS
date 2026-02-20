@@ -75,7 +75,7 @@ struct LoginView: View {
     
     var body: some View {
         if (state == .LoggedIn){
-            PersonalInfoView(language: $language, state: $state)
+            PersonalInfoView(language: $language, state: $state, tabViewSelection: $tabViewSelection)
         } else{
             NavigationStack {
                 ZStack {
