@@ -64,26 +64,31 @@ struct HomeView: View {
                                     language = "zh-Hans"
                                 }){
                                     Text("简").foregroundColor(Color("toolbarBackground"))
+                                        .font(.subheadline)
                                         .fontWeight(.semibold)
                                         .frame(alignment: .center)
                                 }
                                 Text("|").foregroundColor(Color("toolbarBackground")).offset(y:-1)
+                                    .font(.subheadline)
                                     .fontWeight(.medium)
                                 Button(action: {
                                     preferenceUtil.language = "zh-HK"
                                     language = "zh-HK"
                                 }){
                                     Text("繁").foregroundColor(Color("toolbarBackground"))
+                                        .font(.subheadline)
                                         .fontWeight(.semibold)
                                         .frame(alignment: .center)
                                 }
                                 Text("|").foregroundColor(Color("toolbarBackground")).offset(y:-1)
+                                    .font(.subheadline)
                                     .fontWeight(.medium)
                                 Button(action: {
                                     preferenceUtil.language = "en"
                                     language = "en"
                                 }){
                                     Text("ENG").foregroundColor(Color("toolbarBackground"))
+                                        .font(.subheadline)
                                         .fontWeight(.medium)
                                 }
                             }
@@ -112,7 +117,7 @@ struct HomeView: View {
                                     }
                                 }
                             }){
-                                Button1View(text: "auto_mode".localizedString(language: language), width: 120, color: Color("toolbarBackground"), topLeading:10, bottomLeading:10, topTrailing:10, bottomTrailing:10, verticalPadding:15, textSize: Font.headline, textColor:.white)
+                                Button1View(text: "auto_mode".localizedString(language: language), width: 120, color: Color("toolbarBackground"), topLeading:10, bottomLeading:10, topTrailing:10, bottomTrailing:10, verticalPadding:15, textSize: Font.title3, textColor:.white)
                             }
                             .padding([.leading, .trailing], 5)
                             .buttonStyle(ClickScaleDown())
@@ -136,7 +141,7 @@ struct HomeView: View {
                                 }
                                 
                             }){
-                                Button1View(text: "manual_mode".localizedString(language: language), width: 120, color: Color("button_green2"), topLeading:10, bottomLeading:10, topTrailing:10, bottomTrailing:10,verticalPadding:15, textSize: Font.headline, textColor:.white)
+                                Button1View(text: "manual_mode".localizedString(language: language), width: 120, color: Color("button_green2"), topLeading:10, bottomLeading:10, topTrailing:10, bottomTrailing:10,verticalPadding:15, textSize: Font.title3, textColor:.white)
                             }
                             .padding([.leading, .trailing], 5)
                             .buttonStyle(ClickScaleDown())
@@ -164,8 +169,8 @@ struct HomeView: View {
                             "tongueDemoDescription".localizedText(language: language)
                                 .foregroundColor(Color("toolbarBackground"))
                                 .multilineTextAlignment(.center)
-                                .fontWeight(.bold)
-                                .font(.footnote)
+                                .fontWeight(.medium)
+                                .font(.subheadline)
                             Spacer()
                         }
                         .padding([.bottom], 20)
@@ -187,8 +192,8 @@ struct HomeView: View {
                                     "guideTitle".localizedText(language: language)
                                         .foregroundColor(Color("toolbarBackground"))
                                         .multilineTextAlignment(.center)
-                                        .fontWeight(.bold)
-                                        .font(.footnote)
+                                        .fontWeight(.semibold)
+                                        .font(.subheadline)
                                 }
                             }
                             .buttonStyle(ClickScaleDown())
@@ -210,8 +215,8 @@ struct HomeView: View {
                                     "termsAndConditions".localizedText(language: language)
                                         .foregroundColor(Color("toolbarBackground"))
                                         .multilineTextAlignment(.center)
-                                        .fontWeight(.bold)
-                                        .font(.footnote)
+                                        .fontWeight(.semibold)
+                                        .font(.subheadline)
                                 }
                             }
                             .buttonStyle(ClickScaleDown())
@@ -231,6 +236,7 @@ struct HomeView: View {
                     ToolbarItem(placement: .principal) {
                         "appName".localizedText(language: language)
                             .foregroundColor(.white)
+                            .font(.title3)
                             .fontWeight(.bold)
                     }
                 }

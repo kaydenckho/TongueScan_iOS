@@ -423,8 +423,9 @@ struct LoginView: View {
                                                 Toggle(isOn: $isRememberLogin) {
                                                     "rememberLogin".localizedText(language: language)
                                                         .font(.footnote)
+                                                        .foregroundColor(Color("toolbarBackground"))
                                                 }
-                                                .toggleStyle(iOSCheckboxToggleStyle())
+                                                .toggleStyle(iOSCheckboxToggleStyle(tintColor: Color("toolbarBackground")))
                                                 .padding(EdgeInsets(top: 0, leading: 25, bottom: 15, trailing: 0))
                                                 .fixedSize(horizontal: false, vertical: true)
                                                 Spacer()

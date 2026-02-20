@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct iOSCheckboxToggleStyle: ToggleStyle {
+    var tintColor: Color = .primary
+    
     func makeBody(configuration: Configuration) -> some View {
         Button(action: {
             configuration.isOn.toggle()
         }, label: {
             HStack {
                 Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(configuration.isOn ? tintColor : Color.gray)
                 configuration.label
             }
         })

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 /// Centralized app navigation - single source of truth for page routing
 enum AppRoute: Equatable {
@@ -89,6 +90,8 @@ struct ContentView: View {
                                 "personalSetting".localizedText(language: language)
                             }.tag(4)
                 }
+                .environment(\.horizontalSizeClass, .compact)
+                .toolbarBackground(Color(UIColor.systemBackground), for: .tabBar)
                 LoadingView(text: "loading".localizedString(language: language)).opacity(isLoading ? 1 : 0)
             }
             .onAppear(){
